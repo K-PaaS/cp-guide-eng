@@ -1,4 +1,4 @@
-### [Index](https://github.com/K-PaaS/cp-guide-eng/tree/master) > [CP Install](../Readme.md) > SourceControl Installation Guide
+### [Index](https://github.com/K-PaaS/cp-guide-eng) > [CP Install](../Readme.md) > SourceControl Installation Guide
 
 <br>
 
@@ -377,4 +377,4 @@ A setting for viewing and applying for the container platform source control ser
 
 <br>
 
-### [Index](https://github.com/K-PaaS/cp-guide-eng/tree/master) > [CP Install](../Readme.md) > SourceControl Installation Guide
+### [Index](https://github.com/K-PaaS/cp-guide-eng) > [CP Install](../Readme.md) > SourceControl Installation Guide

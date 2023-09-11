@@ -1,7 +1,7 @@
-### [Index](https://github.com/PaaS-TA/Guide-eng/blob/master/README.md) > [CP Architecture](./README.md) > PaaS-TA CP
+### [Index](https://github.com/K-PaaS/cp-guide-eng) > [CP Architecture](./README.md) > K-PaaS CP
 
 ## Purpose
-This document provides an architecture of the PaaS-TA Container Platform (CP).
+This document provides an architecture of the K-PaaS Container Platform (CP).
 <br><br>
 
 ## System Configuration
@@ -17,8 +17,8 @@ This document provides an architecture of the PaaS-TA Container Platform (CP).
 
 
 ## Description
-PaaS-TA CPis a container-based development and deployment management platform using Kubernetes, which supports container orchestration. 
-PaaS-TA CP enables container-based applications to be deployed, tested, and expanded faster and easier.
+K-PaaS CPis a container-based development and deployment management platform using Kubernetes, which supports container orchestration. 
+K-PaaS CP enables container-based applications to be deployed, tested, and expanded faster and easier.
 
 
-### [Index](https://github.com/PaaS-TA/Guide/blob/master/README.md) > [CP Architecture](../README.md) > PaaS-TA CP
+### [Index](https://github.com/K-PaaS/cp-guide-eng) > [CP Architecture](./README.md) > K-PaaS CP

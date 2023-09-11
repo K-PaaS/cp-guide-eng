@@ -1,4 +1,4 @@
-### [Index](https://github.com/K-PaaS/cp-guide-eng/tree/master) > [CP Install](../Readme.md) > Service Deployment Portal Installation Guide
+### [Index](https://github.com/K-PaaS/cp-guide-eng) > [CP Install](../Readme.md) > Service Deployment Portal Installation Guide
 
 <br>
 
@@ -797,7 +797,7 @@ Be careful not to use the following prefixes when creating resources while using
 
 <br>
 
-### [Index](https://github.com/K-PaaS/cp-guide-eng/tree/master) > [CP Install](../Readme.md) > Service Deployment Portal Installation Guide
+### [Index](https://github.com/K-PaaS/cp-guide-eng) > [CP Install](../Readme.md) > Service Deployment Portal Installation Guide
 
 [image 001]:images-v1.2/cp-001.png
 [image 002]:images-v1.2/cp-002.png

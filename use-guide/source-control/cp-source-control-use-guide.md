@@ -1,8 +1,8 @@
-### [Index](https://github.com/PaaS-TA/Guide-eng/blob/master/README.md) > [CP Use](https://github.com/PaaS-TA/paas-ta-container-platform-guide-eng/tree/master/use-guide/Readme.md) > Source Control Service Use Guide
+### [Index](https://github.com/K-PaaS/cp-guide-eng) > [CP Use](../Readme.md) > Source Control Service Use Guide
 
 <br>
 
-# [PaaS-TA Container Platform Source Control Service User Guide]
+# [K-PaaS Container Platform Source Control Service User Guide]
 
 <br>
 
@@ -47,7 +47,7 @@ The range of this document covers how to use the container platform source contr
 # <div id='2'/> 2. Container Platform Source Control Access
 
 ### <div id='2.1'/> 2.1. Service Container Platform Source Control Access
-1. Connect by clicking the "dashboard" button on the applied source control from the space page of the PaaS-TA portal.
+1. Connect by clicking the "dashboard" button on the applied source control from the space page of the K-PaaS portal.
 
 <br>
 
@@ -131,7 +131,7 @@ This menu describes the information retrieving and managing of a specific user u
 
 
 ***※The changed password is the password used to access the source control repository 
-<br>It has nothing to do with login (Keycloak password for Stand-Alone Deployment, PaaS-TA password for service deployment)information.*** <br>
+<br>It has nothing to do with login (Keycloak password for Stand-Alone Deployment, K-PaaS password for service deployment)information.*** <br>
 ***※Password should be changed at the very first login to have access to repository pull, push, etc. *** <br>
 <br>
 
@@ -305,4 +305,4 @@ This chapter describes checking and managing repository information of the conta
 
 <br>
 
-### [Index](https://github.com/PaaS-TA/Guide-eng/blob/master/README.md) > [CP Use](https://github.com/PaaS-TA/paas-ta-container-platform-guide-eng/tree/master/use-guide/Readme.md) > Source Control Service Use Guide
+### [Index](https://github.com/K-PaaS/cp-guide-eng) > [CP Install](../Readme.md) > Source Control Service Use Guide

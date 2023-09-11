@@ -1,7 +1,7 @@
-### [Index](https://github.com/PaaS-TA/Guide-eng/blob/master/README.md) > [CP Architecture](./README.md) > SourceControl
+### [Index](https://github.com/K-PaaS/cp-guide-eng) > [CP Architecture](./README.md) > Source Control
 
 ## Purpose
-This document provides an architecture of PaaS-TA Container Platform SourceControl.
+This document provides an architecture of K-PaaS Container Platform SourceControl.
 <br><br>
 
 ## Container Configuration Diagram
@@ -13,13 +13,13 @@ This document provides an architecture of PaaS-TA Container Platform SourceContr
 |-------|-----|
 | SC-API | Provides the REST API required for source control service control |
 | SC-UI | Source Control Service Web UI |
-| SC-Broker | Application for relay role between PaaS-TA and source control services |
+| SC-Broker | Application for relay role between K-PaaS and source control services |
 | SCM-Server | SCM Server |
 
 
 
 ## Description
-The Paas-Ta container platform source control service provides a UI for managing Git and Svn Repository.   
+The K-PaaS container platform source control service provides a UI for managing Git and Svn Repository.   
 
 
-### [Index](https://github.com/PaaS-TA/Guide/blob/master/README.md) > [CP Architecture](../README.md) > SourceControl
+### [Index](https://github.com/K-PaaS/cp-guide-eng) > [CP Architecture](./README.md) > Source Control

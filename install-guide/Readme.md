@@ -1,4 +1,4 @@
-### [Index](https://github.com/K-PaaS/cp-guide-eng/tree/master) > CP Install
+### [Index](https://github.com/K-PaaS/cp-guide-eng) > CP Install
 # Container Platform(CP) - install
 
 ## Stand-alone Deployment   
