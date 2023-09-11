@@ -1,4 +1,4 @@
-### [Index](https://github.com/PaaS-TA/Guide-eng/blob/master/README.md) > [CP Install](https://github.com/PaaS-TA/paas-ta-container-platform-guide-eng/tree/master/install-guide/Readme.md) > Pipeline Installation Guide
+### [Index](https://github.com/K-PaaS/cp-guide-eng/tree/master) > [CP Install](../Readme.md) > Pipeline Installation Guide
 
 <br>
 
@@ -66,9 +66,9 @@ For NFS Storage Server installation, refer to the guide below.
     
 ### <div id='2.2'>2.2. Container Platform Portal Installation
 The infrastructure to be used in the container platform pipeline must be pre-installed with the authenticating server **KeyCloak Server**, database **Maria DB**, and repository server **Harbor**.
-When deploying the PaaS-TA container platform portal, install all the infrastructure.
+When deploying the K-PaaS container platform portal, install all the infrastructure.
 Refer to the guide below for Container Platform infra installation.
-> [PaaS-TA Container Platform Portal Deployment](../container-platform-portal/paas-ta-container-platform-portal-deployment-service-guide-v1.2.md)     
+> [K-PaaS Container Platform Portal Deployment](../container-platform-portal/cp-portal-deployment-service-guide-v1.2.md)     
 
 
 ### <div id='2.3'>2.3. Cluster Environment
@@ -106,7 +106,7 @@ When deploying the container platform pipeline, upload the image and package fil
 Upload images and package files related to the container platform pipeline to the Private Repository (Harbor) deployed through the container platform portal. 
 
 Refer to the guide below for CRI-O insecure-registry settings needed for the Private Repository.
-> [CRI-O insecure-registry Setting](../container-platform-portal/paas-ta-container-platform-portal-deployment-service-guide-v1.2.md#3.1)     
+> [CRI-O insecure-registry Setting](../container-platform-portal/cp-portal-deployment-service-guide-v1.2.md#3.1)     
 
 ### <div id='3.2'>3.2. Container Platform Pipeline Deployment
     
@@ -168,11 +168,11 @@ CF_API_URL="https:\/\/api.xx.xxx.xxx.xx.nip.io"
 - **K8S_MASTER_NODE_IP** <br>Enter Kubernetes Master Node Public IP<br><br>
 - **PROVIDER_TYPE** <br>Enter Container Platform Pipeline Providing Type <br>
    + This guide is a service deployment installation guide that requires **'service'** values<br><br>
-- **CF_API_URL** <br>Enter api domain to connect to PaaS-TA to interwork the service <br>
+- **CF_API_URL** <br>Enter api domain to connect to K-PaaS to interwork the service <br>
 <br>    
 
 :bulb: Keycloak's default deployment method is **HTTP** and **HTTPS** via certificate is enabled
-> [Keycloak TLS Setting](../container-platform-portal/paas-ta-container-platform-portal-deployment-keycloak-tls-setting-guide-v1.2.md)
+> [Keycloak TLS Setting](../container-platform-portal/cp-portal-deployment-keycloak-tls-setting-guide-v1.2.md)
 
 Modify the contents under the container platform pipeline variable file.
 ```
@@ -308,17 +308,17 @@ namespace "paas-ta-container-platform-pipeline" deleted
 <br>
   
 ## <div id='4'>4. Container Platform Pipeline Service Broker
-When installing as a container platform PaaS-TA service pipeline, brokers must be registered to interwork the container platform pipeline service deployed to CF and Kubernetes.
-If you register and disclose the service through the PaaS-TA operator portal, you can apply for and use the service through the PaaS-TA user portal.
+When installing as a container platform K-PaaS service pipeline, brokers must be registered to interwork the container platform pipeline service deployed to CF and Kubernetes.
+If you register and disclose the service through the K-PaaS operator portal, you can apply for and use the service through the K-PaaS user portal.
   
 ## <div id='4.1'>4.1. Container Platform Pipeline User Authentication Service Configuration
 To use the container platform pipeline as a service, the **user authentication service** configuration must be performed in advance.<br>
 Refer to the guide below for configuring the user authentication service.
-> [User Authentication Service Configuration](../container-platform-portal/paas-ta-container-platform-portal-deployment-service-guide-v1.2.md#4)      
+> [User Authentication Service Configuration](../container-platform-portal/cp-portal-deployment-service-guide-v1.2.md#4)      
 When configuring the container platform portal user authentication service, it also gets applied to the pipeline.
 
 ### <div id='4.2'>4.2. Container Platform Pipeline Service Broker Registration
-:bulb: This content will be conducted at the **BOSH Inception** where PaaS-TA Portal is installed.
+:bulb: This content will be conducted at the **BOSH Inception** where K-PaaS Portal is installed.
 When registering a service broker, you must be logged in as a user who can register a service broker on an open cloud platform.
 
 ##### Check Service Broker List.
@@ -398,9 +398,9 @@ broker: container-platform-pipeline-service-broker
 <br>
     
 ### <div id='4.3'>4.3. Container Platform Pipeline Service Lookup Settings
-A setting for retrieving and applying for container platform pipeline service on PaaS-TA Portal.
+A setting for retrieving and applying for container platform pipeline service on K-PaaS Portal.
 
-##### Access to PaaS-TA Opertator Portal.
+##### Access to K-PaaS Opertator Portal.
 
 
 ##### In [Operation Management]-[Catalog] menu, select the Container Platform Pipeline service in the App Service tab and change the settings.
@@ -412,7 +412,7 @@ A setting for retrieving and applying for container platform pipeline service on
 
 ![image](https://user-images.githubusercontent.com/80228983/146296316-3bbb70d4-ce31-42f6-9ec0-019c0f12d774.png)
 
-##### Access to PaaS-TA User Portal.
+##### Access to K-PaaS User Portal.
 
 ##### In the [Catalog]-[Service] menu, select the container platform pipeline service in the service tab to create a service.
 ![image](https://user-images.githubusercontent.com/80228983/146296949-fceac26c-86b6-40fb-b005-dcc84b3f081c.png)
@@ -422,8 +422,8 @@ A setting for retrieving and applying for container platform pipeline service on
     
 ### <div id='4.4'/>4.4. Container Platform Pipeline Use Guide
 - Refer to the use guide below for container platform pipeline usage.  
-  + [Container Platform Pipeline Use Guide](../../use-guide/pipeline/paas-ta-container-platform-pipeline-use-guide.md)   
+  + [Container Platform Pipeline Use Guide](../../use-guide/pipeline/cp-pipeline-use-guide.md)   
 
 <br>
 
-### [Index](https://github.com/PaaS-TA/Guide-eng/blob/master/README.md) > [CP Install](https://github.com/PaaS-TA/paas-ta-container-platform-guide-eng/tree/master/install-guide/Readme.md) > Pipeline Installation Guide
+### [Index](https://github.com/K-PaaS/cp-guide-eng/tree/master) > [CP Install](../Readme.md) > Pipeline Installation Guide

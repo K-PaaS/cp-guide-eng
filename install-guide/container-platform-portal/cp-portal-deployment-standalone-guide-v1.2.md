@@ -1,4 +1,4 @@
-### [Index](https://github.com/PaaS-TA/Guide-eng/blob/master/README.md) > [CP Install](/install-guide/Readme.md) > Stand-alone Deployment Portal Installation Guide
+### [Index](https://github.com/K-PaaS/cp-guide-eng/tree/master) > [CP Install](../Readme.md) > Stand-alone Deployment Portal Installation Guide
 
 <br>
 
@@ -193,7 +193,7 @@ $ tar -xvf paas-ta-container-platform-portal-deployment.tar.gz
 Defining variable values is necessary before deploying the container platform portal. Set the variable by checking the information required for deployment.
 
 :bulb: Keycloak's default deployment method is **HTTP**. If you want to set **HTPS** through a certificate, refer to the guide below for pre-processing.
-> [Keycloak TLS Setting](paas-ta-container-platform-portal-deployment-keycloak-tls-setting-guide-v1.2.md#2-keycloak-tls-설정)       
+> [Keycloak TLS Setting](cp-portal-deployment-keycloak-tls-setting-guide-v1.2.md#2-keycloak-tls-설정)       
 
 <br>
 
@@ -518,7 +518,7 @@ Be careful not to use the following prefixes when creating resources while using
 
 <br>
 
-### [Index](https://github.com/PaaS-TA/Guide-eng/blob/master/README.md) > [CP Install](/install-guide/Readme.md) > Stand-Alone Deployment Portal Installation Guide
+### [Index](https://github.com/K-PaaS/cp-guide-eng/tree/master) > [CP Install](../Readme.md) > Stand-Alone Deployment Portal Installation Guide
 
 [image 001]:images-v1.2/cp-001.png
 [image 002]:images-v1.2/cp-002.png

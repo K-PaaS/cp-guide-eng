@@ -1,4 +1,4 @@
-### [Index](https://github.com/PaaS-TA/Guide-eng/blob/master/README.md) > [CP Install](https://github.com/PaaS-TA/paas-ta-container-platform-guide-eng/tree/master/install-guide/Readme.md) > SourceControl Installation Guide
+### [Index](https://github.com/K-PaaS/cp-guide-eng/tree/master) > [CP Install](../Readme.md) > SourceControl Installation Guide
 
 <br>
 
@@ -66,7 +66,7 @@ Refer to the guide below for NFS Storage Server installation.
 Installation of the certificate server **KeyCloak Server**, database **Maria DB**, and repository server **Harbor** must be performed in advance as the infrastructure to be used by the container platform source control.
 When deploying the pasta container platform portal, all the infrastructures will be installed.
 Refer to the guide below for installing the container platform portal.
-> [PaaS-TA Container Platform Portal Deployment](../container-platform-portal/paas-ta-container-platform-portal-deployment-service-guide-v1.2.md)     
+> [K-PaaS Container Platform Portal Deployment](../container-platform-portal/cp-portal-deployment-service-guide-v1.2.md)     
 
   
 ## <div id='3'>3. Container Platform Source Control Deployment
@@ -76,7 +76,7 @@ When deploying the container platform source control, upload images and package 
 Upload the container platform portal to the deployed Private Repository (Harbor) with images and package files related to the container platform source control. 
 
 Refer to the guide below for the CRI-O insecure-registry settings required for a Private Repository deployment.
-> [CRI-O insecure-registry Setting](../container-platform-portal/paas-ta-container-platform-portal-deployment-service-guide-v1.2.md#3.1)      
+> [CRI-O insecure-registry Setting](../container-platform-portal/cp-portal-deployment-service-guide-v1.2.md#3.1)      
 
 ### <div id='3.2'>3.2. Container Platform Source Control Deployment
     
@@ -139,7 +139,7 @@ PROVIDER_TYPE="service"
 <br>    
 
 :bulb: Keycloak default deployment method is **HTTP**, and **HTPS** via certificate is set
-> [Keycloak TLS Setting](../container-platform-portal/paas-ta-container-platform-portal-deployment-keycloak-tls-setting-guide-v1.2.md)
+> [Keycloak TLS Setting](../container-platform-portal/cp-portal-deployment-keycloak-tls-setting-guide-v1.2.md)
 
 Modify the contents below in the container platform source control variable file.
 ```
@@ -258,17 +258,17 @@ namespace "paas-ta-container-platform-source-control" deleted
 ```
   
 ## <div id='4'>4. Container Platform Source Control Service Broker
-When installing as a container platform PaaS-TA service-type source control, brokers must be registered for the container platform source control service integration deployed to CF and Kubernetes.
-If you register and disclose the service through the PaaS-TA operator portal, you can apply for and use the service through the PaaS-TA user portal.
+When installing as a container platform K-PaaS service-type source control, brokers must be registered for the container platform source control service integration deployed to CF and Kubernetes.
+If you register and disclose the service through the K-PaaS operator portal, you can apply for and use the service through the K-PaaS user portal.
   
 ## <div id='4.1'>4.1. Container Platform Source Control User Authentication Service Configuration
 To use the container platform source control as a service, the **user authentication service** configuration must be performed in advance.<br>
 For user authentication service configuration, refer to the guide below.
-> [User Authentication Service Configuration](../container-platform-portal/paas-ta-container-platform-portal-deployment-service-guide-v1.2.md#4)      
+> [User Authentication Service Configuration](../container-platform-portal/cp-portal-deployment-service-guide-v1.2.md#4)      
 When configuring the container platform portal user authentication service, it also applies to source control.
 
 ### <div id='4.2'>4.2. Container Platform Source Control Service Broker Registration
-:bulb: This will be done at **BOSH Inception** with PaaS-TA Portal installed.
+:bulb: This will be done at **BOSH Inception** with K-PaaS Portal installed.
 When registering a service broker, you must be logged in as a user who can register a service broker on an open cloud platform.
 
 ##### Check Service Broker List.
@@ -348,9 +348,9 @@ broker: container-platform-source-control-service-broker
 <br>
     
 ### <div id='4.3'>4.3. Container Platform Source Control Service Lookup Setting
-A setting for viewing and applying for the container platform source control service on the PaaS-TA portal.
+A setting for viewing and applying for the container platform source control service on the K-PaaS portal.
 
-##### Access to the PaaS-TA Operator Portal.
+##### Access to the K-PaaS Operator Portal.
 
 
 ##### In the [OperationManagement]-[Catalog] menu, select Container Platform Source Control Service from the App service tab and change settings.
@@ -363,7 +363,7 @@ A setting for viewing and applying for the container platform source control ser
 ![image](https://user-images.githubusercontent.com/80228983/146360677-bd0878f4-85ac-48fc-9e30-6bc49a74381f.png)
 
 
-##### Access to PaaS-TA User Portal.
+##### Access to K-PaaS User Portal.
 
 ##### In the [Catalog]-[Service] menu, select Container Platform Source Control Service from the service tab and create Service.
 ![image](https://user-images.githubusercontent.com/80228983/146360859-7388527a-e570-4985-b4bc-e5b4b3f19c55.png)
@@ -373,8 +373,8 @@ A setting for viewing and applying for the container platform source control ser
     
 ### <div id='4.4'/>4.4. Container Platform Source Control Use Guide
 - For the usage of Container Platform Source Control, refer to the use guide below.  
-  + [Container Platform Source Control Use Guide](../../use-guide/source-control/paas-ta-container-platform-source-control-use-guide.md)   
+  + [Container Platform Source Control Use Guide](../../use-guide/source-control/cp-source-control-use-guide.md)   
 
 <br>
 
-### [Index](https://github.com/PaaS-TA/Guide-eng/blob/master/README.md) > [CP Install](https://github.com/PaaS-TA/paas-ta-container-platform-guide-eng/tree/master/install-guide/Readme.md) > SourceControl Installation Guide
+### [Index](https://github.com/K-PaaS/cp-guide-eng/tree/master) > [CP Install](../Readme.md) > SourceControl Installation Guide

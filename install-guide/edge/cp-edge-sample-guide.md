@@ -1,4 +1,4 @@
-### [Index](https://github.com/PaaS-TA/Guide-eng/blob/master/README.md) > [CP Install](https://github.com/PaaS-TA/paas-ta-container-platform-guide-eng/tree/master/install-guide/Readme.md) > Edge Sample Guide
+### [Index](https://github.com/K-PaaS/cp-guide-eng/tree/master) > [CP Install](../Readme.md) > Edge Sample Guide
 
 <br>
 
@@ -52,8 +52,7 @@ Kubernetes Cluster was configured in the Cloud environment, and Edge Node was ad
 A temperature and humidity sensor DHT11 was connected to Raspberry Pi.
 
 Before installing the Container Platform portal, install Podman separately to deploy the KubeEdge Sample. For Podman installation, see **3.1. CRI-O secure-registry Setting** in the portal installation guide.
-> https://github.com/PaaS-TA/paas-ta-container-platform/blob/master/install-guide/container-platform-portal/paas-ta-container-platform-portal-deployment-standalone-guide-v1.2.md#3.1
-
+> [CRI-O secure-registry Setting guide](../container-platform-portal/cp-portal-deployment-standalone-guide-v1.2.md#31-cri-o-insecure-registry-setting)
 <br>
 
 ### <div id='2.1'> 2.1. Web Based KubeEdge Counter Sample
@@ -96,7 +95,7 @@ $ kubectl apply -f kubeedge-counter-model.yaml
 ## Change hostname in DeviceInstance ()
 $ sed -i "s/{EDGE_NODE_NAME}/{{Actual Edge Node Hostname}}/g" kubeedge-counter-instance.yaml
 
-ex) sed -i "s/{EDGE_NODE_NAME}/paasta-cp-edge-1/g" kubeedge-counter-instance.yaml
+ex) sed -i "s/{EDGE_NODE_NAME}/cp-edge-1/g" kubeedge-counter-instance.yaml
 
 ## DeviceInstance Deployment
 $ kubectl apply -f kubeedge-counter-instance.yaml
@@ -189,7 +188,7 @@ $ kubectl apply -f model.yaml
 ## Change hotname in DeviceInstance ()
 $ sed -i "s/{EDGE_NODE_NAME}/{{Actual Edge Node Hostname}}/g" instance.yaml
 
-ex) sed -i "s/{EDGE_NODE_NAME}/paasta-cp-edge-1/g" instance.yaml
+ex) sed -i "s/{EDGE_NODE_NAME}/cp-edge-1/g" instance.yaml
 
 ## DeviceInstance Deployment
 $ kubectl apply -f instance.yaml
@@ -254,4 +253,4 @@ $ mosquitto_sub -h 127.0.0.1 -t '$hw/events/device/temperature/twin/update' -p 1
 [image 001]:images/edge-v1.2.png
 [image 002]: images/kubeedge-counter-web.png
 
-### [Index](https://github.com/PaaS-TA/Guide-eng/blob/master/README.md) > [CP Install](https://github.com/PaaS-TA/paas-ta-container-platform-guide-eng/tree/master/install-guide/Readme.md) > Edge Sample Guide
+### [Index](https://github.com/K-PaaS/cp-guide-eng/tree/master) > [CP Install](../Readme.md) > Edge Sample Guide

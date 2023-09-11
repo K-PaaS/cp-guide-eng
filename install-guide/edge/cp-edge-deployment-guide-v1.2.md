@@ -1,4 +1,4 @@
-### [Index](https://github.com/PaaS-TA/Guide-eng/blob/master/README.md) > [CP Install](https://github.com/PaaS-TA/paas-ta-container-platform-guide-eng/tree/master/install-guide/Readme.md) > Edge Installation Guide
+### [Index](https://github.com/K-PaaS/cp-guide-eng/tree/master) > [CP Install](../Readme.md) > Edge Installation Guide
 
 <br>
 
@@ -36,7 +36,7 @@
 ### <div id='1.1'> 1.1. Purpose
 This document (KubeEdge Installation Guide) describes how to install KubeEdge to upgrade the open PaaS platform and install a container platform deployment to Open PaaS based on a developer support environment.
 
-Starting with PaaS-TA 5.5 version, it supports exclusive deployment based on KubeEdge. To install it based on an existing Container service, refer to the PaaS-TA 5.0 or lower version of the document. 
+Starting with K-PaaS 5.5 version, it supports exclusive deployment based on KubeEdge. To install it based on an existing Container service, refer to the K-PaaS 5.0 or lower version of the document. 
 
 <br>
 
@@ -139,7 +139,7 @@ For KubeEdge installation, the Kubernetes cluster must be deployed in the Cloud 
 
 - Deploy Kubernetes Cluster through Kubespray in the Cloud area.
 
-> https://github.com/PaaS-TA/paas-ta-container-platform/blob/master/install-guide/standalone/paas-ta-container-platform-standalone-deployment-guide-v1.2.md
+> [cp-standalone-deployment-guide](../standalone/cp-standalone-deployment-guide-v1.2.md)
 
 <br>
 
@@ -151,13 +151,13 @@ Install keadm for installing KubeEdge. Super User or root authentication is requ
 ```
 $ sudo su -
 
-# git clone https://github.com/PaaS-TA/paas-ta-container-platform-deployment.git
+# git clone https://github.com/K-PaaS/cp-deployment.git -b branch_v1.2.x
 
 ## When Ubuntu architecture is amd64 (ex: Cloud Area Master Node)
-# cp paas-ta-container-platform-deployment/edge/keadm/amd64/keadm /usr/bin/keadm
+# cp cp-deployment/edge/keadm/amd64/keadm /usr/bin/keadm
 
 ## When Ubuntu architecture is arm64 (ex: Edge Area Edge Node)
-# cp paas-ta-container-platform-deployment/edge/keadm/arm64/keadm /usr/bin/keadm
+# cp cp-deployment/edge/keadm/arm64/keadm /usr/bin/keadm
 ```
 
 <br>
@@ -213,7 +213,7 @@ After pre-installing CRI-O on **Edge Node** in the Edge area, install KubeEdge E
 ## When installing CRI-O after the Raspberry Pi Reboot, switch to Root authority.
 $ sudo su -
 
-# cd paas-ta-container-platform-deployment/edge
+# cd cp-deployment/edge
 
 # source crio-install.sh
 ```
@@ -332,7 +332,7 @@ cloudStream:
 
 - Modify the IP information in the script to activate the kubectl logs function and execute it at the **Master Node**.
 ```
-# cd paas-ta-container-platform-deployment/edge
+# cd cp-deployment/edge
 
 # vi enable-logs.sh
 
@@ -461,11 +461,11 @@ Check the Pod of the Kubernetes Node and kube-system Namespace to verify the ins
 ```
 # kubectl get nodes
 NAME                 STATUS   ROLES                  AGE     VERSION
-paasta-cp-edge       Ready    agent,edge             5m40s   v1.19.3-kubeedge-v1.8.2
-paasta-cp-master     Ready    control-plane,master   39m     v1.20.5
-paasta-cp-worker-1   Ready    <none>                 38m     v1.20.5
-paasta-cp-worker-2   Ready    <none>                 38m     v1.20.5
-paasta-cp-worker-3   Ready    <none>                 38m     v1.20.5
+cp-edge       Ready    agent,edge             5m40s   v1.19.3-kubeedge-v1.8.2
+cp-master     Ready    control-plane,master   39m     v1.20.5
+cp-worker-1   Ready    <none>                 38m     v1.20.5
+cp-worker-2   Ready    <none>                 38m     v1.20.5
+cp-worker-3   Ready    <none>                 38m     v1.20.5
 
 # kubectl get pods -n kube-system
 NAME                                       READY   STATUS    RESTARTS   AGE
@@ -477,18 +477,18 @@ calico-node-xc55c                          1/1     Running   0          4m53s
 coredns-657959df74-grflz                   1/1     Running   0          37m
 coredns-657959df74-wbdl6                   1/1     Running   0          37m
 dns-autoscaler-b5c786945-cbcv9             1/1     Running   0          37m
-kube-apiserver-paasta-cp-master            1/1     Running   0          36m
-kube-controller-manager-paasta-cp-master   1/1     Running   1          39m
+kube-apiserver-cp-master            1/1     Running   0          36m
+kube-controller-manager-cp-master   1/1     Running   1          39m
 kube-proxy-2ckfd                           1/1     Running   0          38m
 kube-proxy-hb8p2                           1/1     Running   0          38m
 kube-proxy-nnh6d                           1/1     Running   0          38m
 kube-proxy-p9srm                           1/1     Running   0          6m4s
 kube-proxy-zmp95                           1/1     Running   0          38m
-kube-scheduler-paasta-cp-master            1/1     Running   1          39m
+kube-scheduler-cp-master            1/1     Running   1          39m
 metrics-server-5cd75b7749-57sc2            2/2     Running   0          37m
-nginx-proxy-paasta-cp-worker-1             1/1     Running   0          38m
-nginx-proxy-paasta-cp-worker-2             1/1     Running   0          38m
-nginx-proxy-paasta-cp-worker-3             1/1     Running   0          38m
+nginx-proxy-cp-worker-1             1/1     Running   0          38m
+nginx-proxy-cp-worker-2             1/1     Running   0          38m
+nginx-proxy-cp-worker-3             1/1     Running   0          38m
 nodelocaldns-24vq4                         1/1     Running   0          6m4s
 nodelocaldns-jjrjj                         1/1     Running   0          37m
 nodelocaldns-kgzxb                         1/1     Running   0          37m
@@ -578,4 +578,4 @@ When users create their resources, be careful not to use the following prefixes.
 
 [image 001]:images/edge-v1.2.png
 
-### [Index](https://github.com/PaaS-TA/Guide-eng/blob/master/README.md) > [CP Install](https://github.com/PaaS-TA/paas-ta-container-platform-guide-eng/tree/master/install-guide/Readme.md) > Edge Installation Guide
+### [Index](https://github.com/K-PaaS/cp-guide-eng/tree/master) > [CP Install](../Readme.md) > Edge Installation Guide

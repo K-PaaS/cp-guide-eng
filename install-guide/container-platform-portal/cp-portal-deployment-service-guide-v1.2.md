@@ -1,4 +1,4 @@
-### [Index](https://github.com/PaaS-TA/Guide-eng/blob/master/README.md) > [CP Install](/install-guide/Readme.md) > Service Deployment Portal Installation Guide
+### [Index](https://github.com/K-PaaS/cp-guide-eng/tree/master) > [CP Install](../Readme.md) > Service Deployment Portal Installation Guide
 
 <br>
 
@@ -40,7 +40,7 @@
 
 ## <div id='1'>1. Document Outline
 ### <div id='1.1'>1.1. Purpose
-This document (Container Platform PaaS-TA Service Deployment Portal Installation Guide) describes how to install the Kubernetes Cluster and deploy the Container Platform PaaS-TA Service Deployment Portal.<br>
+This document (Container Platform K-PaaS Service Deployment Portal Installation Guide) describes how to install the Kubernetes Cluster and deploy the Container Platform K-PaaS Service Deployment Portal.<br>
 <br>
 
 ### <div id='1.2'>1.2. Range
@@ -230,7 +230,7 @@ PROVIDER_TYPE="service"
 - **NFS_SERVER_IP** <br>Enter NFS Server Private IP<br>
    + Enter the NFS Server Private IP installed through [[NFS Server Installation](../nfs-server-install-guide.md)] guide<br><br>
 - **PROVIDER_TYPE** <br>Enter Container Platform Portal Providing Type <br>
-   + This guide is a portal PaaS-TA service deployment installation guide that requires **'service'** value
+   + This guide is a portal K-PaaS service deployment installation guide that requires **'service'** value
 
 <br>    
 
@@ -423,11 +423,11 @@ Uninstalled plugin: cm-push
 <br>   
 
 ## <div id='4'>4. Configuring Container Platform Portal User Authentication Service
-Container platform portal user authentication is managed through the Keycloak service. To access the container platform portal with the user account of the PaaS-TA portal user authentication service UAA, a step is required to configure the UAA service as an identity provider and the Keycloak service as a service provider.
+Container platform portal user authentication is managed through the Keycloak service. To access the container platform portal with the user account of the K-PaaS portal user authentication service UAA, a step is required to configure the UAA service as an identity provider and the Keycloak service as a service provider.
 
 #### <div id='4.1'>4.1. Download Container Platform Portal User Authentication Configuration Deployment
 Download the Deployment file for configuring UAA service and Keycloak service authentication and locate it in the path below.<br>
-:bulb: It will be done at the **BOSH Inception** where PaaS-TA Portal is installed.
+:bulb: It will be done at the **BOSH Inception** where K-PaaS Portal is installed.
 
 + Download Container Platform Portal User Authentication Configuration Deployment :  
    [paas-ta-container-platform-saml-deployment.tar.gz](https://nextcloud.paas-ta.org/index.php/s/iJYjroasEA9BJgs/download)  
@@ -453,7 +453,7 @@ Defining variable values for configuring UAA service and Keycloak service authen
 
 :bulb: If **Keycloak TLS HTTPS** setting is applied, the Keycloak URL variable value needs to be changed. <br>
 Refer to the guide below to change the variable value.
-> [(Service Deployment) Change User Authentication Service Configuration](paas-ta-container-platform-portal-deployment-keycloak-tls-setting-guide-v1.2.md#3-서비스형-배포-사용자-인증-서비스-구성-변경)       
+> [(Service Deployment) Change User Authentication Service Configuration](cp-portal-deployment-keycloak-tls-setting-guide-v1.2#3-service-deployment-modify-user-authentication-service-configuration)       
 
 <br>
 
@@ -581,8 +581,8 @@ DELETE https://uaa.13.125.147.203.nip.io/saml/service-providers/0679dca3-0461-4a
 <br>
 
 ## <div id='5'>5. Container Platform Portal Service Broker
-When installing as a container platform PaaS-TA service-type portal, brokers must be registered to interwork the container platform portal service deployed to CF and Kubernetes.
-If you register and disclose the service through the PaaS-TA operator portal, you can apply for and use the service through the PaaS-TA user portal.
+When installing as a container platform K-PaaS service-type portal, brokers must be registered to interwork the container platform portal service deployed to CF and Kubernetes.
+If you register and disclose the service through the K-PaaS operator portal, you can apply for and use the service through the K-PaaS user portal.
 
 ### <div id='5.1'>5.1. Container Platform Portal Service Broker Registration
 When registering a service broker, you must be logged in as a user who can register a service broker on an open cloud platform.
@@ -690,9 +690,9 @@ broker: container-platform-user-portal-service-broker
 <br>
 
 ### <div id='5.2'>5.2. Container Platform Portal Service Lookup Settings
-This setting is to enable the container platform portal service to be inquired and applied from the PaaS-TA portal.
+This setting is to enable the container platform portal service to be inquired and applied from the K-PaaS portal.
 
-##### Access to the PaaS-TA Operator Portal.
+##### Access to the K-PaaS Operator Portal.
 ![image 007]
 
 
@@ -715,7 +715,7 @@ This setting is to enable the container platform portal service to be inquired a
 
 #### :bulb: Precautions when applying for container platform operator portal service
 - In the case of container platform operator portal service, the application can only be made from the organization name **'portal'**.
-- The container platform operator portal service is available only from one organization within the entire organization, and it is designated as an organization **'portal'** that is created by default when the PaaS-TA Portal is deployed.
+- The container platform operator portal service is available only from one organization within the entire organization, and it is designated as an organization **'portal'** that is created by default when the K-PaaS Portal is deployed.
 - If there is no organization **'portal'** when applying for the service, it is necessary to create the organization with **'portal'** and apply for the service.
 
 <br>
@@ -797,7 +797,7 @@ Be careful not to use the following prefixes when creating resources while using
 
 <br>
 
-### [Index](https://github.com/PaaS-TA/Guide-eng/blob/master/README.md) > [CP Install](/install-guide/Readme.md) > Service Deployment Portal Installation Guide
+### [Index](https://github.com/K-PaaS/cp-guide-eng/tree/master) > [CP Install](../Readme.md) > Service Deployment Portal Installation Guide
 
 [image 001]:images-v1.2/cp-001.png
 [image 002]:images-v1.2/cp-002.png
