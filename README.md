@@ -67,7 +67,7 @@
 <br>
 
 ## 소개
-네이티브 쿠버네티스 설치 가이드(Kubespray 설치, KubeEdge 설치) 및 쿠버네티스에 컨테이너 플랫폼을 배포하여 사용할 수 있는 방법에 대한 설치 및 활용 가이드를 다루고 있다.
+The document covers installation guides for native Kubernetes (Kubespray installation, KubeEdge installation) and explains how to install and utilize a container platform on Kubernetes.
 
 <br>
 
