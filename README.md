@@ -80,7 +80,7 @@ The document covers installation guides for native Kubernetes (Kubespray install
 - Portal Installation
   + [Portal Installation Guide](./install-guide/container-platform-portal/cp-portal-deployment-standalone-guide-v1.2.md)  
   + [Keycloak TLS Setting Guide](./install-guide/container-platform-portal/cp-portal-deployment-keycloak-tls-setting-guide-v1.2.md)  
-  + [Installation and Deployment File](https://github.com/K-PaaS/cp-portal-release)  
+  + [Installation and Deployment File](https:https://github.com/K-PaaS/cp-portal-release/tree/master/portal)  
   + [Release File](https://github.com/K-PaaS/cp-portal-release/tree/master/portal)
 - Service Installation
   + [Pipeline Installation Guide](./install-guide/pipeline/cp-pipeline-standalone-guide-v1.2.md)
@@ -93,7 +93,7 @@ The document covers installation guides for native Kubernetes (Kubespray install
 - Portal Installation
   + [Portal Installation Guide](./install-guide/container-platform-portal/cp-portal-deployment-service-guide-v1.2.md)
   + [Keycloak TLS Setting Guide](./install-guide/container-platform-portal/cp-portal-deployment-keycloak-tls-setting-guide-v1.2.md)  
-  + [Installation and Deployment File](https://github.com/K-PaaS/cp-portal-release)     
+  + [Installation and Deployment File](https://github.com/K-PaaS/cp-portal-release/tree/master/portal)     
   + [Release File](https://github.com/K-PaaS/cp-portal-release/tree/master/portal)
 - Service Installation
   + [Pipeline Installation Guide](./install-guide/pipeline/cp-pipeline-service-guide-v1.2.md)
