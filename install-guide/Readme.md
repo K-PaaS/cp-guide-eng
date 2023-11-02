@@ -1,7 +1,7 @@
 ### [Index](https://github.com/K-PaaS/cp-guide-eng) > CP Install
 # Container Platform(CP) - install
 
-## Stand-alone Deployment   
+## Standalone Deployment   
 - Cluster Installation
   + [Cluster Installation Guide](standalone/cp-standalone-deployment-guide-v1.2.md)
   + [Installation and Deployment File](https://github.com/K-PaaS/cp-deployment/tree/master/standalone)
@@ -45,4 +45,4 @@
 
 
 
-### [Index](https://github.com/PaaS-TA/Guide-eng/blob/master/README.md) > CP Install
+### [Index](https://github.com/K-PaaS/cp-guide-eng) > CP Install

@@ -3,60 +3,60 @@
 <table>
   <tr>
     <td colspan=2 align=center>Platform</td>
-    <td colspan=2 align=center><a href="https://github.com/PaaS-TA/paasta-deployment">Application platform</a></td>
-    <td colspan=2 align=center><a href="https://github.com/PaaS-TA/paas-ta-container-platform">🚩 Container Platform</a></td>
+    <td colspan=2 align=center><a href="https://github.com/K-PaaS/ap-deployment">Application platform</a></td>
+    <td colspan=2 align=center><a href="https://github.com/K-PaaS/cp-deployment">🚩 Container Platform</a></td>
   </tr>
   <tr>
     <td colspan=2 rowspan=2 align=center>Portal</td>
-    <td colspan=2 align=center><a href="https://github.com/PaaS-TA/portal-deployment">AP Portal</a></td>
-    <td colspan=2 align=center><a href="https://github.com/PaaS-TA/container-platform-portal-release">CP Portal</a></td>
+    <td colspan=2 align=center><a href="https://github.com/K-PaaS/portal-deployment">AP Portal</a></td>
+    <td colspan=2 align=center><a href="https://github.com/K-PaaS/cp-portal-release">CP Portal</a></td>
   </tr>
   <tr align=center>
-    <td colspan=4><a href="https://github.com/PaaS-TA/PaaS-TA-Monitoring">Monitoring Dashboard</a></td>
+    <td colspan=4><a href="https://github.com/K-PaaS/PaaS-TA-Monitoring">Monitoring Dashboard</a></td>
   </tr>
   <tr align=center>
-    <td rowspan=2 colspan=2><a href="https://github.com/PaaS-TA/monitoring-deployment">Monitoring</a></td>
-    <td><a href="https://github.com/PaaS-TA/PaaS-TA-Monitoring-Release">Monitoring</a></td>
-    <td><a href="https://github.com/PaaS-TA/paas-ta-monitoring-logsearch-release">Logsearch</a></td>
-    <td><a href="https://github.com/PaaS-TA/paas-ta-monitoring-influxdb-release">InfluxDB</a></td>
-    <td><a href="https://github.com/PaaS-TA/paas-ta-monitoring-redis-release">Redis</a></td>
+    <td rowspan=2 colspan=2><a href="https://github.com/K-PaaS/monitoring-deployment">Monitoring</a></td>
+    <td><a href="https://github.com/K-PaaS/PaaS-TA-Monitoring-Release">Monitoring</a></td>
+    <td><a href="https://github.com/K-PaaS/paas-ta-monitoring-logsearch-release">Logsearch</a></td>
+    <td><a href="https://github.com/K-PaaS/paas-ta-monitoring-influxdb-release">InfluxDB</a></td>
+    <td><a href="https://github.com/K-PaaS/paas-ta-monitoring-redis-release">Redis</a></td>
   </tr>
   <tr align=center>
-    <td><a href="https://github.com/PaaS-TA/PAAS-TA-PINPOINT-MONITORING-RELEASE">Pinpoint</td>
-    <td><a href="https://github.com/PaaS-TA/PAAS-TA-PINPOINT-MONITORING-BUILDPACK">Pinpoint Buildpack</td>
+    <td><a href="https://github.com/K-PaaS/PAAS-TA-PINPOINT-MONITORING-RELEASE">Pinpoint</td>
+    <td><a href="https://github.com/K-PaaS/PAAS-TA-PINPOINT-MONITORING-BUILDPACK">Pinpoint Buildpack</td>
     <td></td>
     <td></td>
   </tr>
   </tr>
   <tr align=center>
-    <td rowspan=4 colspan=2><a href="https://github.com/PaaS-TA/service-deployment">AP Service</a></td>
-    <td><a href="https://github.com/PaaS-TA/PAAS-TA-CUBRID-RELEASE">Cubrid</a></td>
-    <td><a href="https://github.com/PaaS-TA/PAAS-TA-API-GATEWAY-SERVICE-RELEASE">Gateway</a></td>
-    <td><a href="https://github.com/PaaS-TA/PAAS-TA-GLUSTERFS-RELEASE">GlusterFS</a></td>
-    <td><a href="https://github.com/PaaS-TA/PAAS-TA-APP-LIFECYCLE-SERVICE-RELEASE">Lifecycle</a></td>
+    <td rowspan=4 colspan=2><a href="https://github.com/K-PaaS/service-deployment">AP Service</a></td>
+    <td><a href="https://github.com/K-PaaS/PAAS-TA-CUBRID-RELEASE">Cubrid</a></td>
+    <td><a href="https://github.com/K-PaaS/ap-api-gateway-release">Gateway</a></td>
+    <td><a href="https://github.com/K-PaaS/ap-glusterfs-release">GlusterFS</a></td>
+    <td><a href="https://github.com/K-PaaS/ap-app-lifecycle-release">Lifecycle</a></td>
   </tr>
   <tr align=center>
-    <td><a href="https://github.com/PaaS-TA/PAAS-TA-LOGGING-SERVICE-RELEASE">Logging</a></td>
-    <td><a href="https://github.com/PaaS-TA/PAAS-TA-MONGODB-SHARD-RELEASE">MongoDB</a></td>
-    <td><a href="https://github.com/PaaS-TA/PAAS-TA-MYSQL-RELEASE">MySQL</a></td>
-    <td><a href="https://github.com/PaaS-TA/PAAS-TA-PINPOINT-RELEASE">Pinpoint APM</a></td>
+    <td><a href="https://github.com/K-PaaS/PAAS-TA-LOGGING-SERVICE-RELEASE">Logging</a></td>
+    <td><a href="https://github.com/K-PaaS/ap-mongodb-shard-release">MongoDB</a></td>
+    <td><a href="https://github.com/K-PaaS/ap-mysql-release">MySQL</a></td>
+    <td><a href="https://github.com/K-PaaS/ap-pinpoint-release">Pinpoint APM</a></td>
   </tr>
   <tr align=center>
-    <td><a href="https://github.com/PaaS-TA/PAAS-TA-DELIVERY-PIPELINE-RELEASE">Pipeline</a></td>
-    <td align=center><a href="https://github.com/PaaS-TA/rabbitmq-release">RabbitMQ</a></td>
-    <td><a href="https://github.com/PaaS-TA/PAAS-TA-ON-DEMAND-REDIS-RELEASE">Redis</a></td>
-    <td><a href="https://github.com/PaaS-TA/PAAS-TA-SOURCE-CONTROL-RELEASE">Source Control</a></td>
+    <td><a href="https://github.com/K-PaaS/ap-pipeline-release">Pipeline</a></td>
+    <td align=center><a href="https://github.com/K-PaaS/ap-rabbitmq-release">RabbitMQ</a></td>
+    <td><a href="https://github.com/K-PaaS/ap-on-demand-redis-release">Redis</a></td>
+    <td><a href="https://github.com/K-PaaS/ap-source-control-release">Source Control</a></td>
   </tr>
   <tr align=center>
-    <td><a href="https://github.com/PaaS-TA/PAAS-TA-WEB-IDE-RELEASE-NEW">WEB-IDE</a></td>
+    <td><a href="https://github.com/K-PaaS/ap-web-ide-release">WEB-IDE</a></td>
     <td></td>
     <td></td>
     <td></td>
   </tr>
   <tr align=center>
-    <td rowspan=1 colspan=2><a href="https://github.com/PaaS-TA/paas-ta-container-platform-deployment">CP Service</a></td>
-    <td><a href="https://github.com/PaaS-TA/container-platform-pipeline-release">Pipeline</a></td>
-    <td><a href="https://github.com/PaaS-TA/container-platform-source-control-release">Source Control</a></td>
+    <td rowspan=1 colspan=2><a href="https://github.com/K-PaaS/cp-deployment">CP Service</a></td>
+    <td><a href="https://github.com/K-PaaS/container-platform-pipeline-release">Pipeline</a></td>
+    <td><a href="https://github.com/K-PaaS/container-platform-source-control-release">Source Control</a></td>
     <td></td>
     <td></td>
   </tr>
@@ -73,46 +73,46 @@
 
 ## Install
 
-### Stand-alone Deployment   
+### Standalone Deployment   
 - Cluster Installation
-  + [Cluster Installation Guide](standalone/cp-standalone-deployment-guide-v1.2.md)
+  + [Cluster Installation Guide](./install-guide/standalone/cp-standalone-deployment-guide-v1.2.md)
   + [Installation and Deployment File](https://github.com/K-PaaS/cp-deployment/tree/master/standalone)
 - Portal Installation
-  + [Portal Installation Guide](container-platform-portal/cp-portal-deployment-standalone-guide-v1.2.md)  
-  + [Keycloak TLS Setting Guide](container-platform-portal/cp-portal-deployment-keycloak-tls-setting-guide-v1.2.md)  
+  + [Portal Installation Guide](./install-guide/container-platform-portal/cp-portal-deployment-standalone-guide-v1.2.md)  
+  + [Keycloak TLS Setting Guide](./install-guide/container-platform-portal/cp-portal-deployment-keycloak-tls-setting-guide-v1.2.md)  
   + [Installation and Deployment File](https://github.com/K-PaaS/cp-portal-release)  
   + [Release File](https://github.com/K-PaaS/cp-portal-release/tree/master/portal)
 - Service Installation
-  + [Pipeline Installation Guide](pipeline/cp-pipeline-standalone-guide-v1.2.md)
-  + [SourceControl Installation Guide](source-control/cp-source-control-standalone-guide-v1.2.md)
+  + [Pipeline Installation Guide](./install-guide/pipeline/cp-pipeline-standalone-guide-v1.2.md)
+  + [SourceControl Installation Guide](./install-guide/source-control/cp-source-control-standalone-guide-v1.2.md)
 
 ### Service Deployment
 - Cluster Installation
-  + [Cluster Installation Guide](standalone/cp-standalone-deployment-guide-v1.2.md)  
-  + [Installation and Deployment File](https://github.com/PaaS-TA/paas-ta-container-platform-deployment/tree/master/standalone)
+  + [Cluster Installation Guide](./install-guide/standalone/cp-standalone-deployment-guide-v1.2.md)  
+  + [Installation and Deployment File](https://github.com/K-PaaS/cp-deployment/tree/master/standalone)
 - Portal Installation
-  + [Portal Installation Guide](container-platform-portal/cp-portal-deployment-service-guide-v1.2.md)
-  + [Keycloak TLS Setting Guide](container-platform-portal/cp-portal-deployment-keycloak-tls-setting-guide-v1.2.md)  
+  + [Portal Installation Guide](./install-guide/container-platform-portal/cp-portal-deployment-service-guide-v1.2.md)
+  + [Keycloak TLS Setting Guide](./install-guide/container-platform-portal/cp-portal-deployment-keycloak-tls-setting-guide-v1.2.md)  
   + [Installation and Deployment File](https://github.com/K-PaaS/cp-portal-release)     
-  + [Release File](https://github.com/PaaS-TA/container-platform-portal-release/tree/master)
+  + [Release File](https://github.com/K-PaaS/cp-portal-release/tree/master/portal)
 - Service Installation
-  + [Pipeline Installation Guide](pipeline/cp-pipeline-service-guide-v1.2.md)
-  + [SourceControl Installation Guide](source-control/cp-source-control-service-guide-v1.2.md)
+  + [Pipeline Installation Guide](./install-guide/pipeline/cp-pipeline-service-guide-v1.2.md)
+  + [SourceControl Installation Guide](./install-guide/pipeline/cp-pipeline-service-guide-v1.2.md)
 
 ### Edge Deployment
 - Edge Installation
-  + [Edge Installation Guide](edge/cp-edge-deployment-guide-v1.2.md)  
+  + [Edge Installation Guide](./install-guide/edge/cp-edge-deployment-guide-v1.2.md)  
   + [Installation and Deployment File](https://github.com/K-PaaS/cp-deployment/tree/master/edge)
 - Portal Installation
-  + [Portal Installation Guide](container-platform-portal/cp-portal-deployment-standalone-guide-v1.2.md)  
-  + [Keycloak TLS Setting Guide](container-platform-portal/cp-portal-deployment-keycloak-tls-setting-guide-v1.2.md)  
+  + [Portal Installation Guide](./install-guide/container-platform-portal/cp-portal-deployment-standalone-guide-v1.2.md)  
+  + [Keycloak TLS Setting Guide](./install-guide/container-platform-portal/cp-portal-deployment-keycloak-tls-setting-guide-v1.2.md)  
   + [Installation and Deployment File](https://github.com/K-PaaS/cp-portal-release)   
-  + [Release File](https://github.com/PaaS-TA/container-platform-portal-release/tree/master)
+  + [Release File](https://github.com/K-PaaS/cp-portal-release/tree/master/portal)
 - Service Installation
-  + [Pipeline Installation Guide](pipeline/cp-pipeline-standalone-guide-v1.2.md)
-  + [SourceControl Installation Guide](source-control/cp-source-control-standalone-guide-v1.2.md)
+  + [Pipeline Installation Guide](./install-guide/pipeline/cp-pipeline-standalone-guide-v1.2.md)
+  + [SourceControl Installation Guide](./install-guide/source-control/cp-source-control-standalone-guide-v1.2.md)
 - Sample Model
-  + [Web Counting / Real-time Temperature Collect](edge/cp-edge-sample-guide.md)
+  + [Web Counting / Real-time Temperature Collect](./install-guide/edge/cp-edge-sample-guide.md)
 
 
 
@@ -122,15 +122,15 @@
 
 ### Portal Use Guide
 - Operator Portal
-  + [Operator Portal Use Guide](portal/container-platform-admin-portal-guide.md)
+  + [Operator Portal Use Guide](./use-guide/portal/cp-admin-portal-guide.md)
 - User Portal
-  + [User Portal Use Guide](portal/container-platform-user-portal-guide.md) 
+  + [User Portal Use Guide](./use-guide/portal/cp-user-portal-guide.md) 
 
 ### Service Use Guide
 - Pipeline Service
-  + [Pipeline Service Use Guide](pipeline/paas-ta-container-platform-pipeline-use-guide.md)
+  + [Pipeline Service Use Guide](./use-guide/service/cp-pipeline-guide-v1.2.md)
 - Source Control Service
-  + [Source Control Service Use Guide](source-control/paas-ta-container-platform-source-control-use-guide.md)
+  + [Source Control Service Use Guide](./use-guide/service/cp-source-control-guide-v1.2.md)
 
 
 <br>
@@ -138,25 +138,11 @@
 ## Project
 
 ### portal project 
-- [container-platform-api](https://github.com/PaaS-TA/paas-ta-container-platform-api)  
-- [container-platform-common-api](https://github.com/PaaS-TA/paas-ta-container-platform-common-api)
-- [container-platform-webadmin](https://github.com/PaaS-TA/paas-ta-container-platform-webadmin)
-- [container-platform-webuser](https://github.com/PaaS-TA/paas-ta-container-platform-webuser)
-- [container-platform-portal-service-broker](https://github.com/PaaS-TA/container-platform-portal-service-broker)
-
-### service project
-
-#### Pipeline
-- [container-platform-pipeline-api](https://github.com/PaaS-TA/container-platform-pipeline-api)
-- [container-platform-pipeline-common-api](https://github.com/PaaS-TA/container-platform-pipeline-common-api)
-- [container-platform-pipeline-inspection-api](https://github.com/PaaS-TA/container-platform-pipeline-inspection-api)
-- [container-platform-pipeline-ui](https://github.com/PaaS-TA/container-platform-pipeline-ui)
-- [container-platform-pipeline-broker](https://github.com/PaaS-TA/container-platform-pipeline-broker)  
-
-#### Source Control
-- [container-platform-source-control-api](https://github.com/PaaS-TA/container-platform-source-control-api)
-- [container-platform-source-control-ui](https://github.com/PaaS-TA/container-platform-source-control-ui)
-- [container-platform-source-control-broker](https://github.com/PaaS-TA/container-platform-source-control-broker)
+- [container-platform-api](https://github.com/K-PaaS/cp-portal-release/tree/master/portal/paas-ta-container-platform-api)  
+- [container-platform-common-api](https://github.com/K-PaaS/cp-portal-release/tree/master/portal/paas-ta-container-platform-common-api)
+- [container-platform-webadmin](https://github.com/K-PaaS/cp-portal-release/tree/master/portal/paas-ta-container-platform-webadmin)
+- [container-platform-webuser](https://github.com/K-PaaS/cp-portal-release/tree/master/portal/paas-ta-container-platform-webuser)
+- [container-platform-portal-service-broker](https://github.com/K-PaaS/cp-portal-release/tree/master/service-broker)
 
 
 <br>

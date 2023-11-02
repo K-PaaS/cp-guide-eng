@@ -32,7 +32,7 @@
 
 ## <div id='1'>1. Document Outline
 ### <div id='1.1'>1.1. Purpose
-This document (Container Platform Pipeline Stand-Alone Deployment Installation Guide) installs the Kubernetes Cluster and Container Platform Stand-Alone Deployment Portal and describes how to deploy the Container Platform Stand-Alone Deployment Pipeline.<br>.<br>
+This document (Container Platform Pipeline Standalone Deployment Installation Guide) installs the Kubernetes Cluster and Container Platform Standalone Deployment Portal and describes how to deploy the Container Platform Standalone Deployment Pipeline.<br>.<br>
 
 <br>
 
@@ -162,7 +162,7 @@ PROVIDER_TYPE="standalone"
 - **K8S_MASTER_NODE_IP** <br>Enter Kubernetes Master Node Public IP<br><br>
 - **PROVIDER_TYPE** <br>Enter Container Platform Pipeline Providing Type <br>
    + This guide is a standalone installation guide that requires **'standalone'** values<br><br>
-- **CF_API_URL** <br>No need to enter in stand-alone deployment version <br>    
+- **CF_API_URL** <br>No need to enter in Standalone deployment version <br>    
 
 <br>
 

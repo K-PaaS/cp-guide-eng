@@ -1,16 +1,16 @@
-### [Index](https://github.com/PaaS-TA/Guide-eng/blob/master/README.md) > CP Use
+### [Index](https://github.com/K-PaaS/cp-guide-eng) > CP Use
 # Container Platform(CP) - Use Guide
 
 ## Portal Use Guide
 - Operator Portal
-  + [Operator Portal Use Guide](portal/container-platform-admin-portal-guide.md)
+  + [Operator Portal Use Guide](../use-guide/portal/cp-admin-portal-guide.md)
 - User Portal
-  + [User Portal Use Guide](portal/container-platform-user-portal-guide.md) 
+  + [User Portal Use Guide](../use-guide/portal/cp-user-portal-guide.md) 
 
 ## Service Use Guide
 - Pipeline Service
-  + [Pipeline Service Use Guide](pipeline/paas-ta-container-platform-pipeline-use-guide.md)
+  + [Pipeline Service Use Guide](../use-guide/service/cp-pipeline-guide-v1.2.md)
 - Source Control Service
-  + [Source Control Service Use Guide](source-control/paas-ta-container-platform-source-control-use-guide.md)
+  + [Source Control Service Use Guide](../use-guide/service/cp-source-control-guide-v1.2.md)
 
-### [Index](https://github.com/PaaS-TA/Guide-eng/blob/master/README.md) > CP Use
+### [Index](https://github.com/K-PaaS/cp-guide-eng) > CP Use

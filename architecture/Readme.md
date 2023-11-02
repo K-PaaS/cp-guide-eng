@@ -1,14 +1,14 @@
-### [Index](https://github.com/PaaS-TA/Guide-eng/blob/master/README.md) > CP Architecture
+### [Index](https://github.com/K-PaaS/cp-guide-eng) > CP Architecture
 
 ## Container Platform (CP) - Architecture
 - Container Platform
-  - [PaaS-TA CP](./container-platform.md)
+  - [Container Platform Deployment](./container-platform.md)
 
 + Portal
-  + [Portal](./cp_portal.md)
+  + [Container Platform Portal](./cp_portal.md)
 
 - Service
-  - [Pipeline](./cp_pipeline.md)
-  - [SourceControl](./cp_source_control.md)
+  - [Container Platform Pipeline Service ](./cp_pipeline.md)
+  - [Container Platform SourceControl Service ](./cp_source_control.md)
   
-### [Index](https://github.com/PaaS-TA/Guide-eng/blob/master/README.md) > CP Architecture
+### [Index](https://github.com/K-PaaS/cp-guide-eng) > CP Architecture

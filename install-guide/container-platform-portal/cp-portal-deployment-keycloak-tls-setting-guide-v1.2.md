@@ -25,7 +25,7 @@ This document (Keycloak TLS Setup Guide) describes how to set up Keycloak TLS wh
 
 ## <div id='2'>2. Keycloak TLS Setting
 This guide must be set up before the container platform portal is deployed.
-The Container Platform Portal Stand-Alone Deployment Installation Guide and Service Deployment Installation Guide should be done before executing **[3.2.2.2. Defining Container Platform Portal Variables]**.
+The Container Platform Portal Standalone Deployment Installation Guide and Service Deployment Installation Guide should be done before executing **[3.2.2.2. Defining Container Platform Portal Variables]**.
 
 ### <div id='2.1'>2.1. TLS Authenrication File Preparation
 TLS certificate file before container platform portal deployment (ex: tls).key, tls.crt) should be prepared ahead.<br>
@@ -113,7 +113,7 @@ KEYCLOAK_URL="https:\/\/${K8S_MASTER_NODE_IP}.nip.io:32710"   # Keycloak url (in
 ```
 <br>
     
-When the **Keycloak TLS Setting** of the items above is complete, start from **[3.2.2. Defining Container Platform Portal Variable]**  of the Container Platform Portal Stand-Alone Deployment or Service Deployment Installation Guide.
+When the **Keycloak TLS Setting** of the items above is complete, start from **[3.2.2. Defining Container Platform Portal Variable]**  of the Container Platform Portal Standalone Deployment or Service Deployment Installation Guide.
 <br>
 
 

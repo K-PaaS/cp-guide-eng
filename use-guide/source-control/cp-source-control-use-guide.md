@@ -12,7 +12,7 @@
      * [1.2. Range](#1.2)
 2. [Container Platform Source Control Access](#2)
      * [2.1. Service Container Platform Source Control Access](#2.1)
-     * [2.2. Stand-Alone Deployment Container Platform Source Control Access](#2.2)
+     * [2.2. Standalone Deployment Container Platform Source Control Access](#2.2)
 3. [Container Platform Source Control User Manual](#3)
      * [3.1. Container Platform Source Control User Menu Configuration](#3.1)
      * [3.2. Container Platform Source Control User Menu Description](#3.2)
@@ -60,7 +60,7 @@ The range of this document covers how to use the container platform source contr
 
 <br>
 
-### <div id='2.2'/> 2.2. Stand-Alone Deployment Container Platform Source Control Access
+### <div id='2.2'/> 2.2. Standalone Deployment Container Platform Source Control Access
 1. From the deployed cluster, access the web browser with public IP to http://{K8S_MASTER_NODE_IP}:30094 and proceed.
 
 <br>
@@ -131,7 +131,7 @@ This menu describes the information retrieving and managing of a specific user u
 
 
 ***※The changed password is the password used to access the source control repository 
-<br>It has nothing to do with login (Keycloak password for Stand-Alone Deployment, K-PaaS password for service deployment)information.*** <br>
+<br>It has nothing to do with login (Keycloak password for Standalone Deployment, K-PaaS password for service deployment)information.*** <br>
 ***※Password should be changed at the very first login to have access to repository pull, push, etc. *** <br>
 <br>
 

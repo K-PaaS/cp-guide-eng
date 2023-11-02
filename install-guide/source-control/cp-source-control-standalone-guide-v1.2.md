@@ -31,12 +31,12 @@
 
 ## <div id='1'>1. Document Outline
 ### <div id='1.1'>1.1. Purpose
-This document (Container Platform Source Control Stand-Alone Deployment Installation Guide) describes how source controls are deployed in a stand-alone deployment Kubernetes Cluster environment where container platform portals are deployed.<br>
+This document (Container Platform Source Control Standalone Deployment Installation Guide) describes how source controls are deployed in a Standalone deployment Kubernetes Cluster environment where container platform portals are deployed.<br>
 
 <br>
 
 ### <div id='1.2'>1.2. Range
-The installation range was prepared based on Kubernetes' stand-alone deployment.
+The installation range was prepared based on Kubernetes' Standalone deployment.
 
 <br>
 
