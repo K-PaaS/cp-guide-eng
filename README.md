@@ -9,7 +9,7 @@
   <tr>
     <td colspan=2 rowspan=2 align=center>Portal</td>
     <td colspan=2 align=center><a href="https://github.com/PaaS-TA/portal-deployment">AP Portal</a></td>
-    <td colspan=2 align=center><a href="https://github.com/PaaS-TA/container-platform-portal-release">CP Portal</a></td>
+    <td colspan=2 align=center><a href="./install-guide/container-platform-portal/cp-portal-deployment-standalone-guide.md">CP Portal</a></td>
   </tr>
   <tr align=center>
     <td colspan=4><a href="https://github.com/PaaS-TA/PaaS-TA-Monitoring">Monitoring Dashboard</a></td>
@@ -54,9 +54,9 @@
     <td></td>
   </tr>
   <tr align=center>
-    <td rowspan=1 colspan=2><a href="https://github.com/PaaS-TA/paas-ta-container-platform-deployment">CP Service</a></td>
-    <td><a href="https://github.com/PaaS-TA/container-platform-pipeline-release">Pipeline</a></td>
-    <td><a href="https://github.com/PaaS-TA/container-platform-source-control-release">Source Control</a></td>
+    <td rowspan=1 colspan=2><a href="https://github.com/K-PaaS/container-platform">CP Service</a></td>
+    <td><a href="./install-guide/pipeline/cp-pipeline-service-guide.md">Pipeline</a></td>
+    <td><a href="./install-guide/source-control/cp-source-control-service-guide.md">Source Control</a></td>
     <td></td>
     <td></td>
   </tr>
@@ -67,52 +67,51 @@
 <br>
 
 ## 소개
-네이티브 쿠버네티스 설치 가이드(Kubespray 설치, KubeEdge 설치) 및 쿠버네티스에 컨테이너 플랫폼을 배포하여 사용할 수 있는 방법에 대한 설치 및 활용 가이드를 다루고 있다.
-
+It covers native Kubernetes installation guides (Kubespray installation, KubeEdge installation) and installation and usage guides on how to deploy and use the container platform on Kubernetes.
 <br>
 
 ## Install
 
 ### Stand-alone Deployment   
 - Cluster Installation
-  + [Cluster Installation Guide](standalone/cp-standalone-deployment-guide-v1.2.md)
+  + [Cluster Installation Guide](./install-guide/standalone/cp-cluster-install.md)
   + [Installation and Deployment File](https://github.com/K-PaaS/cp-deployment/tree/master/standalone)
 - Portal Installation
-  + [Portal Installation Guide](container-platform-portal/cp-portal-deployment-standalone-guide-v1.2.md)  
-  + [Keycloak TLS Setting Guide](container-platform-portal/cp-portal-deployment-keycloak-tls-setting-guide-v1.2.md)  
+  + [Portal Installation Guide](./install-guide/container-platform-portal/cp-portal-deployment-standalone-guide.md)  
+  + [Keycloak TLS Setting Guide](./install-guide/container-platform-portal/cp-portal-deployment-keycloak-tls-setting-guide.md)  
   + [Installation and Deployment File](https://github.com/K-PaaS/cp-portal-release)  
   + [Release File](https://github.com/K-PaaS/cp-portal-release/tree/master/portal)
 - Service Installation
-  + [Pipeline Installation Guide](pipeline/cp-pipeline-standalone-guide-v1.2.md)
-  + [SourceControl Installation Guide](source-control/cp-source-control-standalone-guide-v1.2.md)
+  + [Pipeline Installation Guide](./install-guide/pipeline/cp-pipeline-standalone-guide.md)
+  + [SourceControl Installation Guide](./install-guide/source-control/cp-source-control-standalone-guide.md)
 
 ### Service Deployment
 - Cluster Installation
-  + [Cluster Installation Guide](standalone/cp-standalone-deployment-guide-v1.2.md)  
-  + [Installation and Deployment File](https://github.com/PaaS-TA/paas-ta-container-platform-deployment/tree/master/standalone)
+  + [Cluster Installation Guide](./install-guide/standalone/cp-cluster-install.md)  
+  + [Installation and Deployment File](https://github.com/K-PaaS/cp-deployment/tree/master/standalone)
 - Portal Installation
-  + [Portal Installation Guide](container-platform-portal/cp-portal-deployment-service-guide-v1.2.md)
-  + [Keycloak TLS Setting Guide](container-platform-portal/cp-portal-deployment-keycloak-tls-setting-guide-v1.2.md)  
+  + [Portal Installation Guide](./install-guide/container-platform-portal/cp-portal-deployment-service-guide.md)
+  + [Keycloak TLS Setting Guide](./install-guide/container-platform-portal/cp-portal-deployment-keycloak-tls-setting-guide.md)  
   + [Installation and Deployment File](https://github.com/K-PaaS/cp-portal-release)     
-  + [Release File](https://github.com/PaaS-TA/container-platform-portal-release/tree/master)
+  + [Release File](https://github.com/K-PaaS/cp-portal-release)
 - Service Installation
-  + [Pipeline Installation Guide](pipeline/cp-pipeline-service-guide-v1.2.md)
-  + [SourceControl Installation Guide](source-control/cp-source-control-service-guide-v1.2.md)
+  + [Pipeline Installation Guide](./install-guide/pipeline/cp-pipeline-service-guide.md)
+  + [SourceControl Installation Guide](./install-guide/source-control/cp-source-control-service-guide.md)
 
 ### Edge Deployment
 - Edge Installation
-  + [Edge Installation Guide](edge/cp-edge-deployment-guide-v1.2.md)  
+  + [Edge Installation Guide](./install-guide/edge/cp-edge-install.md)
   + [Installation and Deployment File](https://github.com/K-PaaS/cp-deployment/tree/master/edge)
 - Portal Installation
-  + [Portal Installation Guide](container-platform-portal/cp-portal-deployment-standalone-guide-v1.2.md)  
-  + [Keycloak TLS Setting Guide](container-platform-portal/cp-portal-deployment-keycloak-tls-setting-guide-v1.2.md)  
-  + [Installation and Deployment File](https://github.com/K-PaaS/cp-portal-release)   
-  + [Release File](https://github.com/PaaS-TA/container-platform-portal-release/tree/master)
+  + [Portal Installation Guide](./install-guide/container-platform-portal/cp-portal-deployment-service-guide.md)
+  + [Keycloak TLS Setting Guide](./install-guide/container-platform-portal/cp-portal-deployment-keycloak-tls-setting-guide.md)  
+  + [Installation and Deployment File](https://github.com/K-PaaS/cp-portal-release)     
+  + [Release File](https://github.com/K-PaaS/cp-portal-release)
 - Service Installation
-  + [Pipeline Installation Guide](pipeline/cp-pipeline-standalone-guide-v1.2.md)
-  + [SourceControl Installation Guide](source-control/cp-source-control-standalone-guide-v1.2.md)
+  + [Pipeline Installation Guide](./install-guide/pipeline/cp-pipeline-service-guide.md)
+  + [SourceControl Installation Guide](./install-guide/source-control/cp-source-control-service-guide.md)
 - Sample Model
-  + [Web Counting / Real-time Temperature Collect](edge/cp-edge-sample-guide.md)
+  + [Web Counting / Real-time Temperature Collect](./install-guide/edge/cp-edge-sample-guide.md)
 
 
 
@@ -122,15 +121,15 @@
 
 ### Portal Use Guide
 - Operator Portal
-  + [Operator Portal Use Guide](portal/container-platform-admin-portal-guide.md)
+  + [Operator Portal Use Guide](./use-guide/portal/cp-admin-portal-guide.md)
 - User Portal
-  + [User Portal Use Guide](portal/container-platform-user-portal-guide.md) 
+  + [User Portal Use Guide](./use-guide/portal/cp-user-portal-guide.md) 
 
 ### Service Use Guide
 - Pipeline Service
-  + [Pipeline Service Use Guide](pipeline/paas-ta-container-platform-pipeline-use-guide.md)
+  + [Pipeline Service Use Guide](./use-guide/pipeline/cp-pipeline-use-guide.md)
 - Source Control Service
-  + [Source Control Service Use Guide](source-control/paas-ta-container-platform-source-control-use-guide.md)
+  + [Source Control Service Use Guide](./use-guide/source-control/cp-source-control-use-guide.md)
 
 
 <br>
@@ -138,25 +137,11 @@
 ## Project
 
 ### portal project 
-- [container-platform-api](https://github.com/PaaS-TA/paas-ta-container-platform-api)  
-- [container-platform-common-api](https://github.com/PaaS-TA/paas-ta-container-platform-common-api)
-- [container-platform-webadmin](https://github.com/PaaS-TA/paas-ta-container-platform-webadmin)
-- [container-platform-webuser](https://github.com/PaaS-TA/paas-ta-container-platform-webuser)
-- [container-platform-portal-service-broker](https://github.com/PaaS-TA/container-platform-portal-service-broker)
-
-### service project
-
-#### Pipeline
-- [container-platform-pipeline-api](https://github.com/PaaS-TA/container-platform-pipeline-api)
-- [container-platform-pipeline-common-api](https://github.com/PaaS-TA/container-platform-pipeline-common-api)
-- [container-platform-pipeline-inspection-api](https://github.com/PaaS-TA/container-platform-pipeline-inspection-api)
-- [container-platform-pipeline-ui](https://github.com/PaaS-TA/container-platform-pipeline-ui)
-- [container-platform-pipeline-broker](https://github.com/PaaS-TA/container-platform-pipeline-broker)  
-
-#### Source Control
-- [container-platform-source-control-api](https://github.com/PaaS-TA/container-platform-source-control-api)
-- [container-platform-source-control-ui](https://github.com/PaaS-TA/container-platform-source-control-ui)
-- [container-platform-source-control-broker](https://github.com/PaaS-TA/container-platform-source-control-broker)
+- [container-platform-api](https://github.com/K-PaaS/cp-portal-release/tree/v1.4.x/portal/paas-ta-container-platform-api)  
+- [container-platform-common-api](https://github.com/K-PaaS/cp-portal-release/tree/v1.4.x/portal/paas-ta-container-platform-common-api)
+- [container-platform-webadmin](https://github.com/K-PaaS/cp-portal-release/tree/v1.4.x/portal/paas-ta-container-platform-webadmin)
+- [container-platform-webuser](https://github.com/K-PaaS/cp-portal-release/tree/v1.4.x/portal/paas-ta-container-platform-webuser)
+- [container-platform-portal-service-broker](https://github.com/K-PaaS/cp-portal-release/tree/v1.4.x/service-broker/paas-ta-container-platform-admin-service-broker)
 
 
 <br>
