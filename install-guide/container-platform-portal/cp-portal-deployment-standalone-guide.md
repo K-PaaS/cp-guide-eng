@@ -41,7 +41,7 @@ The installation scope was created based on Kubernetes Cluster deployment.
 <br>
 
 ### <div id='1.3'>1.3. System configuration diagram
-<p align="center"><img src="images/cp-001.png" width="850" height="530"></p>
+<p align="center"><img src="./images-v1.2/cp-001.png" width="850" height="530"></p>
 
 The system configuration consists of a **Kubernetes Cluster (Master, Worker)** environment and a storage server for data management. **Harbor** manages the container platform portal image and Helm Chart in the Kubernetes Cluster environment installed through Kubespray, **Keycloak** manages container platform portal user authentication, **Vault** manages authentication data, and Meta A middleware environment such as **MariaDB (RDBMS)** that manages data is provided as a container. The total required VM environment requires **Master VM: 1, Worker VM: 3 or more**, and this document is about deploying a container platform portal environment in a Kubernetes Cluster.
 
@@ -401,13 +401,13 @@ When using the container platform, be careful not to use the following prefixes 
 
 ### [Index](https://github.com/K-PaaS/cp-guide-eng) > [CP Install](/install-guide/Readme.md) > Standalone deployment portal installation guide
 
-[image 001]:images/cp-001.png
-[image 002]:images/cp-002.png
-[image 003]:images/cp-003.png
-[image 004]:images/cp-004.png
-[image 005]:images/cp-005.png
-[image 006]:images/cp-006.png
-[image 007]:images/cp-007.png
-[image 008]:images/cp-008.png
-[image 009]:images/cp-009.png
-[image 010]:images/cp-010.png
+[image 001]:./images-v1.2/cp-001.png
+[image 002]:./images-v1.2//cp-002.png
+[image 003]:./images-v1.2//cp-003.png
+[image 004]:./images-v1.2//cp-004.png
+[image 005]:./images-v1.2//cp-005.png
+[image 006]:./images-v1.2//cp-006.png
+[image 007]:./images-v1.2//cp-007.png
+[image 008]:./images-v1.2//cp-008.png
+[image 009]:./images-v1.2//cp-009.png
+[image 010]:./images-v1.2//cp-010.png

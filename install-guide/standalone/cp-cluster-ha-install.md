@@ -57,10 +57,10 @@ This document describes the installation of LoadBalancer, Master VM, External ET
 
 > When deploying Rook-Ceph, **allocation of additional volumes in addition to the Root Volume to each Worker VM** must be done first.
 
--External ETCD
+- External ETCD<br>
 ![image 001]
 
-- Stacked ETCD
+- Stacked ETCD<br>
 ![image 002]
 
 <br>
