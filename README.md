@@ -103,7 +103,7 @@ It covers native Kubernetes installation guides (Kubespray installation, KubeEdg
   + [Edge Installation Guide](./install-guide/edge/cp-edge-install.md)
   + [Installation and Deployment File](https://github.com/K-PaaS/cp-deployment/tree/master/edge)
 - Portal Installation
-  + [Portal Installation Guide](./install-guide/container-platform-portal/cp-portal-deployment-service-guide.md)
+  + [Portal Installation Guide](./install-guide/container-platform-portal/cp-portal-deployment-standalone-guide.md)
   + [Keycloak TLS Setting Guide](./install-guide/container-platform-portal/cp-portal-deployment-keycloak-tls-setting-guide.md)  
   + [Installation and Deployment File](https://github.com/K-PaaS/cp-portal-release)     
   + [Release File](https://github.com/K-PaaS/cp-portal-release)
