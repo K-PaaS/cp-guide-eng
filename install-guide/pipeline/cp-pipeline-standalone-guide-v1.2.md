@@ -1,4 +1,4 @@
-### [Index](https://github.com/PaaS-TA/Guide-eng/blob/master/README.md) > [CP Install](https://github.com/PaaS-TA/paas-ta-container-platform-guide-eng/tree/master/install-guide/Readme.md) > Pipeline Installation Guide
+### [Index](https://github.com/K-PaaS/cp-guide-eng) > [CP Install](../Readme.md) > Pipeline Installation Guide
 
 <br>
 
@@ -64,9 +64,9 @@ For NFS Storage Server installation, refer to the guide below.
     
 ### <div id='2.2'>2.2. Container Platform Portal Installation
 The infrastructure to be used in the container platform pipeline must be pre-installed with the authenticating server **KeyCloak Server**, database **Maria DB**, and repository server **Harbor**.
-When deploying the PaaS-TA container platform portal, install all the infrastructure.
+When deploying the K-PaaS container platform portal, install all the infrastructure.
 Refer to the guide below for Container Platform infra installation.
-> [PaaS-TA Container Platform Portal Deployment](../container-platform-portal/paas-ta-container-platform-portal-deployment-standalone-guide-v1.2.md)     
+> [K-PaaS Container Platform Portal Deployment](../container-platform-portal/cp-portal-deployment-standalone-guide-v1.2.md)     
 
 
 ### <div id='2.3'>2.3. Cluster Environment
@@ -101,7 +101,7 @@ When deploying the container platform pipeline, upload the image and package fil
 Upload images and package files related to the container platform pipeline to the Private Repository (Harbor) deployed through the container platform portal. 
 
 Refer to the guide below for CRI-O insecure-registry settings needed for the Private Repository.
-> [CRI-O insecure-registry Setting](../container-platform-portal/paas-ta-container-platform-portal-deployment-standalone-guide-v1.2.md#3.1)      
+> [CRI-O insecure-registry Setting](../container-platform-portal/cp-portal-deployment-standalone-guide-v1.2.md#3.1)      
 
 ### <div id='3.2'>3.2. Container Platform Pipeline Deployment
     
@@ -355,8 +355,8 @@ The initial information for accessing the container platform pipeline is as foll
 
 ### <div id='4.3'/>4.3. Container Platform Pipeline Use Guide
 - Refer to the use guide below for usage of container platform pipeline.  
-  + [Container Platform Pipeline Use Guide](../../use-guide/pipeline/paas-ta-container-platform-pipeline-use-guide.md)    
+  + [Container Platform Pipeline Use Guide](../../use-guide/pipeline/cp-pipeline-use-guide.md)    
 
 <br>
 
-### [Index](https://github.com/PaaS-TA/Guide-eng/blob/master/README.md) > [CP Install](https://github.com/PaaS-TA/paas-ta-container-platform-guide-eng/tree/master/install-guide/Readme.md) > Pipeline Installation Guide
+### [Index](https://github.com/K-PaaS/cp-guide-eng) > [CP Install](../Readme.md) > Pipeline Installation Guide

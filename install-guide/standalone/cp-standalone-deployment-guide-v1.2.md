@@ -1,4 +1,4 @@
-### [Index](https://github.com/PaaS-TA/Guide-eng/blob/master/README.md) > [CP Install](https://github.com/PaaS-TA/paas-ta-container-platform-guide-eng/tree/master/install-guide/Readme.md) > Cluster Installation Guide
+### [Index](https://github.com/K-PaaS/cp-guide-eng) > [CP Install](../Readme.md) > Cluster Installation Guide
 
 <br>
 
@@ -33,7 +33,7 @@
 ### <div id='1.1'> 1.1. Purpose
 This document (Kubespray Installation Guide) describes how to install Kubespray to upgrade the open PaaS platform and install Kubespray to install a container platform deployed to Open PaaS based on a developer support environment.
 
-From version 5.5 of PaaS-TA, single deployment is supported based on Kubespray. If you want to install based on the existing container service, refer to the document of PaaS-TA 5.0 or the lower version.
+From version 5.5 of K-PaaS, single deployment is supported based on Kubespray. If you want to install based on the existing container service, refer to the document of K-PaaS 5.0 or the lower version.
 
 <br>
 
@@ -129,7 +129,7 @@ Enter the same passphrase again: [Input Enter key]
 Your identification has been saved in /home/ubuntu/.ssh/id_rsa.
 Your public key has been saved in /home/ubuntu/.ssh/id_rsa.pub.
 The key fingerprint is:
-SHA256:pIG4/G309Dof305mWjdNz1OORx9nQgQ3b8yUP5DzC3w ubuntu@paasta-cp-master
+SHA256:pIG4/G309Dof305mWjdNz1OORx9nQgQ3b8yUP5DzC3w ubuntu@cp-master
 The key's randomart image is:
 +---[RSA 2048]----+
 |            ..= o|
@@ -149,7 +149,7 @@ The key's randomart image is:
 ## Copy the printed public key
 
 $ cat ~/.ssh/id_rsa.pub
-ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC5QrbqzV6g4iZT4iR1u+EKKVQGqBy4DbGqH7/PVfmAYEo3CcFGhRhzLcVz3rKb+C25mOne+MaQGynZFpZk4muEAUdkpieoo+B6r2eJHjBLopn5quWJ561H7EZb/GlfC5ThjHFF+hTf5trF4boW1iZRvUM56KAwXiYosLLRBXeNlub4SKfApe8ojQh4RRzFBZP/wNbOKr+Fo6g4RQCWrr5xQCZMK3ugBzTHM+zh9Ra7tG0oCySRcFTAXXoyXnJm+PFhdR6jbkerDlUYP9RD/87p/YKS1wSXExpBkEglpbTUPMCj+t1kXXEJ68JkMrVMpeznuuopgjHYWWD2FgjFFNkp ubuntu@paasta-cp-master
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC5QrbqzV6g4iZT4iR1u+EKKVQGqBy4DbGqH7/PVfmAYEo3CcFGhRhzLcVz3rKb+C25mOne+MaQGynZFpZk4muEAUdkpieoo+B6r2eJHjBLopn5quWJ561H7EZb/GlfC5ThjHFF+hTf5trF4boW1iZRvUM56KAwXiYosLLRBXeNlub4SKfApe8ojQh4RRzFBZP/wNbOKr+Fo6g4RQCWrr5xQCZMK3ugBzTHM+zh9Ra7tG0oCySRcFTAXXoyXnJm+PFhdR6jbkerDlUYP9RD/87p/YKS1wSXExpBkEglpbTUPMCj+t1kXXEJ68JkMrVMpeznuuopgjHYWWD2FgjFFNkp ubuntu@cp-master
 ```
 
 - Copy the public key to the end of the authorized_keys file body of the **Master, Worker Node** to use (add below the existing body content).
@@ -158,7 +158,7 @@ $ vi .ssh/authorized_keys
 
 ex)
 ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDRueywSiuwyfmCSecHu7iwyi3xYS1xigAnhR/RMg/Ws3yOuwbKfeDFUprQR24BoMaD360uyuRaPpfqSL3LS9oRFrj0BSaQfmLcMM1+dWv+NbH/vvq7QWhIszVCLzwTqlHrhgNsh0+EMhqc15KEo5kHm7d7vLc0fB5tZkmovsUFzp01Ceo9+Qye6+j+UM6ssxdTmatoMP3ZZKZzUPF0EZwTcGG6+8rVK2G8GhTqwGLj9E+As3GB1YdOvr/fsTAi2PoxxFsypNR4NX8ZTDvRdAUzIxz8wv2VV4mADStSjFpE7HWrzr4tZUjvvVFptU4LbyON9YY4brMzjxA7kTuf/e3j Generated-by-Nova
-ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC5QrbqzV6g4iZT4iR1u+EKKVQGqBy4DbGqH7/PVfmAYEo3CcFGhRhzLcVz3rKb+C25mOne+MaQGynZFpZk4muEAUdkpieoo+B6r2eJHjBLopn5quWJ561H7EZb/GlfC5ThjHFF+hTf5trF4boW1iZRvUM56KAwXiYosLLRBXeNlub4SKfApe8ojQh4RRzFBZP/wNbOKr+Fo6g4RQCWrr5xQCZMK3ugBzTHM+zh9Ra7tG0oCySRcFTAXXoyXnJm+PFhdR6jbkerDlUYP9RD/87p/YKS1wSXExpBkEglpbTUPMCj+t1kXXEJ68JkMrVMpeznuuopgjHYWWD2FgjFFNkp ubuntu@paasta-cp-master
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC5QrbqzV6g4iZT4iR1u+EKKVQGqBy4DbGqH7/PVfmAYEo3CcFGhRhzLcVz3rKb+C25mOne+MaQGynZFpZk4muEAUdkpieoo+B6r2eJHjBLopn5quWJ561H7EZb/GlfC5ThjHFF+hTf5trF4boW1iZRvUM56KAwXiYosLLRBXeNlub4SKfApe8ojQh4RRzFBZP/wNbOKr+Fo6g4RQCWrr5xQCZMK3ugBzTHM+zh9Ra7tG0oCySRcFTAXXoyXnJm+PFhdR6jbkerDlUYP9RD/87p/YKS1wSXExpBkEglpbTUPMCj+t1kXXEJ68JkMrVMpeznuuopgjHYWWD2FgjFFNkp ubuntu@cp-master
 ```
 
 <br>
@@ -167,11 +167,11 @@ ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC5QrbqzV6g4iZT4iR1u+EKKVQGqBy4DbGqH7/PVfmA
 from 2.3., you may proceed only at the **Master Node**. (No further work in Worker Node)
 Download the source file required for Kubespray installation and place it in the Kubespray installation work path.
 
-- Kubespray Download URL : https://github.com/PaaS-TA/paas-ta-container-platform-deployment
+- Kubespray Download URL : https://github.com/K-PaaS/cp-deployment
 
 - Download Kubespray from the following path through the git clone command. The version of Kubespray in this installation guide is v2.16.0.
 ```
-$ git clone https://github.com/PaaS-TA/paas-ta-container-platform-deployment.git
+$ git clone https://github.com/K-PaaS/cp-deployment.git -b branch_v1.2.x
 ```
 
 <br>
@@ -183,13 +183,13 @@ After pre-defining the environment variables required for Kubespray installation
 ```
 ## When installing AWS Environment
 
-$ cd paas-ta-container-platform-deployment/standalone/aws
+$ cd cp-deployment/standalone/aws
 ```
 
 ```
 ## When installing Openstack Environment
 
-$ cd paas-ta-container-platform-deployment/standalone/openstack
+$ cd cp-deployment/standalone/openstack
 ```
 
 - Define the environment variables required for Kubespray installation. HostName and IP information can be found by:
@@ -258,10 +258,10 @@ Check the Pod of the Kubernetes Node and kube-system Namespace to check the inst
 ```
 $ kubectl get nodes
 NAME                 STATUS   ROLES                  AGE   VERSION
-paasta-cp-master     Ready    control-plane,master   12m   v1.20.5
-paasta-cp-worker-1   Ready    <none>                 10m   v1.20.5
-paasta-cp-worker-2   Ready    <none>                 10m   v1.20.5
-paasta-cp-worker-3   Ready    <none>                 10m   v1.20.5
+cp-master     Ready    control-plane,master   12m   v1.20.5
+cp-worker-1   Ready    <none>                 10m   v1.20.5
+cp-worker-2   Ready    <none>                 10m   v1.20.5
+cp-worker-3   Ready    <none>                 10m   v1.20.5
 
 $ kubectl get pods -n kube-system
 NAME                                          READY   STATUS    RESTARTS   AGE
@@ -278,17 +278,17 @@ csi-cinder-nodeplugin-njdrc                   2/2     Running   0          7m41s
 csi-cinder-nodeplugin-sb9vg                   2/2     Running   0          7m41s
 csi-cinder-nodeplugin-t5fxh                   2/2     Running   0          7m41s
 dns-autoscaler-b5c786945-rhlkd                1/1     Running   0          8m9s
-kube-apiserver-paasta-cp-master               1/1     Running   0          12m
-kube-controller-manager-paasta-cp-master      1/1     Running   1          12m
+kube-apiserver-cp-master               1/1     Running   0          12m
+kube-controller-manager-cp-master      1/1     Running   1          12m
 kube-proxy-dj5c8                              1/1     Running   0          10m
 kube-proxy-kkvhk                              1/1     Running   0          10m
 kube-proxy-nfttc                              1/1     Running   0          10m
 kube-proxy-znfgk                              1/1     Running   0          10m
-kube-scheduler-paasta-cp-master               1/1     Running   1          12m
+kube-scheduler-cp-master               1/1     Running   1          12m
 metrics-server-5cd75b7749-xcrps               2/2     Running   0          7m57s
-nginx-proxy-paasta-cp-worker-1                1/1     Running   0          10m
-nginx-proxy-paasta-cp-worker-2                1/1     Running   0          10m
-nginx-proxy-paasta-cp-worker-3                1/1     Running   0          10m
+nginx-proxy-cp-worker-1                1/1     Running   0          10m
+nginx-proxy-cp-worker-2                1/1     Running   0          10m
+nginx-proxy-cp-worker-3                1/1     Running   0          10m
 nodelocaldns-556gb                            1/1     Running   0          8m8s
 nodelocaldns-8dpnt                            1/1     Running   0          8m8s
 nodelocaldns-pvl6z                            1/1     Running   0          8m8s
@@ -376,4 +376,4 @@ When users create their own resources, be careful not to use the following prefi
 
 [image 001]:images/standalone-v1.2.png
 
-### [Index](https://github.com/PaaS-TA/Guide-eng/blob/master/README.md) > [CP Install](https://github.com/PaaS-TA/paas-ta-container-platform-guide-eng/tree/master/install-guide/Readme.md) > Cluster Installation Guide
+### [Index](https://github.com/K-PaaS/cp-guide-eng) > [CP Install](../Readme.md) > Cluster Installation Guide

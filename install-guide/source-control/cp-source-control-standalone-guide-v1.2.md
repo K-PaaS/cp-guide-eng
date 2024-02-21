@@ -1,4 +1,4 @@
-### [Index](https://github.com/PaaS-TA/Guide-eng/blob/master/README.md) > [CP Install](https://github.com/PaaS-TA/paas-ta-container-platform-guide-eng/tree/master/install-guide/Readme.md) > SourceControl Installation Guide
+### [Index](https://github.com/K-PaaS/cp-guide-eng) > [CP Install](../Readme.md) > SourceControl Installation Guide
 
 <br>
 
@@ -66,7 +66,7 @@ Refer to the guide below for NFS Storage Server installation.
 Installation of the certificate server **KeyCloak Server**, database **Maria DB**, and repository server **Harbor** must be performed in advance as the infrastructure to be used by the container platform source control.
 When deploying the pasta container platform portal, all the infrastructures will be installed.
 For installation of Container Platform Infrastructure, refer to the guide below.
-> [{PaaS-TA Container Platform Portal Deployment](../container-platform-portal/paas-ta-container-platform-portal-deployment-standalone-guide-v1.2.md)     
+> [K-PaaS Container Platform Portal Deployment](../container-platform-portal/cp-portal-deployment-standalone-guide-v1.2.md)     
 
 
 ## <div id='3'>3. Container Platform Source Control Deployment
@@ -76,7 +76,7 @@ When deploying the container platform source control, upload images and package 
 Upload the container platform portal to the deployed Private Repository (Harbor) with images and package files related to the container platform source control. 
 
 Refer to the guide below for the CRI-O insecure-registry settings required for a Private Repository deployment.
-> [CRI-O insecure-registry Setting](../container-platform-portal/paas-ta-container-platform-portal-deployment-standalone-guide-v1.2.md#3.1)      
+> [CRI-O insecure-registry Setting](../container-platform-portal/cp-portal-deployment-standalone-guide-v1.2.md#3.1)      
 
 ### <div id='3.2'>3.2. Container Platform Source Control Deployment 
     
@@ -140,7 +140,7 @@ PROVIDER_TYPE="standalone"
 <br>    
 
 :bulb: Keycloak default deployment method is **HTTP**, and **HTPS** via certificate is enabled
-> [Keycloak TLS Settings](../container-platform-portal/paas-ta-container-platform-portal-deployment-keycloak-tls-setting-guide-v1.2.md)
+> [Keycloak TLS Settings](../container-platform-portal/cp-portal-deployment-keycloak-tls-setting-guide-v1.2.md)
 
 Modify the contents below in the container platform source control variable file.
 ```
@@ -168,8 +168,26 @@ $ ./deploy-container-platform-source-control.sh
 
 ...
 ...
+NAME: paas-ta-container-platform-source-control-api
+LAST DEPLOYED: Thu Dec 16 10:24:29 2021
+NAMESPACE: paas-ta-container-platform-source-control
+STATUS: deployed
+REVISION: 1
+TEST SUITE: None
+NAME: paas-ta-container-platform-source-control-manager
+LAST DEPLOYED: Thu Dec 16 10:24:30 2021
+NAMESPACE: paas-ta-container-platform-source-control
+STATUS: deployed
+REVISION: 1
+TEST SUITE: None
+NAME: paas-ta-container-platform-source-control-broker
+LAST DEPLOYED: Thu Dec 16 10:24:31 2021
+NAMESPACE: paas-ta-container-platform-source-control
+STATUS: deployed
+REVISION: 1
+TEST SUITE: None
 NAME: paas-ta-container-platform-source-control-ui
-LAST DEPLOYED: Thu Dec 16 05:06:09 2021
+LAST DEPLOYED: Thu Dec 16 10:24:32 2021
 NAMESPACE: paas-ta-container-platform-source-control
 STATUS: deployed
 REVISION: 1
@@ -292,8 +310,8 @@ The initial information for accessing the container platform source control is a
 
 ### <div id='4.3'/>4.3. Container Platform SourceControl Use Guide
 - For the usage of Container Platform Source Control, refer to the use guide below.  
-  + [Container Platform Source Control Use Guide](../../use-guide/source-control/paas-ta-container-platform-source-control-use-guide.md)   
+  + [Container Platform Source Control Use Guide](../../use-guide/source-control/cp-source-control-use-guide.md)   
 
 <br>
 
-### [Index](https://github.com/PaaS-TA/Guide-eng/blob/master/README.md) > [CP Install](https://github.com/PaaS-TA/paas-ta-container-platform-guide-eng/tree/master/install-guide/Readme.md) > SourceControl Installation Guide
+### [Index](https://github.com/K-PaaS/cp-guide-eng) > [CP Install](../Readme.md) > SourceControl Installation Guide

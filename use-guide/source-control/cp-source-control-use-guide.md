@@ -1,4 +1,4 @@
-### [Index](https://github.com/PaaS-TA/Guide-eng/blob/master/README.md) > [CP Use](https://github.com/PaaS-TA/paas-ta-container-platform-guide-eng/tree/master/use-guide/Readme.md) > Source Control Service Use Guide
+### [Index](https://github.com/K-PaaS/cp-guide-eng) > [CP Use](../Readme.md) > Source Control Service Use Guide
 
 <br>
 
@@ -305,4 +305,4 @@ This chapter describes checking and managing repository information of the conta
 
 <br>
 
-### [Index](https://github.com/PaaS-TA/Guide-eng/blob/master/README.md) > [CP Use](https://github.com/PaaS-TA/paas-ta-container-platform-guide-eng/tree/master/use-guide/Readme.md) > Source Control Service Use Guide
+### [Index](https://github.com/K-PaaS/cp-guide-eng) > [CP Install](../Readme.md) > Source Control Service Use Guide

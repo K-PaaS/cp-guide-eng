@@ -1,8 +1,8 @@
-### [Index](https://github.com/PaaS-TA/Guide-eng/blob/master/README.md) > [CP Use](https://github.com/PaaS-TA/paas-ta-container-platform-guide-eng/tree/master/use-guide/Readme.md) > Pipeline Service Use Guide
+### [Index](https://github.com/K-PaaS/cp-guide-eng) > [CP Use](../Readme.md) > Pipeline Service Use Guide
 
 <br>
 
-# [PaaS-TA Container Platform Pipeline User Guide]
+# [K-PaaS Container Platform Pipeline User Guide]
 
 ## Table of content
 1. [Document Outline](#1)
@@ -117,7 +117,7 @@ This document is a usage guide about how users will use the Container Platform P
 # <div id='2'/> 2. Container Platform Pipeline Access
 
 ## <div id='2-1'/> 2.1 Service Container Platform Pipeline Access
-1. On the space page of the PaaS-TA portal, click the "dashboard" button on the applied distribution pipeline to proceed with access.
+1. On the space page of the K-PaaS portal, click the "dashboard" button on the applied distribution pipeline to proceed with access.
 
 2. Check the Container Platform Pipeline Access.
 ![image](https://user-images.githubusercontent.com/80228983/146734921-c3bb22aa-40b2-4d1a-91ad-4b6361d9e379.png)
@@ -669,7 +669,7 @@ This chapter describes overall participant management, such as adding, modifying
 2.	Go to the log lookup page. Check that the log is visible in real-time.
 3.	Confirm that the deployment job execution is completed, and check the history.
 ![image](https://user-images.githubusercontent.com/80228983/146859513-36f03f0d-aeaa-428b-8ff7-5414488f7959.png)
-4.	As a result of inquiring on the PaaS-TA container platform portal, it can be confirmed that an application called 'spring-music-test' was deployed in the deployment section.
+4.	As a result of inquiring on the K-PaaS container platform portal, it can be confirmed that an application called 'spring-music-test' was deployed in the deployment section.
 ![image](https://user-images.githubusercontent.com/80228983/146859752-60cc0195-164d-4681-96a7-ee57c948bac8.png)
 
 ***※	The deployment Job log/history can be viewed by the administrator and all pipeline participants, but the Run and Stop buttons can only be viewed by participants with creation and execution authority.***
@@ -912,4 +912,4 @@ The selected application/profile information may be deleted from the environment
 
 <br>
 
-### [Index](https://github.com/PaaS-TA/Guide-eng/blob/master/README.md) > [CP Use](https://github.com/PaaS-TA/paas-ta-container-platform-guide-eng/tree/master/use-guide/Readme.md) > Pipeline Service Use Guide
+### [Index](https://github.com/K-PaaS/cp-guide-eng) > [CP Use](../Readme.md) > Pipeline Service Use Guide

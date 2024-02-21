@@ -1,4 +1,4 @@
-### [Index](https://github.com/PaaS-TA/Guide-eng/blob/master/README.md) > [CP Use](/use-guide/Readme.md) > User Portal Use Guide
+### [Index](https://github.com/K-PaaS/cp-guide-eng) > [CP Use ](../Readme.md)> User Portal Use Guide
 
 <br>
 
@@ -515,7 +515,7 @@ This chapter describes the menu of the container platform user portal.
 
 <br>
 
-### [Index](https://github.com/PaaS-TA/Guide-eng/blob/master/README.md) > [CP Use](/use-guide/Readme.md) > User Portal Use Guide
+### [Index](https://github.com/K-PaaS/cp-guide-eng) > [CP Use ](../Readme.md) > User Portal Use Guide
 
 ----
 
