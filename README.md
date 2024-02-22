@@ -4,7 +4,7 @@
   <tr>
     <td colspan=2 align=center>Platform</td>
     <td colspan=2 align=center><a href="https://github.com/PaaS-TA/paasta-deployment">Application platform</a></td>
-    <td colspan=2 align=center><a href="https://github.com/PaaS-TA/paas-ta-container-platform">🚩 Container Platform</a></td>
+    <td colspan=2 align=center><a href="https://github.com/K-PaaS/container-platform">🚩 Container Platform</a></td>
   </tr>
   <tr>
     <td colspan=2 rowspan=2 align=center>Portal</td>
