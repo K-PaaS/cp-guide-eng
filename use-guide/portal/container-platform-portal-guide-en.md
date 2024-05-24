@@ -53,7 +53,7 @@
 <br>
 
 
-# # <div id='1'/> 1. Documentation Overview
+# <div id='1'/> 1. Documentation Overview
 
 ## <div id='1-1'/> 1.1. Purpose
 This document describes how to use the Container Platform Portal.
@@ -556,7 +556,7 @@ You can register an SSH key to access subcluster instances through the K-PaaS co
 
 <br>
 
-#### <div id='5-3-1-3'/> 5.3.1.3. 배포 생성
+#### <div id='5-3-1-3'/> 5.3.1.3. Create Deployment
 - When you click the Create button in the Deployment list, the Create Deployment popup appears.
   ![IMG_3_1_3]
 
