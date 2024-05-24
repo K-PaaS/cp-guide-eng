@@ -152,7 +152,6 @@ Access the Keycloak Admin Console and log in to the Keycloak Admin account you f
 - You cannot access the portal immediately after registering, but you can use the portal after the administrator assigns a Namespace and Role to the user.
   To assign Namespace and Role to a user, see [[5.7.1.5. Modify User]](#5-7-1-5).
 
-![image 005]
 
 #### User login
 - Log in to the Container Platform portal with the account registered through registration.
