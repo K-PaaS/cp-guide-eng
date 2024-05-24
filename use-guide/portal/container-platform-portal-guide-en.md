@@ -140,7 +140,7 @@ Access the Keycloak Admin Console and log in to the Keycloak Admin account you f
 <br>
 
 ### <div id='3-2'/>3.2. Container Platform Portal User Account Login
-Register as a user at ####
+#### Register as a user at
 - Click the 'Register' button at the bottom.
 
 ![image 003]
@@ -161,7 +161,7 @@ Register as a user at ####
 
 <br>    
 
-# # <div id='4'/> 4. Configure the Container Platform Portal
+# <div id='4'/> 4. Configure the Container Platform Portal
 ## <div id='4-1'/> 4.1. Container Platform Portal User Permission Types
 | <center>User Type</center> | <center>Function</center> |
 | :--- | :--- | 
