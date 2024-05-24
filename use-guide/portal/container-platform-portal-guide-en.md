@@ -8,7 +8,7 @@
     * [1.1. Purpose](#1-1)
     * [1.2. Range](#1-2)
 2. [Prerequisite](#2)
-    * [2.1. Terraman IaC 설정](#2-1)
+    * [2.1. Terraman IaC Settings](#2-1)
 3. [Access the Container Platform Portal](#3)
     * [3.1. Log in to the Container Platform Portal administrator account](#3-1)
     * [3.2. Log in to the Container Platform Portal user account](#3-2)
