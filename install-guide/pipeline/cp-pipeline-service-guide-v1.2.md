@@ -83,8 +83,8 @@ container-platform-pipeline-config-server-deployment-58fc95prx2   2m           1
 container-platform-pipeline-inspection-api-deployment-6f7c6sfbp   1m           141Mi
 container-platform-pipeline-jenkins-deployment-5595ff67b5-7snrn   2m           905Mi
 container-platform-pipeline-ui-deployment-c88df8f74-jc9wv         1m           173Mi
-paas-ta-container-platform-postgresql-postgresql-0                4m           41Mi
-paas-ta-container-platform-sonarqube-sonarqube-5c799d8c97-pltdn   13m          1566Mi
+container-platform-postgresql-postgresql-0                4m           41Mi
+container-platform-sonarqube-sonarqube-5c799d8c97-pltdn   13m          1566Mi
 
 ```
 For cluster environments where container platform pipelines are to be installed, a minimum of **4Gi** total free memory is recommended..<br>
@@ -92,8 +92,8 @@ For cluster environments where container platform pipelines are to be installed,
 When the container platform pipeline installation is completed, the resource for using Persistent Volume is as follows.    
 ```
 NAME                                                      STATUS   VOLUME                                     CAPACITY   ACCESS MODES   STORAGECLASS                                  AGE
-container-platform-pipeline-jenkins-pv                    Bound    pvc-9faf103f-5462-4a76-9f4b-f9bd81e1471b   20Gi        RWO            paas-ta-container-platform-nfs-storageclass   30h
-data-paas-ta-container-platform-postgresql-postgresql-0   Bound    pvc-327312f3-35b9-4e4e-aa2a-0f094f5fdd0a   8Gi        RWX            paas-ta-container-platform-nfs-storageclass   30h
+container-platform-pipeline-jenkins-pv                    Bound    pvc-9faf103f-5462-4a76-9f4b-f9bd81e1471b   20Gi        RWO            cp-stroageClass   30h
+data-container-platform-postgresql-postgresql-0   Bound    pvc-327312f3-35b9-4e4e-aa2a-0f094f5fdd0a   8Gi        RWX            paas-ta-cp-stroageClass   30h
 
 ```
 NFS storage capacity **28Gi** is recommended for cluster environments where container platform pipelines will be installed.<br>    
@@ -115,7 +115,7 @@ For container platform pipeline deployment, download the container platform pipe
 :bulb: This content will be conducted at Kubernetes **Master Node**.
 
 +  Container Platform Pipeline Deployment File Download :  
-   [paas-ta-container-platform-pipeline-deployment.tar](https://nextcloud.paas-ta.org/index.php/s/6BDzar68ck5jryq)  
+   [container-platform-pipeline-deployment.tar](https://nextcloud.paas-ta.org/index.php/s/6BDzar68ck5jryq)  
 
 ```
 # Create Deployment File Download Path
@@ -127,10 +127,10 @@ $ wget --content-disposition https://nextcloud.paas-ta.org/index.php/s/6BDzar68c
 
 $ ls ~/workspace/container-platform
   ...
-  paas-ta-container-platform-pipeline-deployment.tar.gz
+  container-platform-pipeline-deployment.tar.gz
   ...
 # Unzip Deployment File
-$ tar xvfz paas-ta-container-platform-pipeline-deployment.tar.gz
+$ tar xvfz container-platform-pipeline-deployment.tar.gz
 ```
 
 - Configure Deployment File Directory
@@ -147,7 +147,7 @@ $ tar xvfz paas-ta-container-platform-pipeline-deployment.tar.gz
 Defining variable values is necessary before deploying a container platform pipeline. Set the variable by checking the information required for deployment.
 
 ```
-$ cd ~/workspace/container-platform/paas-ta-container-platform-pipeline-deployment/script
+$ cd ~/workspace/container-platform/container-platform-pipeline-deployment/script
 $ vi container-platform-pipeline-vars.sh
 ```
 
@@ -200,22 +200,22 @@ $ ./deploy-container-platform-pipeline.sh
 
 ...
 ...
-NAME: paas-ta-container-platform-pipeline-api
+NAME: container-platform-pipeline-api
 LAST DEPLOYED: Tue Dec 14 04:23:06 2021
-NAMESPACE: paas-ta-container-platform-pipeline
+NAMESPACE: container-platform-pipeline
 STATUS: deployed
 REVISION: 1
 TEST SUITE: None
 ...
 ...
-NAME: paas-ta-container-platform-sonarqube
+NAME: container-platform-sonarqube
 LAST DEPLOYED: Tue Dec 14 04:23:12 2021
 NAMESPACE: paas-ta-container-platfrom-pipeline
 STATUS: deployed
 REVISION: 1
 NOTES:
 1. Get the application URL by running these commands:
-  export NODE_PORT=$(kubectl get --namespace paas-ta-container-platfrom-pipeline -o jsonpath="{.spec.ports[0].nodePort}" services paas-ta-container-platform-sonarqube-sonarqube)
+  export NODE_PORT=$(kubectl get --namespace paas-ta-container-platfrom-pipeline -o jsonpath="{.spec.ports[0].nodePort}" services container-platform-sonarqube-sonarqube)
   export NODE_IP=$(kubectl get nodes --namespace paas-ta-container-platfrom-pipeline -o jsonpath="{.items[0].status.addresses[0].address}")
   echo http://$NODE_IP:$NODE_PORT
 
@@ -228,7 +228,7 @@ NOTES:
 
 ```
 # Check Pipeline Resource
-$ kubectl get all -n paas-ta-container-platform-pipeline
+$ kubectl get all -n container-platform-pipeline
 ```
 
 ```
@@ -240,8 +240,8 @@ pod/container-platform-pipeline-config-server-deployment-58fc95prx2   1/1     Ru
 pod/container-platform-pipeline-inspection-api-deployment-6f7c6sfbp   1/1     Running   0          116s
 pod/container-platform-pipeline-jenkins-deployment-5595ff67b5-7snrn   1/1     Running   0          115s
 pod/container-platform-pipeline-ui-deployment-c88df8f74-jc9wv         1/1     Running   0          117s
-pod/paas-ta-container-platform-postgresql-postgresql-0                1/1     Running   0          112s
-pod/paas-ta-container-platform-sonarqube-sonarqube-5c799d8c97-pltdn   1/1     Running   0          111s
+pod/container-platform-postgresql-postgresql-0                1/1     Running   0          112s
+pod/container-platform-sonarqube-sonarqube-5c799d8c97-pltdn   1/1     Running   0          111s
 
 NAME                                                         TYPE        CLUSTER-IP      EXTERNAL-IP   PORT(S)          AGE
 service/container-platform-pipeline-api-service              NodePort    10.233.10.130   <none>        8082:30082/TCP   119s
@@ -251,9 +251,9 @@ service/container-platform-pipeline-config-server-service    NodePort    10.233.
 service/container-platform-pipeline-inspection-api-service   NodePort    10.233.55.123   <none>        8085:30085/TCP   116s
 service/container-platform-pipeline-jenkins-service          NodePort    10.233.18.195   <none>        8080:30086/TCP   115s
 service/container-platform-pipeline-ui-service               NodePort    10.233.49.219   <none>        8084:30084/TCP   117s
-service/paas-ta-container-platform-postgresql                ClusterIP   10.233.46.68    <none>        5432/TCP         112s
-service/paas-ta-container-platform-postgresql-headless       ClusterIP   None            <none>        5432/TCP         112s
-service/paas-ta-container-platform-sonarqube-sonarqube       NodePort    10.233.47.187   <none>        9000:30087/TCP   111s
+service/container-platform-postgresql                ClusterIP   10.233.46.68    <none>        5432/TCP         112s
+service/container-platform-postgresql-headless       ClusterIP   None            <none>        5432/TCP         112s
+service/container-platform-sonarqube-sonarqube       NodePort    10.233.47.187   <none>        9000:30087/TCP   111s
 
 NAME                                                                    READY   UP-TO-DATE   AVAILABLE   AGE
 deployment.apps/container-platform-pipeline-api-deployment              1/1     1            1           119s
@@ -263,7 +263,7 @@ deployment.apps/container-platform-pipeline-config-server-deployment    1/1     
 deployment.apps/container-platform-pipeline-inspection-api-deployment   1/1     1            1           116s
 deployment.apps/container-platform-pipeline-jenkins-deployment          1/1     1            1           115s
 deployment.apps/container-platform-pipeline-ui-deployment               1/1     1            1           117s
-deployment.apps/paas-ta-container-platform-sonarqube-sonarqube          1/1     1            1           111s
+deployment.apps/container-platform-sonarqube-sonarqube          1/1     1            1           111s
 
 NAME                                                                              DESIRED   CURRENT   READY   AGE
 replicaset.apps/container-platform-pipeline-api-deployment-67bc5b4d9b             1         1         1       119s
@@ -273,10 +273,10 @@ replicaset.apps/container-platform-pipeline-config-server-deployment-58fc9bb8b4 
 replicaset.apps/container-platform-pipeline-inspection-api-deployment-6f7cbc558   1         1         1       116s
 replicaset.apps/container-platform-pipeline-jenkins-deployment-5595ff67b5         1         1         1       115s
 replicaset.apps/container-platform-pipeline-ui-deployment-c88df8f74               1         1         1       117s
-replicaset.apps/paas-ta-container-platform-sonarqube-sonarqube-5c799d8c97         1         1         1       111s
+replicaset.apps/container-platform-sonarqube-sonarqube-5c799d8c97         1         1         1       111s
 
 NAME                                                                READY   AGE
-statefulset.apps/paas-ta-container-platform-postgresql-postgresql   1/1     112s
+statefulset.apps/container-platform-postgresql-postgresql   1/1     112s
 
 
 ```    
@@ -285,7 +285,7 @@ statefulset.apps/paas-ta-container-platform-postgresql-postgresql   1/1     112s
 To delete the deployed container platform pipeline resources, run the script below.<br>
 
 ```
-$ cd ~/workspace/container-platform/paas-ta-container-platform-pipeline-deployment/script
+$ cd ~/workspace/container-platform/container-platform-pipeline-deployment/script
 $ chmod +x uninstall-container-platform-pipeline.sh
 $ ./uninstall-container-platform-pipeline.sh
 
@@ -300,7 +300,7 @@ replicaset.apps "container-platform-pipeline-jenkins-deployment-7466bbf878" dele
 replicaset.apps "container-platform-pipeline-ui-deployment-7698cc79c8" deleted
 ...
 ...
-namespace "paas-ta-container-platform-pipeline" deleted
+namespace "container-platform-pipeline" deleted
 ...
 ...
 ```

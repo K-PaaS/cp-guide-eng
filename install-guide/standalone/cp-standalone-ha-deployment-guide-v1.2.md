@@ -1,4 +1,4 @@
-### [Index](https://github.com/PaaS-TA/Guide-eng/blob/master/README.md) > [CP Install](https://github.com/PaaS-TA/paas-ta-container-platform-guide-eng/tree/master/install-guide/Readme.md) > 클러스터 설치 가이드 (HA)
+### [Index](https://github.com/K-PaaS/cp-guide-eng) > [CP Install](../Readme.md) > 클러스터 설치 가이드 (HA)
 
 <br>
 

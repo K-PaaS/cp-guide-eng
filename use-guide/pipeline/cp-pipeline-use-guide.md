@@ -10,7 +10,7 @@
 	* [1.2. Range](#1-2)
 2. [Container](#2)
 	* [2.1. Service Container Platform Pipeline Access](#2-1)
-	* [2.2. Stand-Alone Deployment Container Platform Pipeline](#2-2)
+	* [2.2. Standalone Deployment Container Platform Pipeline](#2-2)
 3. [Container Platform Pipeline User Manual](#3)
 	* [3.1. Container Platform Pipeline User Menu Configuration](#3-1)
 	* [3.2. Container Platform Pipeline User Menu Description](#3-2)
@@ -124,7 +124,7 @@ This document is a usage guide about how users will use the Container Platform P
 
 3. At this time, the user who ***first created the container platform deployment pipeline service becomes the administrator.*** Click the User Management menu in the upper right corner to go to the user dashboard.
 
-## <div id='2-2'/> 2.2 Stand-Alone Deployment Container Platform Pipeline
+## <div id='2-2'/> 2.2 Standalone Deployment Container Platform Pipeline
 1. The Public IP of the deployed cluster is accessed from a web browser at  http://{K8S_MASTER_NODE_IP}:30084.
 
 2. Enter account information at the key cloak login page. (Initial administrator's account: admin / admin )

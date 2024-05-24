@@ -360,15 +360,15 @@ When users create their own resources, be careful not to use the following prefi
 |All Resources|kube*|
 |Namespace|all|
 ||kubernetes-dashboard|
-||paas-ta-container-platform-temp-namespace|
-|Role|paas-ta-container-platform-init-role|
-||paas-ta-container-platform-admin-role|
-|ResourceQuota|paas-ta-container-platform-low-rq|
-||paas-ta-container-platform-medium-rq|
-||paas-ta-container-platform-high-rq|
-|LimitRanges|paas-ta-container-platform-low-limit-range|
-||paas-ta-container-platform-medium-limit-range|
-||paas-ta-container-platform-high-limit-range|
+||container-platform-temp-namespace|
+|Role|container-platform-init-role|
+||container-platform-admin-role|
+|ResourceQuota|container-platform-low-rq|
+||container-platform-medium-rq|
+||container-platform-high-rq|
+|LimitRanges|container-platform-low-limit-range|
+||container-platform-medium-limit-range|
+||container-platform-high-limit-range|
 |Pod|nodes|
 ||resources|
 

@@ -1,4 +1,4 @@
-### [Index](https://github.com/K-PaaS/cp-guide-eng) > [CP Install](../Readme.md) > Stand-alone Deployment Portal Installation Guide
+### [Index](https://github.com/K-PaaS/cp-guide-eng) > [CP Install](../Readme.md) > Standalone Deployment Portal Installation Guide
 
 <br>
 
@@ -161,7 +161,7 @@ Download the container platform portal Deployment file and locate it in the path
 :bulb: Process the content at Kubernetes **Master Node**.
 
 + Container Platform Portal Deployment File Download :
-   [paas-ta-container-platform-portal-deployment.tar.gz](https://nextcloud.paas-ta.org/index.php/s/wYJ3wim3WCxG7Ed/download)
+   [container-platform-portal-deployment.tar.gz](https://nextcloud.paas-ta.org/index.php/s/wYJ3wim3WCxG7Ed/download)
 
 ```
 # Create Deployment File Download Path
@@ -172,10 +172,10 @@ $ cd ~/workspace/container-platform
 $ wget --content-disposition https://nextcloud.paas-ta.org/index.php/s/wYJ3wim3WCxG7Ed/download
 
 $ ls ~/workspace/container-platform
-  paas-ta-container-platform-portal-deployment.tar.gz
+  container-platform-portal-deployment.tar.gz
 
 # Unzip Deployment File
-$ tar -xvf paas-ta-container-platform-portal-deployment.tar.gz
+$ tar -xvf container-platform-portal-deployment.tar.gz
 ```
 
 - Configure Deployment File Directory
@@ -198,7 +198,7 @@ Defining variable values is necessary before deploying the container platform po
 <br>
 
 ```
-$ cd ~/workspace/container-platform/paas-ta-container-platform-portal-deployment/script
+$ cd ~/workspace/container-platform/container-platform-portal-deployment/script
 $ vi container-platform-portal-vars.sh
 ```
 
@@ -261,55 +261,55 @@ replicaset.apps/nfs-pod-provisioner-7f7c444487   1         1         1       3m2
 ```
 $ kubectl get all -n harbor
 NAME                                                                  READY   STATUS    RESTARTS   AGE
-pod/paas-ta-container-platform-harbor-chartmuseum-59b784bfd4-55twb    1/1     Running   0          4m
-pod/paas-ta-container-platform-harbor-core-6b7b8768f9-r27nn           1/1     Running   0          4m
-pod/paas-ta-container-platform-harbor-database-0                      1/1     Running   0          4m
-pod/paas-ta-container-platform-harbor-jobservice-69556cd7cd-hk75s     1/1     Running   0          4m
-pod/paas-ta-container-platform-harbor-nginx-755cf6876f-rkwk2          1/1     Running   0          4m
-pod/paas-ta-container-platform-harbor-notary-server-896c47dcd-lg78k   1/1     Running   0          4m
-pod/paas-ta-container-platform-harbor-notary-signer-b747fb89d-lpw86   1/1     Running   0          4m
-pod/paas-ta-container-platform-harbor-portal-c79c78f5b-nk5vm          1/1     Running   0          4m
-pod/paas-ta-container-platform-harbor-redis-0                         1/1     Running   0          4m
-pod/paas-ta-container-platform-harbor-registry-54c4f69579-zwjmp       2/2     Running   0          4m
-pod/paas-ta-container-platform-harbor-trivy-0                         1/1     Running   0          4m
+pod/container-platform-harbor-chartmuseum-59b784bfd4-55twb    1/1     Running   0          4m
+pod/container-platform-harbor-core-6b7b8768f9-r27nn           1/1     Running   0          4m
+pod/container-platform-harbor-database-0                      1/1     Running   0          4m
+pod/container-platform-harbor-jobservice-69556cd7cd-hk75s     1/1     Running   0          4m
+pod/container-platform-harbor-nginx-755cf6876f-rkwk2          1/1     Running   0          4m
+pod/container-platform-harbor-notary-server-896c47dcd-lg78k   1/1     Running   0          4m
+pod/container-platform-harbor-notary-signer-b747fb89d-lpw86   1/1     Running   0          4m
+pod/container-platform-harbor-portal-c79c78f5b-nk5vm          1/1     Running   0          4m
+pod/container-platform-harbor-redis-0                         1/1     Running   0          4m
+pod/container-platform-harbor-registry-54c4f69579-zwjmp       2/2     Running   0          4m
+pod/container-platform-harbor-trivy-0                         1/1     Running   0          4m
 
 NAME                                                      TYPE        CLUSTER-IP      EXTERNAL-IP   PORT(S)                       AGE
 service/harbor                                            NodePort    10.233.3.114    <none>        80:30002/TCP,4443:30004/TCP   4m1s
-service/paas-ta-container-platform-harbor-chartmuseum     ClusterIP   10.233.28.112   <none>        80/TCP                        4m1s
-service/paas-ta-container-platform-harbor-core            ClusterIP   10.233.14.27    <none>        80/TCP                        4m
-service/paas-ta-container-platform-harbor-database        ClusterIP   10.233.9.5      <none>        5432/TCP                      4m1s
-service/paas-ta-container-platform-harbor-jobservice      ClusterIP   10.233.5.82     <none>        80/TCP                        4m1s
-service/paas-ta-container-platform-harbor-notary-server   ClusterIP   10.233.22.118   <none>        4443/TCP                      4m1s
-service/paas-ta-container-platform-harbor-notary-signer   ClusterIP   10.233.57.71    <none>        7899/TCP                      4m1s
-service/paas-ta-container-platform-harbor-portal          ClusterIP   10.233.48.102   <none>        80/TCP                        4m1s
-service/paas-ta-container-platform-harbor-redis           ClusterIP   10.233.34.72    <none>        6379/TCP                      4m1s
-service/paas-ta-container-platform-harbor-registry        ClusterIP   10.233.41.153   <none>        5000/TCP,8080/TCP             4m1s
-service/paas-ta-container-platform-harbor-trivy           ClusterIP   10.233.33.126   <none>        8080/TCP                      4m1s
+service/container-platform-harbor-chartmuseum     ClusterIP   10.233.28.112   <none>        80/TCP                        4m1s
+service/container-platform-harbor-core            ClusterIP   10.233.14.27    <none>        80/TCP                        4m
+service/container-platform-harbor-database        ClusterIP   10.233.9.5      <none>        5432/TCP                      4m1s
+service/container-platform-harbor-jobservice      ClusterIP   10.233.5.82     <none>        80/TCP                        4m1s
+service/container-platform-harbor-notary-server   ClusterIP   10.233.22.118   <none>        4443/TCP                      4m1s
+service/container-platform-harbor-notary-signer   ClusterIP   10.233.57.71    <none>        7899/TCP                      4m1s
+service/container-platform-harbor-portal          ClusterIP   10.233.48.102   <none>        80/TCP                        4m1s
+service/container-platform-harbor-redis           ClusterIP   10.233.34.72    <none>        6379/TCP                      4m1s
+service/container-platform-harbor-registry        ClusterIP   10.233.41.153   <none>        5000/TCP,8080/TCP             4m1s
+service/container-platform-harbor-trivy           ClusterIP   10.233.33.126   <none>        8080/TCP                      4m1s
 
 NAME                                                              READY   UP-TO-DATE   AVAILABLE   AGE
-deployment.apps/paas-ta-container-platform-harbor-chartmuseum     1/1     1            1           4m
-deployment.apps/paas-ta-container-platform-harbor-core            1/1     1            1           4m
-deployment.apps/paas-ta-container-platform-harbor-jobservice      1/1     1            1           4m
-deployment.apps/paas-ta-container-platform-harbor-nginx           1/1     1            1           4m
-deployment.apps/paas-ta-container-platform-harbor-notary-server   1/1     1            1           4m
-deployment.apps/paas-ta-container-platform-harbor-notary-signer   1/1     1            1           4m
-deployment.apps/paas-ta-container-platform-harbor-portal          1/1     1            1           4m
-deployment.apps/paas-ta-container-platform-harbor-registry        1/1     1            1           4m
+deployment.apps/container-platform-harbor-chartmuseum     1/1     1            1           4m
+deployment.apps/container-platform-harbor-core            1/1     1            1           4m
+deployment.apps/container-platform-harbor-jobservice      1/1     1            1           4m
+deployment.apps/container-platform-harbor-nginx           1/1     1            1           4m
+deployment.apps/container-platform-harbor-notary-server   1/1     1            1           4m
+deployment.apps/container-platform-harbor-notary-signer   1/1     1            1           4m
+deployment.apps/container-platform-harbor-portal          1/1     1            1           4m
+deployment.apps/container-platform-harbor-registry        1/1     1            1           4m
 
 NAME                                                                        DESIRED   CURRENT   READY   AGE
-replicaset.apps/paas-ta-container-platform-harbor-chartmuseum-59b784bfd4    1         1         1       4m
-replicaset.apps/paas-ta-container-platform-harbor-core-6b7b8768f9           1         1         1       4m
-replicaset.apps/paas-ta-container-platform-harbor-jobservice-69556cd7cd     1         1         1       4m
-replicaset.apps/paas-ta-container-platform-harbor-nginx-755cf6876f          1         1         1       4m
-replicaset.apps/paas-ta-container-platform-harbor-notary-server-896c47dcd   1         1         1       4m
-replicaset.apps/paas-ta-container-platform-harbor-notary-signer-b747fb89d   1         1         1       4m
-replicaset.apps/paas-ta-container-platform-harbor-portal-c79c78f5b          1         1         1       4m
-replicaset.apps/paas-ta-container-platform-harbor-registry-54c4f69579       1         1         1       4m
+replicaset.apps/container-platform-harbor-chartmuseum-59b784bfd4    1         1         1       4m
+replicaset.apps/container-platform-harbor-core-6b7b8768f9           1         1         1       4m
+replicaset.apps/container-platform-harbor-jobservice-69556cd7cd     1         1         1       4m
+replicaset.apps/container-platform-harbor-nginx-755cf6876f          1         1         1       4m
+replicaset.apps/container-platform-harbor-notary-server-896c47dcd   1         1         1       4m
+replicaset.apps/container-platform-harbor-notary-signer-b747fb89d   1         1         1       4m
+replicaset.apps/container-platform-harbor-portal-c79c78f5b          1         1         1       4m
+replicaset.apps/container-platform-harbor-registry-54c4f69579       1         1         1       4m
 
 NAME                                                          READY   AGE
-statefulset.apps/paas-ta-container-platform-harbor-database   1/1     4m
-statefulset.apps/paas-ta-container-platform-harbor-redis      1/1     4m
-statefulset.apps/paas-ta-container-platform-harbor-trivy      1/1     4m
+statefulset.apps/container-platform-harbor-database   1/1     4m
+statefulset.apps/container-platform-harbor-redis      1/1     4m
+statefulset.apps/container-platform-harbor-trivy      1/1     4m
 ```  
 
 - **Retrieve MariaDB Resource**
@@ -317,13 +317,13 @@ statefulset.apps/paas-ta-container-platform-harbor-trivy      1/1     4m
 ```
 $ kubectl get all -n mariadb
 NAME                                       READY   STATUS    RESTARTS   AGE
-pod/paas-ta-container-platform-mariadb-0   1/1     Running   0          3m4s
+pod/container-platform-mariadb-0   1/1     Running   0          3m4s
 
 NAME                                         TYPE       CLUSTER-IP      EXTERNAL-IP   PORT(S)          AGE
-service/paas-ta-container-platform-mariadb   NodePort   10.233.37.208   <none>        3306:31306/TCP   3m4s
+service/container-platform-mariadb   NodePort   10.233.37.208   <none>        3306:31306/TCP   3m4s
 
 NAME                                                  READY   AGE
-statefulset.apps/paas-ta-container-platform-mariadb   1/1     3m4s
+statefulset.apps/container-platform-mariadb   1/1     3m4s
 ```    
 
 - **Retrieve Keycloak Resource**
@@ -346,9 +346,9 @@ replicaset.apps/keycloak-7d47d9f577   2         2         2       4m18s
 ```
 
 - **Retrieve Container Platform Portal Resource**
->`$ kubectl get all -n paas-ta-container-platform-portal`        
+>`$ kubectl get all -n container-platform-portal`        
 ```
-$ kubectl get all -n paas-ta-container-platform-portal
+$ kubectl get all -n container-platform-portal
 NAME                                                            READY   STATUS    RESTARTS   AGE
 pod/container-platform-api-deployment-55d995498d-9vlpg          1/1     Running   0          5m9s
 pod/container-platform-common-api-deployment-5c959bcdf6-kwfpt   1/1     Running   0          5m8s
@@ -381,27 +381,27 @@ To delete the deployed container platform portal resource, perform the scrip bel
 :loudspeaker: (Caution) Be aware that the  **whole resource necessary for the operation gets deleted** if the script is performed while the container platform portal is being operated.<br>
 
 ```
-$ cd ~/workspace/container-platform/paas-ta-container-platform-portal-deployment/script
+$ cd ~/workspace/container-platform/container-platform-portal-deployment/script
 $ chmod +x uninstall-container-platform-portal.sh
 $ ./uninstall-container-platform-portal.sh
 ```
 ```    
 Are you sure you want to delete the container platform portal? <y/n> y
 ....
-release "paas-ta-container-platform-harbor" uninstalled
-release "paas-ta-container-platform-mariadb" uninstalled
-release "paas-ta-container-platform-keycloak" uninstalled
-release "paas-ta-container-platform-nfs-storageclass" uninstalled
-release "paas-ta-container-platform-api" uninstalled
-release "paas-ta-container-platform-common-api" uninstalled
-release "paas-ta-container-platform-webadmin" uninstalled
-release "paas-ta-container-platform-webuser" uninstalled
+release "container-platform-harbor" uninstalled
+release "container-platform-mariadb" uninstalled
+release "container-platform-keycloak" uninstalled
+release "container-platform-nfs-storageclass" uninstalled
+release "container-platform-api" uninstalled
+release "container-platform-common-api" uninstalled
+release "container-platform-webadmin" uninstalled
+release "container-platform-webuser" uninstalled
 namespace "harbor" deleted
 namespace "mariadb" deleted
 namespace "keycloak" deleted
 namespace "nfs-storageclass" deleted
-namespace "paas-ta-container-platform-portal" deleted
-"paas-ta-container-platform-repository" has been removed from your repositories
+namespace "container-platform-portal" deleted
+"container-platform-repository" has been removed from your repositories
 Uninstalled plugin: cm-push
 ....    
 ```
@@ -504,21 +504,21 @@ Be careful not to use the following prefixes when creating resources while using
 |All Resource|kube*|
 |Namespace|all|
 ||kubernetes-dashboard|
-||paas-ta-container-platform-temp-namespace|
-|Role|paas-ta-container-platform-init-role|
-||paas-ta-container-platform-admin-role|
-|ResourceQuota|paas-ta-container-platform-low-rq|
-||paas-ta-container-platform-medium-rq|
-||paas-ta-container-platform-high-rq|
-|LimitRanges|paas-ta-container-platform-low-limit-range|
-||paas-ta-container-platform-medium-limit-range|
-||paas-ta-container-platform-high-limit-range|
+||container-platform-temp-namespace|
+|Role|container-platform-init-role|
+||container-platform-admin-role|
+|ResourceQuota|container-platform-low-rq|
+||container-platform-medium-rq|
+||container-platform-high-rq|
+|LimitRanges|container-platform-low-limit-range|
+||container-platform-medium-limit-range|
+||container-platform-high-limit-range|
 |Pod|nodes|
 ||resources|
 
 <br>
 
-### [Index](https://github.com/K-PaaS/cp-guide-eng) > [CP Install](../Readme.md) > Stand-Alone Deployment Portal Installation Guide
+### [Index](https://github.com/K-PaaS/cp-guide-eng) > [CP Install](../Readme.md) > Standalone Deployment Portal Installation Guide
 
 [image 001]:images-v1.2/cp-001.png
 [image 002]:images-v1.2/cp-002.png

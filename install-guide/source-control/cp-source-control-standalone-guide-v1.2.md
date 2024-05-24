@@ -31,12 +31,12 @@
 
 ## <div id='1'>1. Document Outline
 ### <div id='1.1'>1.1. Purpose
-This document (Container Platform Source Control Stand-Alone Deployment Installation Guide) describes how source controls are deployed in a stand-alone deployment Kubernetes Cluster environment where container platform portals are deployed.<br>
+This document (Container Platform Source Control Standalone Deployment Installation Guide) describes how source controls are deployed in a Standalone deployment Kubernetes Cluster environment where container platform portals are deployed.<br>
 
 <br>
 
 ### <div id='1.2'>1.2. Range
-The installation range was prepared based on Kubernetes' stand-alone deployment.
+The installation range was prepared based on Kubernetes' Standalone deployment.
 
 <br>
 
@@ -85,7 +85,7 @@ Download the container platform source control Deployment file and locate it in 
 :bulb: Process this content at the **Master Node** of Kubernetes. 
 
 + Container Platform Source Control Deployment File Download :  
-   [paas-ta-container-platform-source-control-deployment.tar.gz](https://nextcloud.paas-ta.org/index.php/s/6WG9C29tjQGY8We)  
+   [container-platform-source-control-deployment.tar.gz](https://nextcloud.paas-ta.org/index.php/s/6WG9C29tjQGY8We)  
 
 ```
 # Create Deployment File Download Path
@@ -97,11 +97,11 @@ $ wget --content-disposition https://nextcloud.paas-ta.org/index.php/s/6WG9C29tj
 
 $ ls ~/workspace/container-platform
   ...
-  paas-ta-container-platform-source-control-deployment.tar.gz
+  container-platform-source-control-deployment.tar.gz
   ...
 
 # Unzip Deployment file
-$ tar xvfz paas-ta-container-platform-source-control-deployment.tar.gz
+$ tar xvfz container-platform-source-control-deployment.tar.gz
 ```
 
 - Configure Deployment File Directory
@@ -118,7 +118,7 @@ $ tar xvfz paas-ta-container-platform-source-control-deployment.tar.gz
 Defining variable values is required before deploying container platform source controls. Set the variable by checking the information required for deployment.
 
 ```
-$ cd ~/workspace/container-platform/paas-ta-container-platform-source-control-deployment/script
+$ cd ~/workspace/container-platform/container-platform-source-control-deployment/script
 $ vi container-platform-source-control-vars.sh
 ```
 
@@ -168,27 +168,27 @@ $ ./deploy-container-platform-source-control.sh
 
 ...
 ...
-NAME: paas-ta-container-platform-source-control-api
+NAME: container-platform-source-control-api
 LAST DEPLOYED: Thu Dec 16 10:24:29 2021
-NAMESPACE: paas-ta-container-platform-source-control
+NAMESPACE: container-platform-source-control
 STATUS: deployed
 REVISION: 1
 TEST SUITE: None
-NAME: paas-ta-container-platform-source-control-manager
+NAME: container-platform-source-control-manager
 LAST DEPLOYED: Thu Dec 16 10:24:30 2021
-NAMESPACE: paas-ta-container-platform-source-control
+NAMESPACE: container-platform-source-control
 STATUS: deployed
 REVISION: 1
 TEST SUITE: None
-NAME: paas-ta-container-platform-source-control-broker
+NAME: container-platform-source-control-broker
 LAST DEPLOYED: Thu Dec 16 10:24:31 2021
-NAMESPACE: paas-ta-container-platform-source-control
+NAMESPACE: container-platform-source-control
 STATUS: deployed
 REVISION: 1
 TEST SUITE: None
-NAME: paas-ta-container-platform-source-control-ui
+NAME: container-platform-source-control-ui
 LAST DEPLOYED: Thu Dec 16 10:24:32 2021
-NAMESPACE: paas-ta-container-platform-source-control
+NAMESPACE: container-platform-source-control
 STATUS: deployed
 REVISION: 1
 TEST SUITE: None
@@ -201,7 +201,7 @@ TEST SUITE: None
 
 ```
 # Check Source Control Resource
-$ kubectl get all -n paas-ta-container-platform-source-control
+$ kubectl get all -n container-platform-source-control
 ```
 ```
     
@@ -235,7 +235,7 @@ replicaset.apps/container-platform-source-control-ui-deployment-55dc694d8c      
 To delete the deployed container platform source control resource, follow the script below.<br>
 
 ```
-$ cd ~/workspace/container-platform/paas-ta-container-platform-source-control-deployment/script
+$ cd ~/workspace/container-platform/container-platform-source-control-deployment/script
 $ chmod +x uninstall-container-platform-source-control.sh
 $ ./uninstall-container-platform-source-control.sh
 
@@ -246,12 +246,12 @@ $ ./uninstall-container-platform-source-control.sh
 service "container-platform-source-control-api-service" deleted
 service "container-platform-source-control-manager-service" deleted
 service "container-platform-source-control-ui-service" deleted
-release "paas-ta-container-platform-source-control-api" uninstalled
-release "paas-ta-container-platform-source-control-manager" uninstalled
-release "paas-ta-container-platform-source-control-ui" uninstalled
+release "container-platform-source-control-api" uninstalled
+release "container-platform-source-control-manager" uninstalled
+release "container-platform-source-control-ui" uninstalled
 ...
 ...
-namespace "paas-ta-container-platform-source-control" deleted
+namespace "container-platform-source-control" deleted
 ...
 ...
 ```
