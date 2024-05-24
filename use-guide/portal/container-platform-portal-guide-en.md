@@ -60,7 +60,7 @@ This document describes how to use the Container Platform Portal.
 
 <br>
 
-## <div id='1-2'/> 1.2. 범위
+## <div id='1-2'/> 1.2. Range
 This document describes how to use the Container Platform Portal based on the Windows environment.
 
 <br>
