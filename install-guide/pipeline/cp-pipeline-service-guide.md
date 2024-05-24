@@ -67,24 +67,24 @@ To install the container platform portal, refer to the guide below.
 To deploy a container platform pipeline, images such as sonarqube and postgresql are downloaded from the public network, so they must be installed in an environment where **external network communication** is possible. <br>
 The resources used in idle state upon completion of container platform pipeline installation are as follows.
 ```
-NAME CPU(cores) MEMORY(bytes)
-cp-pipeline-api-deployment-bb6f7bd46-nl4j4 1m 224Mi
-cp-pipeline-broker-deployment-b76b6ff4-l6ndw 2m 189Mi
-cp-pipeline-common-api-deployment-54c646c95c-87k5g 2m 255Mi
-cp-pipeline-config-server-deployment-78675b565d-8kxf9 2m 170Mi
-cp-pipeline-inspection-api-deployment-6bf9c4479d-d6xgb 1m 158Mi
-cp-pipeline-jenkins-deployment-779c6d7bc9-pn782 3m 1319Mi
-cp-pipeline-postgresql-postgresql-0 4m 58Mi
-cp-pipeline-sonarqube-sonarqube-6d9c6b579f-2xkkw 7m 1744Mi
-cp-pipeline-ui-deployment-5db955b77b-snkpl 1m 337Mi
+NAME                                                     CPU(cores)   MEMORY(bytes)
+cp-pipeline-api-deployment-bb6f7bd46-nl4j4               1m           224Mi
+cp-pipeline-broker-deployment-b76b6ff4-l6ndw             2m           189Mi
+cp-pipeline-common-api-deployment-54c646c95c-87k5g       2m           255Mi
+cp-pipeline-config-server-deployment-78675b565d-8kxf9    2m           170Mi
+cp-pipeline-inspection-api-deployment-6bf9c4479d-d6xgb   1m           158Mi
+cp-pipeline-jenkins-deployment-779c6d7bc9-pn782          3m           1319Mi
+cp-pipeline-postgresql-postgresql-0                      4m           58Mi
+cp-pipeline-sonarqube-sonarqube-6d9c6b579f-2xkkw         7m           1744Mi
+cp-pipeline-ui-deployment-5db955b77b-snkpl               1m           337Mi
 ```
 For the cluster environment where the container platform pipeline will be installed, we recommend at least **4Gi** of free memory in the cluster total.<br>
 
 When the container platform pipeline installation is completed, the Persistent Volume usage resources are as follows.
 ```
-NAME STATUS VOLUME CAPACITY ACCESS MODES STORAGE CLASS
-cp-pipeline-jenkins-pv Bound pvc-4bf64900-d25c-482f-9aa3-baa07c11cdd1 20Gi RWO kpaas-cp-storageclass
-data-cp-pipeline-postgresql-postgresql-0 Bound pvc-f61096ac-5e2b-4105-9ed3-04a9a7d999cb 8Gi RWX kpaas-cp-storageclass
+NAME                                       STATUS   VOLUME                                     CAPACITY   ACCESS MODES   STORAGECLASS
+cp-pipeline-jenkins-pv                     Bound    pvc-4bf64900-d25c-482f-9aa3-baa07c11cdd1   20Gi       RWO            kpaas-cp-storageclass
+data-cp-pipeline-postgresql-postgresql-0   Bound    pvc-f61096ac-5e2b-4105-9ed3-04a9a7d999cb   8Gi        RWX            kpaas-cp-storageclass
 ```
 A spare capacity of NFS storage capacity of **28Gi** is recommended for the cluster environment where the container platform pipeline will be installed.<br>
     
