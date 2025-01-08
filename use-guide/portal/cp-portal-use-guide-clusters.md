@@ -5,8 +5,17 @@
 
 1. [Clusters Menu](#1)  
    1.1. [Overview](#1-1)  
-   1.2. [Nodes](#1-2)      
-   1.3. [Namespaces](#1-3)
+   1.1.1. [Get Overview Information](#1-1-1)  
+   1.1.2. [Changing the Overview Cluster](#1-1-2)  
+   1.2. [Nodes](#1-2)  
+   1.2.1. [Get a list of Nodes](#1-2-1)  
+   1.2.2. [Get Node Details](#1-2-2)  
+   1.3. [Namespaces](#1-3)  
+   1.3.1. [Get a list of Namespaces](#1-3-1)  
+   1.3.2. [Get Namespace Details](#1-3-2)  
+   1.3.3. [Create a Namespace](#1-3-3)  
+   1.3.4. [Modify the Namespace](#1-3-4)  
+   1.3.5. [Delete a Namespace](#1-3-5)
 
 <br>
 

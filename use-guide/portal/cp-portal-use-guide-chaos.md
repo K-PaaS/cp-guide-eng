@@ -4,15 +4,15 @@
 
 ## Table of Contents
 
-1. [Chaos Menu](#1)
-   1.1. [Experiments](#1-1)
-   1.1.1. [Get Experiment List](#1-1-1)
-   1.1.2. [Create Experiment](#1-1-2)
+1. [Chaos Menu](#1)  
+   1.1. [Experiments](#1-1)  
+   1.1.1. [Get Experiment List](#1-1-1)  
+   1.1.2. [Create Experiment](#1-1-2)  
    1.1.3. [Experiment Details](#1-1-3)  
-   1.1.4. [Delete Experiment](#1-1-4)
-   1.2. [Events](#1-2)
-   1.2.1. [Get Event](#1-2-1)
-   <br>
+   1.1.4. [Delete Experiment](#1-1-4)  
+   1.2. [Events](#1-2)   
+   1.2.1. [Get Event](#1-2-1)  
+<br>
 
 ## <div id='1'/> 1. Chaos menu
 Chaos provides different types of experiments to simulate anomalies that may actually occur in production (pod termination, network latency, etc.) and monitor the status of the experiment.
@@ -119,7 +119,7 @@ The types of experiments include 'Pod Fault', 'Network Attack', and 'Stress Test
 
 -  Stress Test
 - This is an experiment to load selected Pods by allocating CPU and Memory to them.
-  ![img_10_1_1_1_2_3]
+  ![IMG_10_1_1_2_3]
 - You can load both CPU and Memory, or select one or the other to load.
 - If the duration is longer than 30 seconds, metrics are collected and can be viewed in a chart.
 - Metrics may not be collected smoothly if the resource is not in a healthy state.
@@ -177,7 +177,7 @@ The types of experiments include 'Pod Fault', 'Network Attack', and 'Stress Test
 
 <br>
 
-#### <div id='1-1-3'/> 1.1.3. Experiment 상세 조회
+#### <div id='1-1-3'/> 1.1.3. Experiment Details
 - Click the experiment name in the Experiments list to go to the experiment details page.
   ![IMG_10_1_1_3_1]
 

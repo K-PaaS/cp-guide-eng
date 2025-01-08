@@ -6,9 +6,24 @@
 
 1. [Workloads Menu](#1)  
   1.1. [Deployment](#1-1)  
+   1.1.1. [Get a list of deployments](#1-1-1)    
+   1.1.2. [Get Deployment Details](#1-1-2)  
+   1.1.3. [Create Deployment](#1-1-3)  
+   1.1.4. [Modify the Deployment](#1-1-4)  
+   1.1.5. [Delete a deployment](#1-1-5)   
   1.2. [Pods](#1-2)      
+   1.2.1. [Get a list of pods](#1-2-1)  
+   1.2.2. [View Pod Details](#1-2-2)  
+   1.2.3. [Create a Pod](#1-2-3)  
+   1.2.4. [Modify the Pod](#1-2-4)  
+   1.2.5. [Delete Pod](#1-2-5)  
   1.3. [ReplicaSets](#1-3)  
-       
+   1.3.1. [Get a list of ReplicaSets](#1-3-1)  
+   1.3.2. [Get ReplicaSet Details](#1-3-2)  
+   1.3.3. [Create a ReplicaSet](#1-3-3)  
+   1.3.4. [Modify the ReplicaSet](#1-3-4)  
+   1.3.5. [Delete the ReplicaSet](#1-3-5)
+
 <br>
 
 ## <div id='1'/> 1. Workloads Menu
@@ -69,7 +84,7 @@
 
 <br>
 
-#### <div id='1-2-5'/> 1.2.5. Pod
+#### <div id='1-2-5'/> 1.2.5. Delete Pod
 - Clicking the Delete button in the pod details completes the deletion of the pod.
   ![IMG_3_2_5]
 

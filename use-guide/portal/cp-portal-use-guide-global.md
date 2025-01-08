@@ -5,11 +5,32 @@
 
 1. [Global Menu](#1)  
   1.1. [Overview](#1-1)  
-  1.2. [Clusters](#1-2)      
+   1.1.1. [Get Overview Information](#1-1-1)  
+  1.2. [Clusters](#1-2)  
+   1.2.1. [Get a list of Clusters](#1-2-1)  
+   1.2.2. [Viewing Clusters in Detail](#1-2-2)  
+   1.2.3. [Create Clusters](#1-2-3)  
+   1.2.4. [Registering Clusters](#1-2-4)  
+   1.2.5. [Modify Clusters](#1-2-5)  
   1.3. [Cloud Accounts](#1-3)  
-  1.4. [Instance Code Template](#1-4)    
-  1.5. [SSH Keys](#1-5)           
-     
+   1.3.1. [Get a list of Cloud Accounts](#1-3-1)  
+   1.3.2. [View Cloud Accounts in detail](#1-3-2)  
+   1.3.3. [Create a cloud account](#1-3-3)  
+   1.3.4. [Modify your cloud account](#1-3-4)  
+   1.3.5. [Delete a cloud account](#1-3-5)  
+  1.4. [Instance Code Template](#1-4)  
+   1.4.1. [Get a list of instance code templates](#1-4-1)  
+   1.4.2. [Get Instance Code Template Details](#1-4-2)  
+   1.4.3. [Create an instance code template](#1-4-3)  
+   1.4.4. [Modify the instance code template](#1-4-4)  
+   1.4.5. [Delete the instance code template](#1-4-5)  
+  1.5. [SSH Keys](#1-5)  
+   1.5.1. [Get a list of SSH Keys](#1-5-1)  
+   1.5.2. [Get SSH Keys Details](#1-5-2)  
+   1.5.3. [Generate SSH Keys](#1-5-3)  
+   1.5.4. [Modify SSH Keys](#1-5-4)  
+   1.5.5. [Delete SSH Keys](#1-5-5)
+
 <br>
 
 ## <div id='1'/> 1. Global Menu

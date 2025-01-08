@@ -5,8 +5,18 @@
 ## Table of Contents
 
 1. [Services Menu](#1)  
-  1.1. [Services](#1-1)  
-  1.2. [Ingresses](#1-2)      
+   1.1. [Services](#1-1)  
+   1.1.1. [Get the list of services](#1-1-1)  
+   1.1.2. [Get Service Details](#1-1-2)  
+   1.1.3. [Create a Service](#1-1-3)  
+   1.1.4. [Modify the Service](#1-1-4)  
+   1.1.5. [Delete the Service](#1-1-5)  
+   1.2. [Ingresses](#1-2)  
+   1.2.1. [Get the Ingress list](#1-2-1)  
+   1.2.2. [Ingress Detail Lookup](#1-2-2)  
+   1.2.3. [Create an Ingress](#1-2-3)  
+   1.2.4. [Fix Ingress](#1-2-4)  
+   1.2.5. [Delete Ingress](#1-2-5)
 
 <br>
 

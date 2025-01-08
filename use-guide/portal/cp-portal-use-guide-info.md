@@ -6,7 +6,9 @@
 
 1. [Info Menu](#1)  
   1.1. [Access](#1-1)  
-  1.2. [Private Repository](#1-2)      
+   1.1.1. [Get Access Information](#1-1-1)  
+  1.2. [Private Repository](#1-2)  
+   1.2.1. [Get Private Repository Information](#1-2-1)     
 
 <br>
 
