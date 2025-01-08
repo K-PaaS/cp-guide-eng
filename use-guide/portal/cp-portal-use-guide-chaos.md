@@ -119,7 +119,7 @@ The types of experiments include 'Pod Fault', 'Network Attack', and 'Stress Test
 
 -  Stress Test
 - This is an experiment to load selected Pods by allocating CPU and Memory to them.
-  ![img_10_1_1_1_2_3]
+  ![IMG_10_1_1_2_3]
 - You can load both CPU and Memory, or select one or the other to load.
 - If the duration is longer than 30 seconds, metrics are collected and can be viewed in a chart.
 - Metrics may not be collected smoothly if the resource is not in a healthy state.
