@@ -6,8 +6,8 @@
 
 1. [Storages menu](#1)  
    1.1. [Persistent Volumes](#1-1)  
-      1.1.1. [Get a list of Persistent Volumes](#1-1-1)  
-      1.1.2. [Get Persistent Volume Details](#1-1-2)  
+      1.1.1. [Get a list of Persistent Volumes](#1-1-1)    
+      1.1.2. [Get Persistent Volume Details](#1-1-2)   
       1.1.3. [Create a Persistent Volume](#1-1-3)  
       1.1.4. [Modify a Persistent Volume](#1-1-4)  
       1.1.5. [Delete a Persistent Volume](#1-1-5)  
