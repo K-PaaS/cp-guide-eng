@@ -4,14 +4,14 @@
 
 ## Table of Contents
 
-1. [Chaos Menu](#1)
-  1.1. [Experiments](#1-1)
-  1.1.1. [Get Experiment List](#1-1-1)
-  1.1.2. [Create Experiment](#1-1-2)
-  1.1.3. [Experiment Details](#1-1-3)  
-  1.1.4. [Delete Experiment](#1-1-4)
-  1.2. [Events](#1-2)
-  1.2.1. [Get Event](#1-2-1)
+1. [Chaos Menu](#1)  
+   1.1. [Experiments](#1-1)  
+   1.1.1. [Get Experiment List](#1-1-1)  
+   1.1.2. [Create Experiment](#1-1-2)  
+   1.1.3. [Experiment Details](#1-1-3)  
+   1.1.4. [Delete Experiment](#1-1-4)  
+   1.2. [Events](#1-2)   
+   1.2.1. [Get Event](#1-2-1)  
 <br>
 
 ## <div id='1'/> 1. Chaos menu
@@ -177,7 +177,7 @@ The types of experiments include 'Pod Fault', 'Network Attack', and 'Stress Test
 
 <br>
 
-#### <div id='1-1-3'/> 1.1.3. Experiment 상세 조회
+#### <div id='1-1-3'/> 1.1.3. Experiment Details
 - Click the experiment name in the Experiments list to go to the experiment details page.
   ![IMG_10_1_1_3_1]
 
