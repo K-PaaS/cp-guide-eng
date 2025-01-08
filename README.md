@@ -120,10 +120,7 @@ It covers native Kubernetes installation guides (Kubespray installation, KubeEdg
 ## Use
 
 ### Portal Use Guide
-- Operator Portal
-  + [Operator Portal Use Guide](./use-guide/portal/cp-admin-portal-guide.md)
-- User Portal
-  + [User Portal Use Guide](./use-guide/portal/cp-user-portal-guide.md) 
+- [Portal Use Guide](./use-guide/portal/cp-portal-use-guide.md)
 
 ### Service Use Guide
 - Pipeline Service
