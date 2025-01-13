@@ -1,4 +1,4 @@
-### [Index](https://github.com/K-PaaS/cp-guide-eng) > [CP Use](../Readme.md) >  [Portal Use Guide](./cp-portal-use-guide.md) > Storages menu
+### [Index](https://github.com/K-PaaS/cp-guide-eng) > [CP Use](../README.md) >  [Portal Use Guide](./cp-portal-use-guide.md) > Storages menu
 
 <br>
 
@@ -123,7 +123,7 @@
 
 <br>
 
-### [Index](https://github.com/K-PaaS/cp-guide-eng) > [CP Use](../Readme.md) >  [Portal Use Guide](./cp-portal-use-guide.md) > Storages menu
+### [Index](https://github.com/K-PaaS/cp-guide-eng) > [CP Use](../README.md) >  [Portal Use Guide](./cp-portal-use-guide.md) > Storages menu
 
 [IMG_5_1_1]:../images/portal/IMG_5_1_1.png
 [IMG_5_1_2]:../images/portal/IMG_5_1_2.png

@@ -1,4 +1,4 @@
-### [Index](https://github.com/K-PaaS/cp-guide-eng) > [CP Install](../Readme.md) > Edge Sample Guide
+### [Index](https://github.com/K-PaaS/cp-guide-eng) > [CP Install](../README.md) > Edge Sample Guide
 
 <br>
 
@@ -253,4 +253,4 @@ $ mosquitto_sub -h 127.0.0.1 -t '$hw/events/device/temperature/twin/update' -p 1
 [image 001]:images/edge-v1.2.png
 [image 002]: images/kubeedge-counter-web.png
 
-### [Index](https://github.com/K-PaaS/cp-guide-eng) > [CP Install](../Readme.md) > Edge Sample Guide
+### [Index](https://github.com/K-PaaS/cp-guide-eng) > [CP Install](../README.md) > Edge Sample Guide

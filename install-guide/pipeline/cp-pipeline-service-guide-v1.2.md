@@ -1,4 +1,4 @@
-### [Index](https://github.com/K-PaaS/cp-guide-eng) > [CP Install](../Readme.md) > Pipeline Installation Guide
+### [Index](https://github.com/K-PaaS/cp-guide-eng) > [CP Install](../README.md) > Pipeline Installation Guide
 
 <br>
 
@@ -426,4 +426,4 @@ A setting for retrieving and applying for container platform pipeline service on
 
 <br>
 
-### [Index](https://github.com/K-PaaS/cp-guide-eng) > [CP Install](../Readme.md) > Pipeline Installation Guide
+### [Index](https://github.com/K-PaaS/cp-guide-eng) > [CP Install](../README.md) > Pipeline Installation Guide

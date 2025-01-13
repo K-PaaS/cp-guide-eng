@@ -1,4 +1,4 @@
-### [Index](https://github.com/K-PaaS/cp-guide-eng) > [CP Install](../Readme.md) > Keycloak TLS Setting Guide
+### [Index](https://github.com/K-PaaS/cp-guide-eng) > [CP Install](../README.md) > Keycloak TLS Setting Guide
 
 <br>
 
@@ -140,4 +140,4 @@ KEYCLOAK_URL="https://${K8S_MASTER_NODE_IP}.nip.io:32710"   # Keycloak url (incl
 ```
 <br>
     
-### [Index](https://github.com/K-PaaS/cp-guide-eng) > [CP Install](../Readme.md) > Keycloak TLS Setting Guide
+### [Index](https://github.com/K-PaaS/cp-guide-eng) > [CP Install](../README.md) > Keycloak TLS Setting Guide

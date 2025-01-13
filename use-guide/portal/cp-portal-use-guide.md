@@ -1,4 +1,4 @@
-### [Index](https://github.com/K-PaaS/cp-guide-eng) > [CP Use](../Readme.md) >  Portal Use Guide
+### [Index](https://github.com/K-PaaS/cp-guide-eng) > [CP Use](../README.md) >  Portal Use Guide
 
 <br>
 
@@ -210,7 +210,7 @@ See the guide below to create a subcluster after completing the setup.
 <br>
 
 
-### [Index](https://github.com/K-PaaS/cp-guide-eng) > [CP Use](../Readme.md) >  Portal Use Guide
+### [Index](https://github.com/K-PaaS/cp-guide-eng) > [CP Use](../README.md) >  Portal Use Guide
 
 
 

@@ -1,4 +1,4 @@
-### [Index](https://github.com/K-PaaS/cp-guide-eng) > [CP Use](../Readme.md) >  [Portal Use Guide](./cp-portal-use-guide.md) > Access
+### [Index](https://github.com/K-PaaS/cp-guide-eng) > [CP Use](../README.md) >  [Portal Use Guide](./cp-portal-use-guide.md) > Access
 
 <br>
 
@@ -90,7 +90,7 @@ Access the Keycloak Admin Console and log in to the Keycloak Admin account you f
 
 <br>
 
-### [Index](https://github.com/K-PaaS/cp-guide-eng) > [CP Use](../Readme.md) >  [Portal Use Guide](./cp-portal-use-guide.md) > Access
+### [Index](https://github.com/K-PaaS/cp-guide-eng) > [CP Use](../README.md) >  [Portal Use Guide](./cp-portal-use-guide.md) > Access
 
 
 [image 002]:..//images/portal/cp-002.png

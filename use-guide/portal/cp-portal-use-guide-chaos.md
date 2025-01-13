@@ -1,4 +1,4 @@
-### [Index](https://github.com/K-PaaS/cp-guide-eng) > [CP Use](../Readme.md) >  [Portal Use Guide](./cp-portal-use-guide.md) >  Chaos Menu
+### [Index](https://github.com/K-PaaS/cp-guide-eng) > [CP Use](../README.md) >  [Portal Use Guide](./cp-portal-use-guide.md) >  Chaos Menu
 
 <br>
 
@@ -205,7 +205,7 @@ The types of experiments include 'Pod Fault', 'Network Attack', and 'Stress Test
 
 <br>
 
-### [Index](https://github.com/K-PaaS/cp-guide-eng) > [CP Use](../Readme.md) >  [Portal Use Guide](./cp-portal-use-guide.md) >  Chaos Menu
+### [Index](https://github.com/K-PaaS/cp-guide-eng) > [CP Use](../README.md) >  [Portal Use Guide](./cp-portal-use-guide.md) >  Chaos Menu
 [IMG_10_1_1_1]:../images/portal/IMG_10_1_1_1.png
 [IMG_10_1_1_2_1]:../images/portal/IMG_10_1_1_2_1.png
 [IMG_10_1_1_2_2]:../images/portal/IMG_10_1_1_2_2.png

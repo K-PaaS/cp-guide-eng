@@ -1,4 +1,4 @@
-### [Index](https://github.com/K-PaaS/cp-guide-eng) > [CP Install](/install-guide/Readme.md) > Deployment as a Service Portal Installation Guide
+### [Index](https://github.com/K-PaaS/cp-guide-eng) > [CP Install](/install-guide/README.md) > Deployment as a Service Portal Installation Guide
 
 <br>
 
@@ -609,7 +609,7 @@ When using the container platform, be careful not to use the following prefixes 
 
 <br>
 
-### [Index](https://github.com/K-PaaS/cp-guide-eng) > [CP Install](/install-guide/Readme.md) > 서비스형 배포 포털 설치 가이드
+### [Index](https://github.com/K-PaaS/cp-guide-eng) > [CP Install](/install-guide/README.md) > 서비스형 배포 포털 설치 가이드
 
 [image 001]:./images-v1.2/dp-001.png
 [image 002]:./images-v1.2//cp-002.png

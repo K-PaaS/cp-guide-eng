@@ -1,4 +1,4 @@
-### [Index](https://github.com/K-PaaS/cp-guide-eng) > [CP Install](/install-guide/Readme.md) > Pipeline installation guide
+### [Index](https://github.com/K-PaaS/cp-guide-eng) > [CP Install](/install-guide/README.md) > Pipeline installation guide
 
 <br>
 ## Table of Contents
@@ -326,4 +326,4 @@ $ kubectl get configmap -n cp-portal cp-portal-configmap -o yaml | grep KEYCLOAK
    + [Container Platform Pipeline Use Guide](../../use-guide/pipeline/cp-pipeline-use-guide.md)
 <br>
 
-### [Index](https://github.com/K-PaaS/cp-guide-eng) > [CP Install](/install-guide/Readme.md) > Pipeline installation guide
+### [Index](https://github.com/K-PaaS/cp-guide-eng) > [CP Install](/install-guide/README.md) > Pipeline installation guide

@@ -1,4 +1,4 @@
-### [Index](https://github.com/K-PaaS/cp-guide-eng) > [CP Use](../Readme.md) > Pipeline Service Use Guide
+### [Index](https://github.com/K-PaaS/cp-guide-eng) > [CP Use](../README.md) > Pipeline Service Use Guide
 
 <br>
 
@@ -912,4 +912,4 @@ The selected application/profile information may be deleted from the environment
 
 <br>
 
-### [Index](https://github.com/K-PaaS/cp-guide-eng) > [CP Use](../Readme.md) > Pipeline Service Use Guide
+### [Index](https://github.com/K-PaaS/cp-guide-eng) > [CP Use](../README.md) > Pipeline Service Use Guide

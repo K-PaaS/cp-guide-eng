@@ -1,4 +1,4 @@
-### [Index](https://github.com/K-PaaS/cp-guide-eng) > [CP Install](../Readme.md) > SourceControl Installation Guide
+### [Index](https://github.com/K-PaaS/cp-guide-eng) > [CP Install](../README.md) > SourceControl Installation Guide
 
 <br>
 
@@ -314,4 +314,4 @@ The initial information for accessing the container platform source control is a
 
 <br>
 
-### [Index](https://github.com/K-PaaS/cp-guide-eng) > [CP Install](../Readme.md) > SourceControl Installation Guide
+### [Index](https://github.com/K-PaaS/cp-guide-eng) > [CP Install](../README.md) > SourceControl Installation Guide

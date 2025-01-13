@@ -1,4 +1,4 @@
-### [Index](https://github.com/K-PaaS/cp-guide-eng) > [CP Install](/install-guide/Readme.md) > Standalone deployment portal installation guide
+### [Index](https://github.com/K-PaaS/cp-guide-eng) > [CP Install](/install-guide/README.md) > Standalone deployment portal installation guide
 
 <br>
 
@@ -399,7 +399,7 @@ When using the container platform, be careful not to use the following prefixes 
 
 <br>
 
-### [Index](https://github.com/K-PaaS/cp-guide-eng) > [CP Install](/install-guide/Readme.md) > Standalone deployment portal installation guide
+### [Index](https://github.com/K-PaaS/cp-guide-eng) > [CP Install](/install-guide/README.md) > Standalone deployment portal installation guide
 
 [image 001]:./images-v1.2/cp-001.png
 [image 002]:./images-v1.2//cp-002.png

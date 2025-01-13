@@ -1,4 +1,4 @@
-### [Index](https://github.com/K-PaaS/cp-guide-eng) > [CP Use](../Readme.md) >  [Portal Use Guide](./cp-portal-use-guide.md) > Global Menu
+### [Index](https://github.com/K-PaaS/cp-guide-eng) > [CP Use](../README.md) >  [Portal Use Guide](./cp-portal-use-guide.md) > Global Menu
 <br>
 
 ## Table of Contents
@@ -201,7 +201,7 @@ You can register an SSH key to access subcluster instances through the K-PaaS co
 
 <br>  
 
-### [Index](https://github.com/K-PaaS/cp-guide-eng) > [CP Use](../Readme.md) >  [Portal Use Guide](./cp-portal-use-guide.md) > Global Menu
+### [Index](https://github.com/K-PaaS/cp-guide-eng) > [CP Use](../README.md) >  [Portal Use Guide](./cp-portal-use-guide.md) > Global Menu
 
 [IMG_1_1_1]:../images/portal/IMG_1_1_1.png
 [IMG_1_2_1]:../images/portal/IMG_1_2_1.png

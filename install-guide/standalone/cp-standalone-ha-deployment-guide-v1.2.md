@@ -1,4 +1,4 @@
-### [Index](https://github.com/K-PaaS/cp-guide-eng) > [CP Install](../Readme.md) > 클러스터 설치 가이드 (HA)
+### [Index](https://github.com/K-PaaS/cp-guide-eng) > [CP Install](../README.md) > 클러스터 설치 가이드 (HA)
 
 <br>
 

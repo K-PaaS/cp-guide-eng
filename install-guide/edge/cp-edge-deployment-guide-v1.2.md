@@ -1,4 +1,4 @@
-### [Index](https://github.com/K-PaaS/cp-guide-eng) > [CP Install](../Readme.md) > Edge Installation Guide
+### [Index](https://github.com/K-PaaS/cp-guide-eng) > [CP Install](../README.md) > Edge Installation Guide
 
 <br>
 
@@ -578,4 +578,4 @@ When users create their resources, be careful not to use the following prefixes.
 
 [image 001]:images/edge-v1.2.png
 
-### [Index](https://github.com/K-PaaS/cp-guide-eng) > [CP Install](../Readme.md) > Edge Installation Guide
+### [Index](https://github.com/K-PaaS/cp-guide-eng) > [CP Install](../README.md) > Edge Installation Guide
