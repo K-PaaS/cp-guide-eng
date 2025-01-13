@@ -1,4 +1,4 @@
-### [Index](https://github.com/K-PaaS/cp-guide-eng/blob/master/README.md) > [CP Install](/install-guide/README.md) > CSP 쿠버네티스 서비스 Linkerd 멀티 클러스터 설치 가이드
+### [Index](https://github.com/K-PaaS/cp-guide-eng/blob/master/README.md) > [CP Install](/install-guide/README.md) > CSP Kubernetes Service Linkerd Multi-Cluster Installation Guide
 
 <br>
 
@@ -574,4 +574,4 @@ Hello version: v2, instance: helloworld-v2-f58d4c8cb-mzpsb
 
 <br>
 
-### [Index](https://github.com/K-PaaS/cp-guide-eng/blob/master/README.md) > [CP Install](/install-guide/README.md) > CSP 쿠버네티스 서비스 Linkerd 멀티 클러스터 설치 가이드
+### [Index](https://github.com/K-PaaS/cp-guide-eng/blob/master/README.md) > [CP Install](/install-guide/README.md) > CSP Kubernetes Service Linkerd Multi-Cluster Installation Guide
