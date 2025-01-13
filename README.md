@@ -1,145 +1,142 @@
 # K-PaaS container platform
 
+## Related Repositories
+
 <table>
+<thead>
   <tr>
-    <td colspan=2 align=center>Platform</td>
-    <td colspan=2 align=center><a href="https://github.com/PaaS-TA/paasta-deployment">Application platform</a></td>
-    <td colspan=2 align=center><a href="https://github.com/K-PaaS/container-platform">🚩 Container Platform</a></td>
+    <th width="100">Platforms</th>
+    <th width="250"><a href="https://github.com/K-PaaS/cp-deployment">Container platform</a></th>
+    <th width="250">&nbsp;&nbsp;&nbsp;<a href="https://github.com/K-PaaS/sidecar-deployment.git">Sidecar</a></th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td align="center">Portal</td>
+    <td align="center"><a href="https://github.com/K-PaaS/cp-portal-release">CP Portal</a></td>
+    <td align="center"><a href="https://github.com/K-PaaS/sidecar-deployment/tree/master/install-scripts/portal">Sidecar Portal</a></td>
   </tr>
   <tr>
-    <td colspan=2 rowspan=2 align=center>Portal</td>
-    <td colspan=2 align=center><a href="https://github.com/PaaS-TA/portal-deployment">AP Portal</a></td>
-    <td colspan=2 align=center><a href="./install-guide/container-platform-portal/cp-portal-deployment-standalone-guide.md">CP Portal</a></td>
+    <td rowspan="8">Component <br>/Services</td>
+    <td align="center"><a href="https://github.com/K-PaaS/cp-portal-ui">Portal UI</a></td>
+    <td align="center"><a href="https://github.com/K-PaaS/sidecar-portal-ui">Portal UI</a></td>
   </tr>
-  <tr align=center>
-    <td colspan=4><a href="https://github.com/K-PaaS/PaaS-TA-Monitoring">Monitoring Dashboard</a></td>
+  <tr>
+    <td align="center"><a href="https://github.com/K-PaaS/cp-portal-api">Portal API</a></td>
+    <td align="center"><a href="https://github.com/K-PaaS/sidecar-portal-api">Portal API</a></td>
   </tr>
-  <tr align=center>
-    <td rowspan=2 colspan=2><a href="https://github.com/K-PaaS/monitoring-deployment">Monitoring</a></td>
-    <td><a href="https://github.com/K-PaaS/PaaS-TA-Monitoring-Release">Monitoring</a></td>
-    <td><a href="https://github.com/K-PaaS/paas-ta-monitoring-logsearch-release">Logsearch</a></td>
-    <td><a href="https://github.com/K-PaaS/paas-ta-monitoring-influxdb-release">InfluxDB</a></td>
-    <td><a href="https://github.com/K-PaaS/paas-ta-monitoring-redis-release">Redis</a></td>
+  <tr>
+    <td align="center"><a href="https://github.com/K-PaaS/cp-portal-common-api">Common API</a></td>
+    <td align="center"></td>
   </tr>
-  <tr align=center>
-    <td><a href="https://github.com/K-PaaS/PAAS-TA-PINPOINT-MONITORING-RELEASE">Pinpoint</td>
-    <td><a href="https://github.com/K-PaaS/PAAS-TA-PINPOINT-MONITORING-BUILDPACK">Pinpoint Buildpack</td>
-    <td></td>
-    <td></td>
+  <tr>
+    <td align="center"><a href="https://github.com/K-PaaS/cp-metrics-api">Metric API</a></td>
+    <td align="center"></td>
   </tr>
+  <tr>
+    <td align="center"><a href="https://github.com/K-PaaS/cp-terraman">Terraman API</a></td>
+    <td align="center"></td>
   </tr>
-  <tr align=center>
-    <td rowspan=4 colspan=2><a href="https://github.com/K-PaaS/service-deployment">AP Service</a></td>
-    <td><a href="https://github.com/K-PaaS/PAAS-TA-CUBRID-RELEASE">Cubrid</a></td>
-    <td><a href="https://github.com/K-PaaS/ap-api-gateway-release">Gateway</a></td>
-    <td><a href="https://github.com/K-PaaS/ap-glusterfs-release">GlusterFS</a></td>
-    <td><a href="https://github.com/K-PaaS/ap-app-lifecycle-release">Lifecycle</a></td>
+  <tr>
+    <td align="center"><a href="https://github.com/K-PaaS/cp-catalog-api">Catalog API</a></td>
+    <td align="center"></td>
   </tr>
-  <tr align=center>
-    <td><a href="https://github.com/K-PaaS/PAAS-TA-LOGGING-SERVICE-RELEASE">Logging</a></td>
-    <td><a href="https://github.com/K-PaaS/ap-mongodb-shard-release">MongoDB</a></td>
-    <td><a href="https://github.com/K-PaaS/ap-mysql-release">MySQL</a></td>
-    <td><a href="https://github.com/K-PaaS/ap-pinpoint-release">Pinpoint APM</a></td>
+  <tr>
+    <td align="center"><a href="https://github.com/K-PaaS/cp-chaos-api">Chaos API</a></td>
+    <td align="center"></td>
   </tr>
-  <tr align=center>
-    <td><a href="https://github.com/K-PaaS/ap-pipeline-release">Pipeline</a></td>
-    <td align=center><a href="https://github.com/K-PaaS/ap-rabbitmq-release">RabbitMQ</a></td>
-    <td><a href="https://github.com/K-PaaS/ap-on-demand-redis-release">Redis</a></td>
-    <td><a href="https://github.com/K-PaaS/ap-source-control-release">Source Control</a></td>
+  <tr>
+    <td align="center"><a href="https://github.com/K-PaaS/cp-chaos-collector">Chaos Collector API</a></td>
+    <td align="center"></td>
   </tr>
-  <tr align=center>
-    <td><a href="https://github.com/K-PaaS/ap-web-ide-release">WEB-IDE</a></td>
-    <td></td>
-    <td></td>
-    <td></td>
-  </tr>
-  <tr align=center>
-    <td rowspan=1 colspan=2><a href="https://github.com/K-PaaS/container-platform">CP Service</a></td>
-    <td><a href="./install-guide/pipeline/cp-pipeline-service-guide.md">Pipeline</a></td>
-    <td><a href="./install-guide/source-control/cp-source-control-service-guide.md">Source Control</a></td>
-    <td></td>
-    <td></td>
-  </tr>
-</table>
+</tbody></table>
 <i>🚩 You are here.</i>
+
+## Notice
+#### The path of the release has changed from https://nextcloud.paas-ta.org/ to https://nextcloud.k-paas.org/
 
 
 <br>
 
-## 소개
-It covers native Kubernetes installation guides (Kubespray installation, KubeEdge installation) and installation and usage guides on how to deploy and use the container platform on Kubernetes.
+## Introduction
+It covers guides to installing native Kubernetes (installing Kubespray, installing KubeEdge), as well as guides to various installation methods and utilization guides on how you can deploy and use container platforms on Kubernetes.
+
 <br>
 
 ## Install
 
-### Standalone Deployment   
-- Cluster Installation
-  + [Cluster Installation Guide](./install-guide/standalone/cp-cluster-install.md)
-  + [Installation and Deployment File](https://github.com/K-PaaS/cp-deployment/tree/master/standalone)
-- Portal Installation
-  + [Portal Installation Guide](./install-guide/container-platform-portal/cp-portal-deployment-standalone-guide.md)  
-  + [Keycloak TLS Setting Guide](./install-guide/container-platform-portal/cp-portal-deployment-keycloak-tls-setting-guide.md)  
-  + [Installation and Deployment File](https://github.com/K-PaaS/cp-portal-release)  
-  + [Release File](https://github.com/K-PaaS/cp-portal-release/tree/master/portal)
-- Service Installation
-  + [Pipeline Installation Guide](./install-guide/pipeline/cp-pipeline-standalone-guide.md)
-  + [SourceControl Installation Guide](./install-guide/source-control/cp-source-control-standalone-guide.md)
+### Single Cloud Deployment
+- Installing a cluster
+  + [Cluster installation guide](install-guide/standalone/cp-cluster-install-single.md)
+- Installing the portal
+  + [Portal installation guide](install-guide/portal/cp-portal-standalone-guide.md)
+  + [Installation and deployment files](https://github.com/K-PaaS/cp-helm-chart)
+  + [Release files](https://github.com/K-PaaS/cp-portal-release)
+- Installing services
+  + [Pipeline installation guide](install-guide/pipeline/cp-pipeline-standalone-guide.md)
+  + [Source control installation guide](install-guide/source-control/cp-source-control-standalone-guide.md)
+- Kubeflow Tutorials
+  + [Kubeflow Pipeline Tutorial Guide](install-guide/standalone/cp-kubeflow-sample-guide.md)
 
-### Service Deployment
-- Cluster Installation
-  + [Cluster Installation Guide](./install-guide/standalone/cp-cluster-install.md)  
-  + [Installation and Deployment File](https://github.com/K-PaaS/cp-deployment/tree/master/standalone)
-- Portal Installation
-  + [Portal Installation Guide](./install-guide/container-platform-portal/cp-portal-deployment-service-guide.md)
-  + [Keycloak TLS Setting Guide](./install-guide/container-platform-portal/cp-portal-deployment-keycloak-tls-setting-guide.md)  
-  + [Installation and Deployment File](https://github.com/K-PaaS/cp-portal-release)     
-  + [Release File](https://github.com/K-PaaS/cp-portal-release)
-- Service Installation
-  + [Pipeline Installation Guide](./install-guide/pipeline/cp-pipeline-service-guide.md)
-  + [SourceControl Installation Guide](./install-guide/source-control/cp-source-control-service-guide.md)
+### Multi Cloud Deployment
+- Installing a cluster
+  + [Cluster installation guide](install-guide/standalone/cp-cluster-install-multi.md)
+- Installing the portal
+  + [Portal installation guide](install-guide/portal/cp-portal-standalone-guide-mc.md)
+  + [Installation and deployment files](https://github.com/K-PaaS/cp-helm-chart)
+  + [Release files](https://github.com/K-PaaS/cp-portal-release)
+- Installing services
+  + [Pipeline installation guide](install-guide/pipeline/cp-pipeline-standalone-guide.md)
+  + [Source control installation guide](install-guide/source-control/cp-source-control-standalone-guide.md)
+- Leveraging the container platform Kubernetes
+  + [Linkerd Installation Guide](install-guide/multicluster/cp-linkerd-install.md)
+  + [Karmada Installation Guide](install-guide/multicluster/cp-karmada-install.md)
+- Utilize CSP Kubernetes Service
+  + [Istio Multi-Cluster Configuration Guide](install-guide/csp/cp-csp-istio-guide.md)
+  + [Linkerd Multi-Cluster Configuration Guide](install-guide/csp/cp-csp-linkerd-guide.md)
 
 ### Edge Deployment
-- Edge Installation
-  + [Edge Installation Guide](./install-guide/edge/cp-edge-install.md)
-  + [Installation and Deployment File](https://github.com/K-PaaS/cp-deployment/tree/master/edge)
-- Portal Installation
-  + [Portal Installation Guide](./install-guide/container-platform-portal/cp-portal-deployment-standalone-guide.md)
-  + [Keycloak TLS Setting Guide](./install-guide/container-platform-portal/cp-portal-deployment-keycloak-tls-setting-guide.md)  
-  + [Installation and Deployment File](https://github.com/K-PaaS/cp-portal-release)     
-  + [Release File](https://github.com/K-PaaS/cp-portal-release)
-- Service Installation
-  + [Pipeline Installation Guide](./install-guide/pipeline/cp-pipeline-service-guide.md)
-  + [SourceControl Installation Guide](./install-guide/source-control/cp-source-control-service-guide.md)
-- Sample Model
-  + [Web Counting / Real-time Temperature Collect](./install-guide/edge/cp-edge-sample-guide.md)
-
+- Install Edge
+  + [Edge installation guide](install-guide/edge/cp-edge-install.md)
+- Installing the portal
+  + [Portal installation guide](install-guide/portal/cp-portal-standalone-guide.md)
+  + [Installation and deployment files](https://github.com/K-PaaS/cp-helm-chart/tree/master)
+  + [Release files](https://github.com/K-PaaS/cp-portal-release/tree/master)
+- Installing services
+  + [Pipeline installation guide](install-guide/pipeline/cp-pipeline-standalone-guide.md)
+  + [Source control installation guide](install-guide/source-control/cp-source-control-standalone-guide.md)
+- Sample models
+  + [Web counting / real-time temperature collection](install-guide/edge/cp-edge-sample-guide.md)
 
 
 <br>
 
 ## Use
 
-### Portal Use Guide
-- [Portal Use Guide](./use-guide/portal/cp-portal-use-guide.md)
+### Portal user guide
++ [Portal user guide](use-guide/portal/cp-portal-use-guide.md)
++ [Terraman User Guide](use-guide/terraman/cp-terraman-guide.md)
 
-### Service Use Guide
-- Pipeline Service
-  + [Pipeline Service Use Guide](./use-guide/pipeline/cp-pipeline-use-guide.md)
-- Source Control Service
-  + [Source Control Service Use Guide](./use-guide/source-control/cp-source-control-use-guide.md)
+### Service usage guide
+- Pipeline services
+  + [Pipeline Service User Guide](use-guide/pipeline/cp-pipeline-use-guide.md)
+- Source Control Services
+  + [Source Control Services User Guide](use-guide/source-control/cp-source-control-use-guide.md)
 
 
 <br>
 
 ## Project
 
-### portal project 
-- [container-platform-api](https://github.com/K-PaaS/cp-portal-release/tree/v1.4.x/portal/paas-ta-container-platform-api)  
-- [container-platform-common-api](https://github.com/K-PaaS/cp-portal-release/tree/v1.4.x/portal/paas-ta-container-platform-common-api)
-- [container-platform-webadmin](https://github.com/K-PaaS/cp-portal-release/tree/v1.4.x/portal/paas-ta-container-platform-webadmin)
-- [container-platform-webuser](https://github.com/K-PaaS/cp-portal-release/tree/v1.4.x/portal/paas-ta-container-platform-webuser)
-- [container-platform-portal-service-broker](https://github.com/K-PaaS/cp-portal-release/tree/v1.4.x/service-broker/paas-ta-container-platform-admin-service-broker)
-
+### Portal projects
+- [cp-portal-ui](https://github.com/K-PaaS/cp-portal-ui)
+- [cp-portal-api](https://github.com/K-PaaS/cp-portal-api)
+- [cp-portal-common-api](https://github.com/K-PaaS/cp-portal-common-api)
+- [cp-metrics-api](https://github.com/K-PaaS/cp-metrics-api)
+- [cp-terraman](https://github.com/K-PaaS/cp-terraman)
+- [cp-catalog-api](https://github.com/K-PaaS/cp-catalog-api)
+- [cp-chaos-api](https://github.com/K-PaaS/cp-chaos-api)
+- [cp-chaos-collector](https://github.com/K-PaaS/cp-chaos-collector)
 
 <br>
 
@@ -151,6 +148,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 <!-- markdownlint-disable -->
 <table>
   <tr>
+    <td align="center"><a href="https://github.com/Luna77877"><img src="https://avatars.githubusercontent.com/u/107905603?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Luna</b></sub></a><br /><a href="#ideas-luna77877" title="Ideas, Planning, & Feedback">💻👀</a></td>
     <td align="center"><a href="https://github.com/jinyung0101java2"><img src="https://avatars.githubusercontent.com/u/67574725?v=4?s=100" width="100px;" alt=""/><br /><sub><b>JinYoung Jang</b></sub></a><br /><a href="https://github.com/PaaS-TA/paas-ta-container-platform/commits?author=jinyung0101java2" title="Code">💻</a> <a href="https://github.com/PaaS-TA/paas-ta-container-platform/pulls?q=is&Apr+reviewed-by&jinyung0101java2" title="Reviewed Pull Requests">👀</a></td>
     <td align="center"><a href="https://github.com/hoon77"><img src="https://avatars.githubusercontent.com/u/33216551?v=4?s=100" width="100px;" alt=""/><br /><sub><b>JiHoon Kang</b></sub></a><br /><a href="https://github.com/PaaS-TA/paas-ta-container-platform/commits?author=hoon77" title="Code">💻</a> <a href="https://github.com/PaaS-TA/paas-ta-container-platform/pulls?q=is&Apr+reviewed-by&hoon77" title="Reviewed Pull Requests">👀</a></td>
     <td align="center"><a href="https://github.com/suslmk-lee"><img src="https://avatars.githubusercontent.com/u/67575226?v=4?s=100" width="100px;" alt=""/><br /><sub><b>suslmk</b></sub></a><br /><a href="#maintenance-suslmk" title="Maintenance">🚧</a></td>
@@ -177,7 +175,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 <!-- prettier-ignore-end -->
 
 <!-- ALL-CONTRIBUTORS-LIST:END -->
- 
+
 <br>
 
 ## License
