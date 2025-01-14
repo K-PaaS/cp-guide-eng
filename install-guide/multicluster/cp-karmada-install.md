@@ -1,59 +1,59 @@
-### [Index](https://github.com/K-PaaS/container-platform/blob/master/README.md) > [CP Install](https://github.com/K-PaaS/container-platform/blob/master/install-guide/Readme.md) > K-PaaS 컨테이너 플랫폼 Karmada 설치 가이드
+### [Index](https://github.com/K-PaaS/cp-guide-eng/blob/master/README.md) > [CP Install](/install-guide/README.md) > K-PaaS Container Platform Karmada Installation Guide
 
 <br>
 
 ## Table of Contents
 
-1. [문서 개요](#1)<br>
-  1.1. [목적](#1.1)<br>
-  1.2. [범위](#1.2)<br>
-  1.3. [시스템 구성도](#1.3)<br>
-  1.4. [참고 자료](#1.4) 
+1. [Document Overview](#1)<br>
+   1.1. [Purpose](#1.1)<br>
+   1.2. [Scope](#1.2)<br>
+   1.3. [System configuration diagram](#1.3)<br>
+   1.4. [Reference Material](#1.4)<br>
 
 2. [Prerequisite](#2)
 
-3. [Karmada 설치](#3)<br>
-  3.1. [Karmadactl 설치](#3.1)<br>
-  3.1.1. [Karmada 최신 릴리즈 다운로드](#3.1.1)<br>
-  3.1.2. [Karmada Control Plane 설치](#3.1.2)<br>
-  3.1.3. [Karmada Context 설정](#3.1.3)<br>
-  3.2. [Member 클러스터 설정](#3.2)<br>
-  3.2.1. [Config 파일 설정](#3.2.1)<br>
-  3.2.2. [Member 클러스터 등록](#3.2.2)
+3. [Install Karmada](#3)<br>
+  3.1. [Install Karmada](#3.1)<br>
+  3.1.1. [Download the latest release of Karmada](#3.1.1)<br>
+  3.1.2. [Karmada Control Plane Installation](#3.1.2)<br>
+  3.1.3. [Karmada Context Settings](#3.1.3)<br>
+  3.2. [Setting up a Member cluster](#3.2)<br>
+  3.2.1. [Config file settings](#3.2.1)<br>
+  3.2.2. [Register a Member cluster](#3.2.2)
 
-4. [샘플 애플리케이션 배포](#4)<br>
-  4.1. [PropagationPolicy 정책 생성 및 배포](#4.1)<br>
-  4.2. [샘플 yaml 생성](#4.2)<br>
-  4.3. [샘플 애플리케이션 확인](#4.3)<br>
+4. [Deploy the sample application](#4)<br>
+  4.1. [Creating and deploying PropagationPolicy policies](#4.1)<br>
+  4.2. [Generate sample YAML](#4.2)<br>
+  4.3. [Check out the sample application](#4.3)<br>
 
-5. [멀티 클러스터 샘플 애플리케이션 배포](#5)<br>
-  5.1 [namespace 생성](#5.1)<br>
-  5.2 [Karmada Propagationpolicy 생성](#5.2)<br>
-  5.3 [예제 코드 생성](#5.3)<br>
-	5.4 [실습 애플리케이션 동작 확인](#5.4)
-
-<br>
-
-## <div id='1'> 1. 문서 개요
-
-### <div id='1.1'> 1.1. 목적
-본 문서 (K-PaaS 컨테이너 플랫폼 Karmada 설치 가이드) 는 기획자, 개발자, 운영자 지원 환경의 개방형 PaaS 플랫폼인 K-PaaS 컨테이너 플랫폼의 클러스터에 Karmada를 설치하여 `멀티 클러스터`를 구성하는 방법을 기술하였다.
+5. [Deploy a multi-cluster sample application](#5)<br>
+  5.1 [Create a namespace](#5.1)<br>
+  5.2 [Create Karmada Propagationpolicy](#5.2)<br>
+  5.3 [Generate example code](#5.3)<br>
+  5.4 [Verify lab application behavior](#5.4)
 
 <br>
 
-### <div id='1.2'> 1.2. 범위
-설치 범위는 K-PaaS 컨테이너 플랫폼 환경의 기반이 되는 클러스터 설치를 `멀티 클라우드` 환경 기준으로 설치한 후 Karmada를 이용하여 `멀티 클러스터`를 구성하도록 작성하였다.
+## <div id='1'> 1. Document Overview
+
+### <div id='1.1'> 1.1. Purpose
+This document (K-PaaS Container Platform Karmada Installation Guide) describes how to install Karmada on a cluster of the K-PaaS Container Platform, an open PaaS platform for planners, developers, and operators, to form a `multi-cluster`.
 
 <br>
 
-### <div id='1.3'> 1.3. 시스템 구성도
-시스템 구성은 쿠버네티스 3개의 `멀티 클러스터` (Control Plane, Worker) 환경으로 구성되어 있다. (2개의 멀티 클러스터, 1개의 Karmada Host 클러스터)
-
-K-PaaS 컨테이너 플랫폼 Deployment를 통해 쿠버네티스 `멀티 클러스터`를 구성하고 추가로 Karmada Host 클러스터 용도로 `단일 클러스터`를 구성한다.
+### <div id='1.2'> 1.2. Scope
+The scope of the installation is to install the cluster installation that is the basis of the K-PaaS container platform environment as a `multi-cloud` environment and then configure a `multi-cloud` using Karmada.
 
 <br>
 
-### <div id='1.4'> 1.4. 참고 자료
+### <div id='1.3'> 1.3. System configuration diagram
+The system configuration consists of three Kubernetes `multi-cluster` environments (Control Plane, Worker). (2 multi-cluster, 1 Karmada Host cluster)
+
+Configure a Kubernetes `multi-cluster` with K-PaaS Container Platform Deployment and additionally configure a `single cluster` for the Karmada Host cluster.
+
+<br>
+
+### <div id='1.4'> 1.4. Reference Material
 > https://karmada.io/<br>
 > https://github.com/karmada-io/karmada
 
@@ -61,38 +61,38 @@ K-PaaS 컨테이너 플랫폼 Deployment를 통해 쿠버네티스 `멀티 클�
 
 ## <div id='2'> 2. Prerequisite
 
-### K-PaaS 컨테이너 플랫폼 클러스터
-K-PaaS 컨테이너 플랫폼 클러스터 설치는 아래 가이드를 참고한다.
+### K-PaaS Container Platform Clusters
+To install a K-PaaS Container Platform cluster, see the guide below.
 
-> [K-PaaS 컨테이너 플랫폼 멀티 클러스터 설치 가이드](https://github.com/K-PaaS/container-platform/blob/master/install-guide/standalone/cp-cluster-install-multi.md)<br>
-> [K-PaaS 컨테이너 플랫폼 클러스터 설치 가이드](https://github.com/K-PaaS/container-platform/blob/master/install-guide/standalone/cp-cluster-install-single.md)
+> [K-PaaS Container Platform Multi-Cluster Installation Guide](https://github.com/K-PaaS/cp-guide-eng/tree/branch/master/install-guide/standalone/cp-cluster-install-multi.md)<br>
+> [K-PaaS Container Platform Cluster Installation Guide](https://github.com/K-PaaS/cp-guide-eng/tree/branch/master/install-guide/standalone/cp-cluster-install-single.md)
 
 <br>
 
-## <div id='3'> 3. Karmada 설치
+## <div id='3'> 3. Install Karmada
 
-### <div id='3.1'> 3.1. Karmadactl 설치
+### <div id='3.1'> 3.1. Install Karmada
 
-### <div id='3.1.1'> 3.1.1. Karmada 최신 릴리즈 다운로드
-karmada v1.7.0 릴리즈를 다운로드한다.
+### <div id='3.1.1'> 3.1.1. Download the latest release of Karmada
+Download the karmada v1.7.0 release.
 ```bash
 $ curl -s https://raw.githubusercontent.com/karmada-io/karmada/master/hack/install-cli.sh | sudo INSTALL_CLI_VERSION=1.7.0 bash
 ```
 
 <br>
 
-### <div id='3.1.2'> 3.1.2. Karmada Control Plane 설치
-Karmada Control Plane 설치를 진행한다.<br>
-Karmada의 etcd는 K-PaaS 컨테이너 플랫폼의 스토리지 클래스를 사용하여 안정적인 데이터 저장을 보장한다.
+### <div id='3.1.2'> 3.1.2. Karmada Control Plane Installation
+Proceed with the Karmada Control Plane installation.<br>
+Karmada's etcd uses the K-PaaS container platform's storage classes to ensure reliable data storage.
 ```bash
 $ sudo karmadactl init --etcd-storage-mode PVC --storage-classes-name {STORAGE_CLASS_NAME} --kubeconfig={KUBE_CONFIG_PATH}
 
-## 예시
+## Example
 $ sudo karmadactl init --etcd-storage-mode PVC --storage-classes-name cp-storageclass --kubeconfig=/home/ubuntu/.kube/config
 ```
 
 ```bash
-## Karmada 설치 과정
+## Karmada Installation Process
 I1109 13:37:22.987256  106456 deploy.go:184] kubeconfig file: /home/ubuntu/.kube/config, kubernetes: https://127.0.0.1:6443
 I1109 13:37:23.006789  106456 deploy.go:204] karmada apiserver ip: [172.16.11.106]
 I1109 13:37:23.355645  106456 cert.go:229] Generate ca certificate success.
@@ -145,7 +145,7 @@ Step 2: Show members of karmada
 
 <br>
 
-Karmada-System 네임스페이스를 확인한다.
+Check the Karmada-System namespace.
 ```bash
 $ kubectl get all -n karmada-system
 NAME                                                READY   STATUS    RESTARTS   AGE
@@ -186,8 +186,8 @@ statefulset.apps/etcd   1/1     3m31s
 
 <br>
 
-### <div id='3.1.3'> 3.1.3. Karmada Context 설정
-클러스터의 기본 Context 외 Karmada Context를 추가 및 설정한다.
+### <div id='3.1.3'> 3.1.3. Karmada Context Settings
+Add and set up a Karmada context in addition to the cluster's default context.
 ```bash
 $ sudo cp /etc/karmada/karmada-apiserver.config ~/.kube
 $ export KUBECONFIG=~/.kube/config:~/.kube/karmada-apiserver.config
@@ -205,22 +205,22 @@ Switched to context "karmada-apiserver".
 
 <br>
 
-### <div id='3.2'> 3.2. Member 클러스터 설정
+### <div id='3.2'> 3.2. Setting up a Member cluster
 
-### <div id='3.2.1'> 3.2.1. Config 파일 설정
-멀티 클러스터의 Kube Config 파일을 Karmada Host 클러스터의 다음 경로에 위치시킨다.<br>
-Member 클러스터의 Kube Config 파일은 각 클러스터의 `$HOME/.kube/config` 에 저장되어 있다.<br>
+### <div id='3.2.1'> 3.2.1. Config file settings
+Place the Kube Config file for your multi-cluster in the following path on your Karmada Host cluster<br>
+The Kube Config file for the Member cluster is stored in `$HOME/.kube/config` on each cluster.<br>
 ```bash
 $ mkdir -p $HOME/.kube/member
 
-## Config 파일 복사 후 조회
+## Copy and view the Config file
 $ ls /home/ubuntu/.kube/member
 member1_config member2_config
 ```
 
 <br>
 
-member1_cofing 파일 예시
+member1_cofing file example
 ```bash
 $ vi member1_config
 ```
@@ -254,7 +254,7 @@ preferences: {}
 
 <br>
 
-member2_config 파일 예시
+Example member2_config file
 ```bash
 $ vi member2_config
 ```
@@ -287,12 +287,12 @@ kind: Config
 
 <br>
 
-#### <div id='3.2.2'> 3.2.2. Member 클러스터 등록 
-복사한 Kube Config 파일을 이용하여 Karmada Host 클러스터에서 각 클러스터를 Member 클러스터로 등록한다.
+#### <div id='3.2.2'> 3.2.2. Register a Member cluster
+Using the copied Kube Config file, register each cluster as a Member cluster in the Karmada Host cluster.
 
 <br>
 
-Member1 Cluster를 등록한다.
+Register the Member1 cluster.
 ```bash
 $ karmadactl join member1 --cluster-kubeconfig=/home/ubuntu/.kube/member/member1_config
 cluster(member1) is joined successfully
@@ -300,7 +300,7 @@ cluster(member1) is joined successfully
 
 <br>
 
-Member2 Cluster를 등록한다.
+Register the Member2 cluster.
 ```bash
 $ karmadactl join member2 --cluster-kubeconfig=/home/ubuntu/.kube/member/member2_config
 cluster(member2) is joined successfully
@@ -308,7 +308,7 @@ cluster(member2) is joined successfully
 
 <br>
 
-등록한 Member Cluster를 확인한다.
+View the Member Clusters you've registered.
 ```bash
 $ kubectl get clusters
 NAME      VERSION   MODE   READY   AGE
@@ -318,10 +318,10 @@ member2   v1.27.5   Push   True    4m4s
 
 <br>
 
-## <div id='4'> 4. 샘플 애플리케이션 배포
+## <div id='4'> 4. Deploy the sample application
 
-### <div id='4.1'> 4.1. PropagationPolicy 정책 생성 및 배포 
-샘플 애플리케이션 확인을 위해 PropagationPolicy 정책을 생성한다.
+### <div id='4.1'> 4.1. Creating and deploying PropagationPolicy policies
+Create a PropagationPolicy policy to verify the sample application.
 
 ```bash
 $ vi propagationpolicy.yaml
@@ -331,17 +331,17 @@ $ vi propagationpolicy.yaml
 apiVersion: policy.karmada.io/v1alpha1
 kind: PropagationPolicy
 metadata:
-name: example-policy # The default namespace is `default`.
+  name: example-policy # The default namespace is `default`.
 spec:
-resourceSelectors:
-- apiVersion: apps/v1
-  kind: Deployment
-  name: nginx # If no namespace is specified, the namespace is inherited from the parent object scope.
-placement:
-clusterAffinity:
-  clusterNames:
-  - member1
-  - member2
+  resourceSelectors:
+    - apiVersion: apps/v1
+      kind: Deployment
+      name: nginx # If no namespace is specified, the namespace is inherited from the parent object scope.
+  placement:
+    clusterAffinity:
+      clusterNames:
+        - member1
+        - member2
 ```
 
 ```bash
@@ -351,8 +351,8 @@ propagationpolicy.policy.karmada.io/example-policy created
 
 <br>
 
-### <div id='4.2'> 4.2. 샘플 yaml 생성
-샘플 애플리케이션을 배포한다.
+### <div id='4.2'> 4.2. Generate sample YAML
+Deploy the sample application.
 ```bash
 $ vi nginx.yaml
 ```
@@ -361,22 +361,22 @@ $ vi nginx.yaml
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-name: nginx
-labels:
-app: nginx
-spec:
-replicas: 2
-selector:
-matchLabels:
-  app: nginx
-template:
-metadata:
+  name: nginx
   labels:
-  app: nginx
+    app: nginx
 spec:
-  containers:
-  - image: nginx
-    name: nginx
+  replicas: 2
+  selector:
+    matchLabels:
+      app: nginx
+  template:
+    metadata:
+      labels:
+        app: nginx
+    spec:
+      containers:
+        - image: nginx
+          name: nginx
 ```
 
 ```bash
@@ -386,8 +386,8 @@ deployment.apps/nginx created
 
 <br>
 
-### <div id='4.3'> 4.3. 샘플 애플리케이션 확인
-샘플 애플리케이션이 Member 클러스터에 정상 배포되었는지 확인한다.
+### <div id='4.3'> 4.3. Check out the sample application
+Verify that the sample application is successfully deployed to the Member cluster.
 
 ```bash
 $ karmadactl get deployment -l app=nginx
@@ -398,19 +398,19 @@ nginx   member2   2/2     2            2           12s   Y
 
 <br>
 
-## <div id='5'> 5. 멀티 클러스터 샘플 애플리케이션 배포
-karmada를 활용해 클러스터 member1, member2의 멀티 클러스터 통신 확인을 위한 샘플 앱을 배포한다.<br>
-그 후 Cluster의 Install VM으로 이동해 각 클러스터간의 통신을 체크해본다.<br>
+## <div id='5'> 5. Deploy a multi-cluster sample application
+Deploy a sample app to check the multi-cluster communication of cluster member1 and member2 using karmada.<br>
+Then go to the Install VMs in the cluster and check the communication between each cluster.<br>
 <br>
-먼저 실습을 위한 경로를 생성한다.<br>
+First, create a path for the lab.<br>
 ```bash
-# 실습 경로 생성 
+# Create a lab path
 $ mkdir $HOME/samples
 $ cd samples
 ```
 
-### <div id='5.1'> 5.1. Namespace 생성
-샘플 애플리케이션 배포를 위한 namespace를 생성한다.
+### <div id='5.1'> 5.1. Create a namespace
+Create a namespace for deploying the sample application.
 
 ```bash
 $ vi namespace.yaml
@@ -424,13 +424,13 @@ metadata:
 ```
 
 ```bash
-# 네임스페이스 생성
+# Create a namespace
 $ kubectl apply -f namespace.yaml
 ```
 <br>
 
-### <div id='5.2'> 5.2. Propagationpolicy 생성
-샘플 애플리케이션 확인을 위해 PropagationPolicy 정책을 생성한다.<br>
+### <div id='5.2'> 5.2. Create Karmada Propagationpolicy
+Create a PropagationPolicy policy to verify the sample application.<br>
 
 ```bash
 $ vi propagationpolicy.yaml
@@ -493,13 +493,13 @@ spec:
 ```
 
 ```bash
-# 앞서 생성한 namespace에 배포한다
+# Deploy to the namespace you created earlier
 $ kubectl apply -f propagationpolicy.yaml -n sample
 ```
 <br>
 
-### <div id='5.3'> 5.3. 예제 코드 생성
-`member1`에 helloworld(v1), `member2`에 helloworld(v2) Application을 배포한다.<br>
+### <div id='5.3'> 5.3. Generate example code
+Deploy the helloworld(v1) Application to `member1` and the helloworld(v2) Application to `member2`.<br>
 
 ```bash
 $ vi helloworld.yaml
@@ -587,7 +587,7 @@ $ kubectl apply -f helloworld.yaml
 ```
 <br>
 
-sleep application을 배포한다. 
+Deploy the sleep application.
 
 
 
@@ -656,9 +656,9 @@ $ kubectl apply -f sleep.yaml
 <br>
 
 
-### <div id='5.4'> 5.4. 실습 애플리케이션 동작 확인
-`sample` namespace에 배포된 리소스를 확인한다.<br>
-`member1`에는 helloworld(v1)이, `member2`에는 helloworld(v2)가 배포됨을 알 수 있다.<br>
+### <div id='5.4'> 5.4. Verify lab application behavior
+View the resources deployed in the `sample` namespace.<br>
+You can see that `member1` is deployed with helloworld(v1) and `member2` is deployed with helloworld(v2).<br>
 
 ```bash
 $ karmadactl get all -n sample
@@ -688,16 +688,16 @@ replicaset.apps/helloworld-v2-79d5467d55   member2   1         1         1      
 replicaset.apps/sleep-9454cc476            member2   1         1         1       19m
 ```
 
-### Helloworld 통신 테스트<br>
-:bulb: **최종 확인을 위해 Member1 Cluster의 Install VM으로 이동한다**
+### Testing Helloworld communication<br>
+:bulb: **For final verification, navigate to the Install VM in the Member1 Cluster**
 
 ```bash
-# 통신 체크를 위한 각 cluster의 변수 설정
+# Setting variables on each cluster for communication checks
 $ export CTX_CLUSTER1=cluster1
 $ export CTX_CLUSTER2=cluster2
 ```
 
-`TrafficSplit`을 통해 `cluster1`의 helloworld-v1, `cluster2`의 hellodworld-v2로 트래픽이 분활되어 통신 되는 것을 확인 할 수 있다.
+You can see that the traffic is split and communicated to helloworld-v1 in `cluster1` and hellodworld-v2 in `cluster2` via `TrafficSplit`.
 ```bash
 $ $ kubectl exec --context="${CTX_CLUSTER1}" -n sample -c sleep \
     "$(kubectl get pod --context="${CTX_CLUSTER1}" -n sample -l \
@@ -717,4 +717,4 @@ Hello version: v1, instance: helloworld-v1-b6c45f55-gz5qb
 ```
 
 
-### [Index](https://github.com/K-PaaS/container-platform/blob/master/README.md) > [CP Install](https://github.com/K-PaaS/container-platform/blob/master/install-guide/Readme.md) > K-PaaS 컨테이너 플랫폼 Karmada 설치 가이드
+### [Index](https://github.com/K-PaaS/cp-guide-eng/blob/master/README.md) > [CP Install](/install-guide/README.md) > K-PaaS Container Platform Karmada Installation Guide
