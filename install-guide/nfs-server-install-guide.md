@@ -1,90 +1,116 @@
-### [Index](https://github.com/K-PaaS/cp-guide-eng) > [CP Install](../README.md) > NFS Server Installation
+### [Index](https://github.com/K-PaaS/cp-guide-eng/blob/master/README.md) > [CP Install](/install-guide/README.md) > NFS Server Installation Guide
 
+<br>
 
-# NFS Server Installation
+# Installing an NFS server
+
+<br>
 
 ## Table of Contents
 
-1. [Document Outline](#1)  
-  1.1. [Purpose](#1.1)  
-  1.2. [Range](#1.2)  
+1. [Document Outline](#1)<br>  
+  1.1. [Purpose](#1.1)<br>  
+  1.2. [Scope](#1.2)  
 
-2. [NFS Server Installation](#2)  
-  2.1. [Prerequisite](#2.1)  
-  2.2. [Installation](#2.2)  
-  2.3. [Operation Check](#2.3)
+2. [NFS Server Installation](#2)<br>  
+  2.1. [Prerequisite](#2.1)<br>  
+  2.2. [Installation](#2.2)<br>  
+  2.3. [Verify behavior](#2.3)
 
 <br>
 
 ## <div id='1'> 1. Document Outline
 
 ### <div id='1.1'> 1.1. Purpose
-This document (Kubespray Installation Guide) describes how to upgrade the open PaaS platform and install NFS Storage Server for all environments for the container platform deployed in Open PaaS based on developer-enabled environments.
-
-Starting with PaaS-TA 6.0, storage to be used as a Persistence Volume is necessary if you want to install services for container platforms in a basic cluster deployed by Kuberpray.
+This document (NFS Server Installation Guide) describes how to install NFS Server to configure the storage environment of K-PaaS Container Platform, an open PaaS platform for planners, developers, and operators.
 
 <br>
 
-### <div id='1.2'> 1.2. Range
-The installation range was prepared based on the basic installation of Kubespray to verify Kubernetes Native.
+### <div id='1.2'> 1.2. Scope
+The installation scope is based on the K-PaaS Container Platform storage environment configuration.
 
 <br>
 
 ## <div id='2'> 2. NFS Server Installation
 
+### <div id='2.1'> 2.1. Prerequisite
+One instance of NFS Server is required to install NFS Server, and the prerequisites for installation are described below.
+
+### OS (***Required confirmation***)
+The following OS environment information is required to install a K-PaaS Container Platform cluster.
+
+|Supported OS|Version|
+|---|---|
+|Ubuntu|18.04|
+|Ubuntu|20.04|
+|Ubuntu|22.04|
+
 <br>
 
-### <div id='2.1'> 2.1. Prerequisite
-This installation guide is based on installation in **Ubuntu 18.04** environment. Install it on a separate VM for Storage because it is for Storage to be used by clusters deployed in Kubespray.
-
-
 ### <div id='2.2'> 2.2. Installation
-- Package Update
+Proceed with the APT update.
 ```
 $ sudo apt-get update
 ```
 
-- Install package for NFS Server
+<br>
 
+Proceed to install the APT package for NFS Server.
 ```
-$ sudo apt-get install nfs-common nfs-kernel-server portmap
+$ sudo apt-get install -y nfs-common nfs-kernel-server portmap
 ```
 
-- Create the directory to be used at NFS and give authority
+<br>
+
+Proceed to create and authorize the directory for use by NFS Server.
 ```
 $ sudo mkdir -p /home/share/nfs
 $ sudo chmod 777 /home/share/nfs
 ```
 
-- Share dirctory settings
+<br>
+
+Proceed with setting up the shared directory.
 ```
 $ sudo vi /etc/exports
-## Type : [/share directory] [Access IP] [Option]
-/home/share/nfs *(rw,no_root_squash,async)
 ```
->`rw - readwrite` <br>
->       `no_root_squash - Client can acquire root privileges, created with client privileges when creating files.`<br>
->       `async - 요청에 의해 변경되기 전에 요청에 응답, 성능 향상용`
 
+```
+## Format : [/Shared directories] [Access IP] [Options]
+## Example : /home/share/nfs 10.0.0.1(rw,no_root_squash,async)
+...
+/home/share/nfs {{MASTER_NODE_PRIVATE_IP}}(rw,no_root_squash,async)
+/home/share/nfs {{WORKER1_NODE_PRIVATE_IP}}(rw,no_root_squash,async)
+/home/share/nfs {{WORKER2_NODE_PRIVATE_IP}}(rw,no_root_squash,async)
+...
+```
 
-- nfs Server Restart
+> `rw - Read Write` <br>
+> `no_root_squash - Client can get root privileges, files are created with client privileges when created.`<br>
+> `async - Respond to requests before they are changed by the request, for better performance`
+
+<br>
+
+Proceed to restart NFS Server.
 ```
 $ sudo /etc/init.d/nfs-kernel-server restart
 $ sudo systemctl restart portmap
 ```
 
+<br>
 
-### <div id='2.2'> 2.2. Operation Check
-
-- Check settings
+### <div id='2.3'> 2.3. Verify behavior
+Check the NFS Server settings.
 ```
 $ sudo exportfs -v
 ```
 
-- a normal result
 ```
 /home/share/nfs
                 <world>(rw,async,wdelay,no_root_squash,no_subtree_check,sec=sys,rw,secure,no_root_squash,no_all_squash)
 ```
 
-### [Index](https://github.com/PaaS-TA/Guide-eng/blob/master/README.md) > [CP Install](https://github.com/PaaS-TA/paas-ta-container-platform-guide-eng/tree/master/install-guide) > > NFS Server Installation
+<br>
+
+### [Index](https://github.com/K-PaaS/cp-guide-eng/blob/master/README.md) > [CP Install](/install-guide/README.md) > NFS Server Installation Guide
+
