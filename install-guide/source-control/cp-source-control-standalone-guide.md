@@ -122,7 +122,7 @@ IS_MULTI_CLUSTER="N"
 ```
 |Variable|Description|Details|
 |---|---|---|
-|**HOST_DOMAIN**|Enter a value for Host Domain|Enter the `HOST_DOMAIN` value that you defined in [[3.1.2. Defining Container Platform Portal variables]](../portal/cp-portal-standalone-guide.md#3.1.2)|
+|**HOST_DOMAIN**|Enter a value for Host Domain|Enter the `HOST_DOMAIN` value defined in <br>[[3.2. Define Container Platform Portal Variables]](../portal/cp-portal-standalone-guide.md#3.2)|
 |**K8S_STORAGECLASS**|Enter a name for the StorageClass|Clusters deployed via the Container Platform default to `cp-storageclass`. <br> If you want to use a different StorageClass, enter the corresponding resource name.|
 |**IS_MULTI_CLUSTER**|Whether you have a multi-cluster environment|Enter "Y" if deploying in a multi-cluster environment|
 <br>

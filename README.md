@@ -67,61 +67,61 @@ It covers guides to installing native Kubernetes (installing Kubespray, installi
 
 ### Single Cloud Deployment
 - Installing a cluster
-  + [Cluster installation guide](install-guide/standalone/cp-cluster-install-single.md)
+  + [Cluster Installation Guide](install-guide/standalone/cp-cluster-install-single.md)
 - Installing the portal
-  + [Portal installation guide](install-guide/portal/cp-portal-standalone-guide.md)
-  + [Installation and deployment files](https://github.com/K-PaaS/cp-helm-chart)
-  + [Release files](https://github.com/K-PaaS/cp-portal-release)
+  + [Portal Installation Guide](install-guide/portal/cp-portal-standalone-guide.md)
+  + [Installation and Deployment Files](https://github.com/K-PaaS/cp-helm-chart)
+  + [Release Files](https://github.com/K-PaaS/cp-portal-release)
 - Installing services
-  + [Pipeline installation guide](install-guide/pipeline/cp-pipeline-standalone-guide.md)
-  + [Source control installation guide](install-guide/source-control/cp-source-control-standalone-guide.md)
+  + [Pipeline Installation Guide](install-guide/pipeline/cp-pipeline-standalone-guide.md)
+  + [Source Control Installation Guide](install-guide/source-control/cp-source-control-standalone-guide.md)
 - Kubeflow Tutorials
   + [Kubeflow Pipeline Tutorial Guide](install-guide/standalone/cp-kubeflow-sample-guide.md)
 
 ### Multi Cloud Deployment
 - Installing a cluster
-  + [Cluster installation guide](install-guide/standalone/cp-cluster-install-multi.md)
+  + [Cluster Installation Guide](install-guide/standalone/cp-cluster-install-multi.md)
 - Installing the portal
-  + [Portal installation guide](install-guide/portal/cp-portal-standalone-guide-mc.md)
-  + [Installation and deployment files](https://github.com/K-PaaS/cp-helm-chart)
-  + [Release files](https://github.com/K-PaaS/cp-portal-release)
+  + [Portal Installation Guide](install-guide/portal/cp-portal-standalone-guide-mc.md)
+  + [Installation and Deployment Files](https://github.com/K-PaaS/cp-helm-chart)
+  + [Release Files](https://github.com/K-PaaS/cp-portal-release)
 - Installing services
-  + [Pipeline installation guide](install-guide/pipeline/cp-pipeline-standalone-guide.md)
-  + [Source control installation guide](install-guide/source-control/cp-source-control-standalone-guide.md)
+  + [Pipeline Installation Guide](install-guide/pipeline/cp-pipeline-standalone-guide.md)
+  + [Source Control Installation Guide](install-guide/source-control/cp-source-control-standalone-guide.md)
 - Leveraging the container platform Kubernetes
   + [Linkerd Installation Guide](install-guide/multicluster/cp-linkerd-install.md)
   + [Karmada Installation Guide](install-guide/multicluster/cp-karmada-install.md)
 - Utilize CSP Kubernetes Service
-  + [Istio Multi-Cluster Configuration Guide](install-guide/csp/cp-csp-istio-guide.md)
-  + [Linkerd Multi-Cluster Configuration Guide](install-guide/csp/cp-csp-linkerd-guide.md)
+  + [Istio Multi-Cluster Installation Guide](install-guide/csp/cp-csp-istio-guide.md)
+  + [Linkerd Multi-Cluster Installation Guide](install-guide/csp/cp-csp-linkerd-guide.md)
 
 ### Edge Deployment
 - Install Edge
-  + [Edge installation guide](install-guide/edge/cp-edge-install.md)
+  + [Edge Installation Guide](install-guide/edge/cp-edge-install.md)
 - Installing the portal
-  + [Portal installation guide](install-guide/portal/cp-portal-standalone-guide.md)
-  + [Installation and deployment files](https://github.com/K-PaaS/cp-helm-chart/tree/master)
-  + [Release files](https://github.com/K-PaaS/cp-portal-release/tree/master)
+  + [Portal Installation Guide](install-guide/portal/cp-portal-standalone-guide.md)
+  + [Installation and Deployment Files](https://github.com/K-PaaS/cp-helm-chart/tree/master)
+  + [Release Files](https://github.com/K-PaaS/cp-portal-release/tree/master)
 - Installing services
-  + [Pipeline installation guide](install-guide/pipeline/cp-pipeline-standalone-guide.md)
-  + [Source control installation guide](install-guide/source-control/cp-source-control-standalone-guide.md)
+  + [Pipeline Installation Guide](install-guide/pipeline/cp-pipeline-standalone-guide.md)
+  + [Source Control Installation Guide](install-guide/source-control/cp-source-control-standalone-guide.md)
 - Sample models
-  + [Web counting / real-time temperature collection](install-guide/edge/cp-edge-sample-guide.md)
+  + [Web Counting / Real-Time Temperature Collection](install-guide/edge/cp-edge-sample-guide.md)
 
 
 <br>
 
 ## Use
 
-### Portal user guide
-+ [Portal user guide](use-guide/portal/cp-portal-use-guide.md)
-+ [Terraman User Guide](use-guide/terraman/cp-terraman-guide.md)
+### Portal Use Guide
++ [Portal Use guide](use-guide/portal/cp-portal-use-guide.md)
++ [Terraman Use Guide](use-guide/terraman/cp-terraman-guide.md)
 
-### Service usage guide
+### Service Use Guide
 - Pipeline services
-  + [Pipeline Service User Guide](use-guide/pipeline/cp-pipeline-use-guide.md)
+  + [Pipeline Service Use Guide](use-guide/pipeline/cp-pipeline-use-guide.md)
 - Source Control Services
-  + [Source Control Services User Guide](use-guide/source-control/cp-source-control-use-guide.md)
+  + [Source Control Service Use Guide](use-guide/source-control/cp-source-control-use-guide.md)
 
 
 <br>
