@@ -1,25 +1,24 @@
-### [Index](https://github.com/K-PaaS/cp-guide-eng/blob/master/README.md) > [CP Use](https://github.com/K-PaaS/cp-guide-eng/blob/master/use-guide/Readme.md) > [Terraman 사용 가이드](../cp-terraman-guide.md) > Terraman 배포 가이드
-
+### [Index](https://github.com/K-PaaS/cp-guide-eng/blob/master/README.md) > [CP Use](https://github.com/K-PaaS/cp-guide-eng/blob/master/use-guide/Readme.md) > [Terraman Use Guide](../cp-terraman-guide.md) > Terraman Deployment Guide
 <br>
 
 ## Table of Contents
 
-1. [Documentation Overview](#1)
-   1.1. [Purpose](#1.1)
-   1.2. [Scope](#1.2)
-   1.3. [References](#1.3)
+1. [Documentation Overview](#1)  
+   1.1. [Purpose](#1.1)  
+   1.2. [Scope](#1.2)  
+   1.3. [References](#1.3)  
 2. [Prerequisite](#2)  
-   2.1. [Firewall information](#2.1)
-3. [Cluster Deployment Process](#3)
+   2.1. [Firewall information](#2.1)  
+3. [Cluster Deployment Process](#3)  
 4. [Cloud Accounts](#4)  
    4.1. [Cloud Accounts Registration](#4.1)  
-　4.1.1. [NAVER](#4.1.1)
-5. [Instance Code Template](#5)  
-   5.1. [Instance Code Template Example](#5.1)  
-  　5.1.1. [NAVER](#5.1.1)   
-   5.2. [Instance Code Template Registration](#5.2)
-6. [Clusters](#6)  
-   6.1. [Create Clusters](#6.1)
+　4.1.1. [NAVER](#4.1.1)  
+5. [Instance Code Template](#5)   
+   5.1. [Instance Code Template Example](#5.1)   
+  　5.1.1. [NAVER](#5.1.1)    
+   5.2. [Instance Code Template Registration](#5.2)  
+6. [Clusters](#6)   
+   6.1. [Create Clusters](#6.1)  
 
 <br>
 
