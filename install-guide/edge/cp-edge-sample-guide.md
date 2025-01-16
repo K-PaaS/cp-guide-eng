@@ -1,42 +1,41 @@
-### [Index](https://github.com/K-PaaS/cp-guide-eng/blob/master/README.md) > [CP Install](/install-guide/README.md) > K-PaaS Container Platform Edge Sample Guide
-
+### [Index](https://github.com/K-PaaS/cp-guide-eng/blob/master/README.md) > [CP Install](https://github.com/K-PaaS/cp-guide-eng/blob/master/install-guide/Readme.md) > K-PaaS Container Platform Edge Sample Guide
 
 <br>
 
 ## Table of Contents
 
-1. [Document Outline](#1)  
-  1.1. [Purpose](#1.1)  
-  1.2. [Scope](#1.2)  
-  1.3. [System Configuration Diagram](#1.3)  
-  1.4. [References](#1.4)  
+1. [Document Overview](#1)<br>
+  1.1. [Purpose](#1.1)<br>
+  1.2. [Scope](#1.2)<br>
+  1.3. [System Configuration Diagram](#1.3)<br>
+  1.4. [References](#1.4)
 
-2. [K-PaaS Container Platform Edge Sample Deployment](#2)  
-  2.1. [Sample web-based counters](#2.1)  
-  2.2. [Edge-based temperature collection sample](#2.2)  
+2. [K-PaaS Container Platform Edge Sample Deployment](#2)<br>
+  2.1. [Web-based Counter Sample](#2.1)<br>
+  2.2. [Edge-based Temperature Collection Sample](#2.2)
 
 <br>
 
-## <div id='1'> 1. Document Outline
+## <div id='1'> 1. Document Overview
 
 ### <div id='1.1'> 1.1. Purpose
-This document (Kube Edge Sample Deployment Guide) describes how to deploy and verify samples by configuring the actual Edge environment and device using Raspberry Pi and Thermo-Humidity Sensor (DHT11).
+This document (K-PaaS Container Platform Edge Sample Guide) describes the method for deploying and verifying a sample using a Raspberry Pi and a temperature and humidity sensor (DHT11) to configure an actual Edge environment and device.
 
 <br>
 
 ### <div id='1.2'> 1.2. Scope
-The installation range was prepared based on the Kube Edge Sample deployment guide to configure and verify the actual Kube Edge environment.
+The installation scope is based on the K-PaaS Container Platform Edge sample application to configure and validate the K-PaaS Container Platform Edge node environment.
 
 <br>
 
 ### <div id='1.3'> 1.3. System Configuration Diagram
-The system configuration consists of a Kubernetes `Single Cluster` (Control Plane, Worker), a Raspberry Pi (Edge), and a DHT11 sensor (Device) environment.
+The system architecture consists of a Kubernetes `single cluster` (Control Plane, Worker), a Raspberry Pi (Edge), and a DHT11 sensor (Device) environment.
 
-Refer to the configuration below for additional instance environments required for the K-PaaS Container Platform Edge sample deployment.
+For additional instance environments required for K-PaaS Container Platform Edge sample deployment, refer to the configuration below.
 
-|Instance Type|Number of Instances|Note|
+|Instance Type|Number of Instances|Remarks|
 |---|---|---|
-|Edge|1| Raspberry Pi<br>ARM64 Architecture |
+|Edge|1|Raspberry Pi<br>ARM64 Architecture|
 
 <br>
 
@@ -53,13 +52,13 @@ Refer to the configuration below for additional instance environments required f
 <br>
 
 ## <div id='2'> 2. K-PaaS Container Platform Edge Sample Deployment
-This document (K-PaaS Container Platform Edge Sample Guide) uses two sample applications to demonstrate data communication between cloud and edge environments.<br>
-We configured a K-PaaS container platform cluster in the cloud environment and configured the edge nodes using Raspberry Pi.<br>
-We connected and configured a temperature and humidity sensor (DHT11) to the Raspberry Pi.
+This document (K-PaaS Container Platform Edge Sample Guide) verifies data communication between the Cloud and Edge environments using two sample applications. <br>
+A K-PaaS Container Platform cluster is set up in the Cloud environment, and a Raspberry Pi is used to configure the Edge node. <br>
+A temperature and humidity sensor (DHT11) is connected and configured to the Raspberry Pi.
 
-To deploy the K-PaaS Container Platform Edge sample application, you need to install Podman separately on the Edge node.
+To deploy K-PaaS Container Platform Edge sample applications, you need to install Podman separately on the Edge node.
 
-Install  Ubuntu 20.04 arm64 Podman
+Ubuntu 20.04 arm64 Podman Installation
 ```
 $ echo "deb https://download.opensuse.org/repositories/devel:/kubic:/libcontainers:/stable/xUbuntu_22.04/ /" | sudo tee etc/apt/sources.list.d/devel:kubic:libcontainers:stable.list
 
@@ -71,7 +70,7 @@ $ sudo apt-get -y install podman
 
 <br>
 
-Install Ubuntu 22.04 arm64 Podman
+Ubuntu 22.04 arm64 Podman Installation
 ```
 $ sudo apt-get update
 $ sudo apt-get -y install podman
@@ -79,10 +78,10 @@ $ sudo apt-get -y install podman
 
 <br>
 
-### <div id='2.1'> 2.1. Sample web-based counters
-After deploying the web application on the Control Plane node, proceed to deploy the counter application on the Edge node.
+### <div id='2.1'> 2.1. Web-based Counter Sample
+After deploying the web application on the `Control Plane node`, the counter application is deployed on the `Edge node`.
 
-Download the files required to deploy the sample application from the Control Plane node and the Edge node, respectively.
+Download the necessary files for deploying the sample applications on both the `Control Plane node` and the `Edge node`.
 ```
 $ wget --content-disposition https://nextcloud.k-paas.org/index.php/s/fkiZoZkB9oCAcnB/download
 
@@ -91,7 +90,7 @@ $ tar zxvf kubeedge-sample-v1.5.tar.gz
 
 <br>
 
-Load the container image file from the `Control Plane node`.
+Load the container image file on the `Control Plane node`.
 ```
 $ cd ~/kubeedge-sample/kubeedge-counter/amd64
 
@@ -100,7 +99,7 @@ $ sudo podman load -i kubeedge-counter-app.tar
 
 <br>
 
-Load the container image file from the `Edge node`.
+Load the container image file on the `Edge node`.
 ```
 $ cd ~/kubeedge-sample/kubeedge-counter/arm64
 
@@ -109,15 +108,15 @@ $ sudo podman load -i kubeedge-pi-counter.tar
 
 <br>
 
-Deploy DeviceModel, DeviceInstance from the `Control Plane node`.
+Deploy DeviceModel and DeviceInstance on the `Control Plane node`.
 ```
 $ cd ~/kubeedge-sample/kubeedge-counter/
 
 ## Deploy DeviceModel
 $ kubectl apply -f kubeedge-counter-model.yaml
 
-## Change the hostname within a DeviceInstance ()
-$ sed -i "s/{EDGE_NODE_NAME}/{{Physical edge node hostname}}/g" kubeedge-counter-instance.yaml
+## Change the hostname in DeviceInstance ()
+$ sed -i "s/{EDGE_NODE_NAME}/{{Actual Edge Node Hostname}}/g" kubeedge-counter-instance.yaml
 
 ex) sed -i "s/{EDGE_NODE_NAME}/paasta-cp-edge-1/g" kubeedge-counter-instance.yaml
 
@@ -127,7 +126,7 @@ $ kubectl apply -f kubeedge-counter-instance.yaml
 
 <br>
 
-`Deploy the web application, counter application in the `Control Plane node`.
+Deploy the web application and the counter application on the `Control Plane node`.
 ```
 $ kubectl apply -f kubeedge-web-controller-app.yaml
 
@@ -136,13 +135,13 @@ $ kubectl apply -f kubeedge-pi-counter-app.yaml
 
 <br>
 
-Access the deployed web in a browser to control counter functions. Through the web deployed in the cloud environment, you can control the counter application deployed in the edge environment to obtain incremental count values.
+Access the deployed web application through the browser and control the counter function. You can control the counter application deployed in the Edge environment through the web deployed in the Cloud environment, and observe the increasing count value.
 
 ![image 002]
 
 <br>
 
-Check the information of the Device in the `Control Plane node` to check the counter information being collected. The value of status is checked for updating.
+Check the device information on the `Control Plane node` to verify the collected counter information. The update of the value in the status field can be confirmed.
 ```
 $ kubectl get device counter -oyaml -w
 ```
@@ -165,9 +164,9 @@ status:
 
 <br>
 
-Subscribe to the topic '$hw/events/device/counter/twin/update' on the `Edge node' to see the data being delivered.
+On the `Edge node`, subscribe to the topic '$hw/events/device/counter/twin/update' to check the transmitted data.
 ```
-## To use the mosquitto_sub command, install the following packages
+## To use the mosquitto_sub command, install the following package
 $ sudo apt install mosquitto-clients
 
 $ mosquitto_sub -h 127.0.0.1 -t '$hw/events/device/counter/twin/update' -p 1883
@@ -181,11 +180,10 @@ $ mosquitto_sub -h 127.0.0.1 -t '$hw/events/device/counter/twin/update' -p 1883
 ```
 <br>
 
+### <div id='2.2'> 2.2. Edge-based Temperature Collection Sample
+The DHT11 temperature sensor is configured using GPIO on the `Raspberry Pi (Edge node)`, and a temperature collection application is deployed.
 
-### <div id='2.2'> 2.2. Edge-based temperature collection sample
-We configured the DHT11 temperature sensor using GPIO on the Raspberry Pi (Edge node) and deployed the temperature collection application.
-
-Download the files required to deploy the sample application from the Control Plane node and the Edge node.
+Download the necessary files for deploying the sample applications on both the `Control Plane node` and the `Edge node`.
 ```
 $ wget --content-disposition https://nextcloud.k-paas.org/index.php/s/fkiZoZkB9oCAcnB/download
 
@@ -194,7 +192,7 @@ $ tar zxvf kubeedge-sample-v1.5.tar.gz
 
 <br>
 
-Load the container image file from the `Edge node`.
+Load the container image file on the `Edge node`.
 ```
 $ cd ~/kubeedge-sample/kubeedge-temperature/arm64
 
@@ -203,15 +201,15 @@ $ sudo podman load -i kubeedge-temperature.tar
 
 <br>
 
-Deploy DeviceModel, DeviceInstance from the `Control Plane node`.
+Deploy DeviceModel and DeviceInstance on the `Control Plane node`.
 ```
 $ cd ~/kubeedge-sample/kubeedge-temperature/
 
 ## Deploy DeviceModel
 $ kubectl apply -f model.yaml
 
-## Changing the hostname in a DeviceInstance ()
-$ sed -i "s/{EDGE_NODE_NAME}/{{실제 엣지노드 호스트명}}/g" instance.yaml
+## Change the hostname in DeviceInstance ()
+$ sed -i "s/{EDGE_NODE_NAME}/{{Actual Edge Node Hostname}}/g" instance.yaml
 
 ex) sed -i "s/{EDGE_NODE_NAME}/paasta-cp-edge-1/g" instance.yaml
 
@@ -236,7 +234,7 @@ $ kubectl apply -f deployment.yaml
 
 <br>
 
-Check the Device's information in the Control Plane node to see the temperature information being collected.
+Check the device information on the `Control Plane node` to verify the collected temperature information.
 ```
 $ kubectl get device temperature -oyaml -w -n kubeedge
 ```
@@ -258,9 +256,9 @@ status:
 
 <br>
 
-Subscribe to the topic '$hw/events/device/temperature/twin/update' on the `Edge node' to see the data being passed.
+On the `Edge node`, subscribe to the topic '$hw/events/device/temperature/twin/update' to check the transmitted data.
 ```
-## To use the mosquitto_sub command, install the following packages
+## To use the mosquitto_sub command, install the following package
 $ sudo apt install mosquitto-clients
 
 $ mosquitto_sub -h 127.0.0.1 -t '$hw/events/device/temperature/twin/update' -p 1883
@@ -278,4 +276,4 @@ $ mosquitto_sub -h 127.0.0.1 -t '$hw/events/device/temperature/twin/update' -p 1
 [image 001]:images/edge-v1.2.png
 [image 002]: images/kubeedge-counter-web.png
 
-### [Index](https://github.com/K-PaaS/cp-guide-eng/blob/master/README.md) > [CP Install](/install-guide/README.md) > K-PaaS Container Platform Edge Sample Guide
+### [Index](https://github.com/K-PaaS/cp-guide-eng/blob/master/README.md) > [CP Install](https://github.com/K-PaaS/cp-guide-eng/blob/master/install-guide/Readme.md) > K-PaaS Container Platform Edge Sample Guide
