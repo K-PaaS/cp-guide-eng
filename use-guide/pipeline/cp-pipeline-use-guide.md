@@ -8,7 +8,7 @@
 1. [Document Outline](#1)
 	* [1.1. Purpose](#1-1)
 	* [1.2. Range](#1-2)
-2. [Container](#2)
+2. [Container Platform Pipeline Access](#2)
 	* [2.1. Container Platform Pipeline Access Description](#2-1)
 3. [Container Platform Pipeline User Manual](#3)
 	* [3.1. Container Platform Pipeline User Menu Configuration](#3-1)
@@ -117,7 +117,7 @@ This document is a usage guide about how users will use the Container Platform P
 <br>
 
 # <div id='2'/> 2. Container Platform Pipeline Access
-## <div id='1-2'/> 1.2 Container Platform Pipeline Access Description
+## <div id='2-1'/> 2.1 Container Platform Pipeline Access Description
 Connect to the container platform pipeline.<br><br>
 1. **Container Platform Pipeline URL** : `http://pipeline.${HOST_DOMAIN}`
 + Enter the `HOST_DOMAIN` value defined in [[Container platform pipeline variable definitions]](../../install-guide/pipeline/cp-pipeline-standalone-guide.md#3.2)
@@ -459,13 +459,13 @@ This chapter describes overall participant management, such as adding, modifying
 4. For the "Execute", "Cancel", "Configure", and "List" buttons, see 3.2.4.2.5. Build Job Log/History.  
    ***※	Job logs/history can be viewed by the administrator and all pipeline participants, but the Run and Stop buttons are only available to participants with creation and execution authority.***
 
-###### <div id='3-2-2-4-3-6'/> 3.2.2.4.3.6.	Static Analysis Job Job Quality Issue Results
+###### <div id='3-2-2-4-3-6'/> 3.2.2.4.3.6.	Add Static Analysis Job
 1. When you press the Log/History "Quality Issue Results" button in the Test Job, it goes to the Quality Management Dashboard that manages the error resolution, level of error, and activation status of the source code performed.
    ![image](../images/pipeline/IMG_3_2_2_4_3_6_1.png)
 2. Refer to 3.2.4 Quality Management Part for Quality Management Dashboard.  
    ***※	 The results of the Job quality issue can be checked by the manager and all pipeline participants.***
 
-###### <div id='3-2-2-4-3-7'/> 3.2.2.4.3.7.	 Add Static Analysis Job
+###### <div id='3-2-2-4-3-7'/> 3.2.2.4.3.7.	Static Analysis Job Job Quality Issue Results
 1. On the Pipeline Details page, click the "Add" button of the Static Analysis Job.
    ![image](../images/pipeline/IMG_3_2_2_4_3_7_1.png)
 2. Refer to 3.2.2.4.2.7. Add Build Job part for the procedures afterward.  
@@ -532,13 +532,13 @@ This chapter describes overall participant management, such as adding, modifying
 4. For the "Execute", "Cancel", "Configure", and "List" buttons, see 3.2.4.2.5. Build Job Log/History.  
    ***※	The test Job log/history can be viewed by the administrator and all pipeline participants, but the Run and Stop buttons can only be viewed by participants with creation and execution authority.***
 
-###### <div id='3-2-2-4-4-6'/> 3.2.2.4.4.6.	Test Job Quality Issue Results
+###### <div id='3-2-2-4-4-6'/> 3.2.2.4.4.6.	Add Test Job
 1. Pressing the Log/History "Test Results" button on the Test Job will bring up the JUnit Test Results pop-up window of the source code performed.
    ![image](../images/pipeline/IMG_3_2_2_4_4_6_1.png)
 2. See 3.2.2.4.2.6. Add Build Job for subsequent processes.  
    ***※	The results of the test Job quality issue can be checked by the manager and all pipeline participants.***
 
-###### <div id='3-2-2-4-4-7'/> 3.2.2.4.4.7.	Add Test Job
+###### <div id='3-2-2-4-4-7'/> 3.2.2.4.4.7.	Test Job Quality Issue Results
 1. On the Pipeline Details page, click the "Add" button on the Test Job.
    ![image](../images/pipeline/IMG_3_2_2_4_4_7_1.png)
 2. Refer to 3.2.2.4.2.6. Add Build Job for the next procedures.  
