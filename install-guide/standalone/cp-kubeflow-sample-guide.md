@@ -1,4 +1,4 @@
-### [Index](https://github.com/K-PaaS/cp-guide-eng/blob/master/README.md) > [CP Install](https://github.com/K-PaaS/cp-guide-eng/blob/master/install-guide/Readme.md) > Kubeflow Pipeline Tutorial Guide
+### [Index](https://github.com/K-PaaS/cp-guide-eng/blob/master/README.md) > [CP Install](/install-guide/README.md) > Kubeflow Pipeline Tutorial Guide
 
 <br>
 
@@ -150,4 +150,4 @@ file-passing-pipelines-xnnp6-595339866                              0/2     Comp
 [image 009]:images/kubeflow-pipelines-python-002.png
 [image 010]:images/kubeflow-pipelines-python-003.png
 
-### [Index](https://github.com/K-PaaS/cp-guide-eng/blob/master/README.md) > [CP Install](https://github.com/K-PaaS/cp-guide-eng/blob/master/install-guide/Readme.md) > Kubeflow Pipeline Tutorial Guide
+### [Index](https://github.com/K-PaaS/cp-guide-eng/blob/master/README.md) > [CP Install](/install-guide/README.md) > Kubeflow Pipeline Tutorial Guide

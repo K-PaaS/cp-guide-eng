@@ -1,4 +1,4 @@
-### [Index](https://github.com/K-PaaS/cp-guide-eng) > [CP Use](../README.md) >  Portal Use Guide
+### [Index](https://github.com/K-PaaS/cp-guide-eng/blob/master/README.md) > [CP Use](/use-guide/README.md) > Portal Use Guide
 
 <br>
 
@@ -995,7 +995,7 @@ c- When you click the Edit button in the role details, the Edit role popup appea
 
 <br>
 
-### [Index](https://github.com/K-PaaS/cp-guide-eng) > [CP Use](../README.md) >  Portal Use Guide
+### [Index](https://github.com/K-PaaS/cp-guide-eng/blob/master/README.md) > [CP Use](/use-guide/README.md) > Portal Use Guide
 
 
 ----

@@ -1,4 +1,4 @@
-### [Index](https://github.com/K-PaaS/Guide/blob/master/README.md) > [CP Install](/install-guide/Readme.md) > Multi Cluster Container Platform Portal Deployment Guide
+### [Index](https://github.com/K-PaaS/cp-guide-eng/blob/master/README.md) > [CP Install](/install-guide/README.md) > Multi Cluster Container Platform Portal Installation Guide
 
 <br>
 
@@ -478,8 +478,7 @@ When creating resources while using the container platform, be careful not to us
 
 <br>
 
-### [Index](https://github.com/K-PaaS/Guide/blob/master/README.md) > [CP Install](/install-guide/Readme.md) > Multi Cluster Container Platform Portal Deployment Guide
-
+### [Index](https://github.com/K-PaaS/cp-guide-eng/blob/master/README.md) > [CP Install](/install-guide/README.md) > Multi Cluster Container Platform Portal Installation Guide
 
 [image 001]:../images/portal/cp-001.png
 [image 002]:../images/portal/cp-002.png

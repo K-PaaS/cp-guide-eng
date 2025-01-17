@@ -1,4 +1,4 @@
-### [Index](https://github.com/K-PaaS/cp-guide-eng) > [CP Use](../README.md) >  [Portal Use Guide](./cp-portal-use-guide.md) >  Catalogs Menu
+### [Index](https://github.com/K-PaaS/cp-guide-eng/blob/master/README.md) > [CP Use](/use-guide/README.md) > Catalogs Menu
 
 <br>
 
@@ -340,7 +340,7 @@ Renders the Manifest for preview based on the chart version to upgrade or the ch
 
 <br>
 
-### [Index](https://github.com/K-PaaS/cp-guide-eng) > [CP Use](../README.md) >  [Portal Use Guide](./cp-portal-use-guide.md) >  Catalogs Menu
+### [Index](https://github.com/K-PaaS/cp-guide-eng/blob/master/README.md) > [CP Use](/use-guide/README.md) > Catalogs Menu
 
 [IMG_9_1_1]:../images/portal/IMG_9_1_1.png
 [IMG_9_1_2]:../images/portal/IMG_9_1_2.png

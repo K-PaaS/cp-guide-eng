@@ -1,4 +1,4 @@
-### [Index](https://github.com/K-PaaS/cp-guide-eng) > [CP Use](../README.md) > Operator Portal Use Guide
+### [Index](https://github.com/K-PaaS/cp-guide-eng/blob/master/README.md) > [CP Use](/use-guide/README.md) > Operator Portal Use Guide
 
 <br>
 
@@ -671,7 +671,7 @@ This chapter describes the menu of the container platform operator portal.
 
 <br>
 
-### [Index](https://github.com/K-PaaS/cp-guide-eng) > [CP Use](../README.md) > Operator Portal Use Guide
+### [Index](https://github.com/K-PaaS/cp-guide-eng/blob/master/README.md) > [CP Use](/use-guide/README.md) > Operator Portal Use Guide
 
 ----
 [IMG_001]:../images/v1.2/container-platform-portal/admin/cp-001.png

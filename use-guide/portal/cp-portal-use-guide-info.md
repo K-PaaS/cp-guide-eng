@@ -1,4 +1,4 @@
-### [Index](https://github.com/K-PaaS/cp-guide-eng) > [CP Use](../README.md) >  [Portal Use Guide](./cp-portal-use-guide.md) > Info Menu
+### [Index](https://github.com/K-PaaS/cp-guide-eng/blob/master/README.md) > [CP Use](/use-guide/README.md) > Info Menu
 
 <br>
 
@@ -30,7 +30,7 @@
 <br>
 
 
-### [Index](https://github.com/K-PaaS/cp-guide-eng) > [CP Use](../README.md) >  [Portal Use Guide](./cp-portal-use-guide.md) > Info Menu
+### [Index](https://github.com/K-PaaS/cp-guide-eng/blob/master/README.md) > [CP Use](/use-guide/README.md) > Info Menu
 
 [IMG_8_1_1]:../images/portal/IMG_8_1_1.png
 [IMG_8_1_2]:../images/portal/IMG_8_1_2.png

@@ -1,4 +1,4 @@
-### [Index](https://github.com/K-PaaS/cp-guide-eng/blob/master/README.md) > [CP Install](https://github.com/K-PaaS/cp-guide-eng/blob/master/install-guide/Readme.md) > K-PaaS Container Platform Edge Deployment Guide
+### [Index](https://github.com/K-PaaS/cp-guide-eng/blob/master/README.md) > [CP Install](/install-guide/README.md) > K-PaaS Container Platform Edge Deployment Guide
 
 <br><br>
 
@@ -378,4 +378,4 @@ When creating resources manually, avoid using the following prefixes for the res
 
 [image 001]:images/edge-v1.2.png
 
-### [Index](https://github.com/K-PaaS/cp-guide-eng/blob/master/README.md) > [CP Install](https://github.com/K-PaaS/cp-guide-eng/blob/master/install-guide/Readme.md) > K-PaaS Container Platform Edge Deployment Guide
+### [Index](https://github.com/K-PaaS/cp-guide-eng/blob/master/README.md) > [CP Install](/install-guide/README.md) > K-PaaS Container Platform Edge Deployment Guide

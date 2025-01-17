@@ -1,4 +1,4 @@
-### [Index](https://github.com/K-PaaS/container-platform/blob/master/README.md) > [CP Install](/install-guide/Readme.md) > Container Platform Pipeline Deployment Guide
+### [Index](https://github.com/K-PaaS/cp-guide-eng/blob/master/README.md) > [CP Install](/install-guide/README.md) > Container Platform Pipeline Installation Guide
 
 <br>
 
@@ -294,7 +294,8 @@ Login to the pipeline UI with the Container Platform Portal administrator accoun
 
 <br>
 
-### [Index](https://github.com/K-PaaS/container-platform/blob/master/README.md) > [CP Install](/install-guide/Readme.md) > Container Platform Pipeline Deployment Guide
+### [Index](https://github.com/K-PaaS/cp-guide-eng/blob/master/README.md) > [CP Install](/install-guide/README.md) > Container Platform Pipeline Installation Guide
+
 
 [image 001]:../images/portal/cp-001.png
 [image 002]:../images/portal/cp-002.png

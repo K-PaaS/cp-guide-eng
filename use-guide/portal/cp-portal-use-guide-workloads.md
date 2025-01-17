@@ -1,4 +1,4 @@
-### [Index](https://github.com/K-PaaS/cp-guide-eng) > [CP Use](../README.md) >  [Portal Use Guide](./cp-portal-use-guide.md) >  Workloads Menu
+### [Index](https://github.com/K-PaaS/cp-guide-eng/blob/master/README.md) > [CP Use](/use-guide/README.md) >  Workloads Menu
 
 <br>
 
@@ -122,7 +122,7 @@
 <br>
 
 
-### [Index](https://github.com/K-PaaS/cp-guide-eng) > [CP Use](../README.md) >  [Portal Use Guide](./cp-portal-use-guide.md) >  Workloads Menu
+### [Index](https://github.com/K-PaaS/cp-guide-eng/blob/master/README.md) > [CP Use](/use-guide/README.md) >  Workloads Menu
 
 [IMG_3_1_1]:../images/portal/IMG_3_1_1.png
 [IMG_3_1_2]:../images/portal/IMG_3_1_2.png

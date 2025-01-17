@@ -1,4 +1,4 @@
-### [Index](https://github.com/K-PaaS/cp-guide-eng) > [CP Use](../README.md) >  [Portal Use Guide](./cp-portal-use-guide.md) > Clusters Menu
+### [Index](https://github.com/K-PaaS/cp-guide-eng/blob/master/README.md) > [CP Use](/use-guide/README.md) > Clusters Menu
 <br>
 
 ## Table of Contents
@@ -86,7 +86,7 @@
 
 <br>
 
-### [Index](https://github.com/K-PaaS/cp-guide-eng) > [CP Use](../README.md) >  [Portal Use Guide](./cp-portal-use-guide.md) > Clusters Menu
+### [Index](https://github.com/K-PaaS/cp-guide-eng/blob/master/README.md) > [CP Use](/use-guide/README.md) > Clusters Menu
 
 [IMG_2_1_1]:../images/portal/IMG_2_1_1.png
 [IMG_2_1_2_1]:../images/portal/IMG_2_1_2_1.png

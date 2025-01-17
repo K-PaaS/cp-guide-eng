@@ -1,4 +1,4 @@
-### [Index](https://github.com/K-PaaS/cp-guide-eng/blob/master/README.md) > [CP Install](/install-guide/README.md) > SourceControl installation guide
+### [Index](https://github.com/K-PaaS/cp-guide-eng/blob/master/README.md) > [CP Install](/install-guide/README.md) > SourceControl Installation Guide
 
 <br>
 
@@ -229,7 +229,7 @@ Log in to source control with your Container Platform Portal administrator accou
 
 <br>
 
-### [Index](https://github.com/K-PaaS/cp-guide-eng/blob/master/README.md) > [CP Install](/install-guide/README.md) > SourceControl installation guide
+### [Index](https://github.com/K-PaaS/cp-guide-eng/blob/master/README.md) > [CP Install](/install-guide/README.md) > SourceControl Installation Guide
 
 [image 001]:../images/portal/cp-001.png
 [image 002]:../images/portal/cp-002.png

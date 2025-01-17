@@ -1,4 +1,4 @@
-### [Index](https://github.com/K-PaaS/cp-guide-eng) > [CP Use](../README.md) >  [Portal Use Guide](./cp-portal-use-guide.md) > Managements menu
+### [Index](https://github.com/K-PaaS/cp-guide-eng/blob/master/README.md) > [CP Use](/use-guide/README.md) > Managements menu
 
 <br>
 
@@ -184,7 +184,7 @@ c- When you click the Edit button in the role details, the Edit role popup appea
 
 <br>
 
-### [Index](https://github.com/K-PaaS/cp-guide-eng) > [CP Use](../README.md) >  [Portal Use Guide](./cp-portal-use-guide.md) > Managements menu
+### [Index](https://github.com/K-PaaS/cp-guide-eng/blob/master/README.md) > [CP Use](/use-guide/README.md) > Managements menu
 
 [IMG_7_1_1]:../images/portal/IMG_7_1_1.png
 [IMG_7_1_2]:../images/portal/IMG_7_1_2.png

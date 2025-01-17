@@ -1,4 +1,4 @@
-### [Index](https://github.com/K-PaaS/container-platform/blob/master/README.md) > [CP Install](/install-guide/Readme.md)  > K-PaaS Container Platform Linkerd Multi-Cluster Installation Guide
+### [Index](https://github.com/K-PaaS/cp-guide-eng/blob/master/README.md) > [CP Install](/install-guide/README.md)  > K-PaaS Container Platform Linkerd Multi-Cluster Installation Guide
 
 <br>
 
@@ -648,4 +648,5 @@ Hello version: v2, instance: helloworld-v2-f58d4c8cb-mzpsb
 
 <br>
 
-### [Index](https://github.com/K-PaaS/container-platform/blob/master/README.md) > [CP Install](/install-guide/Readme.md)  > K-PaaS Container Platform Linkerd Multi-Cluster Installation Guide
+### [Index](https://github.com/K-PaaS/cp-guide-eng/blob/master/README.md) > [CP Install](/install-guide/README.md)  > K-PaaS Container Platform Linkerd Multi-Cluster Installation Guide
+

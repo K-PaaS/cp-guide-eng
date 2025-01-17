@@ -1,4 +1,4 @@
-### [Index](https://github.com/K-PaaS/cp-guide-eng/blob/master/README.md) > [CP Install](https://github.com/K-PaaS/cp-guide-eng/blob/master/install-guide/Readme.md) > K-PaaS Container Platform Cluster Installation Guide
+### [Index](https://github.com/K-PaaS/cp-guide-eng/blob/master/README.md) > [CP Install](/install-guide/README.md) > K-PaaS Container Platform Cluster Installation Guide (Multi)
 
 <br><br>
 
@@ -1551,4 +1551,4 @@ When users create resources manually, avoid using the following prefixes:
 [image lb naver 012]:images/kpaas-cp-cluster-lb-naver-12.png
 [image lb naver 013]:images/kpaas-cp-cluster-lb-naver-13.png
 
-### [Index](https://github.com/K-PaaS/cp-guide-eng/blob/master/README.md) > [CP Install](https://github.com/K-PaaS/cp-guide-eng/blob/master/install-guide/Readme.md) > K-PaaS Container Platform Cluster Installation Guide
+### [Index](https://github.com/K-PaaS/cp-guide-eng/blob/master/README.md) > [CP Install](/install-guide/README.md) > K-PaaS Container Platform Cluster Installation Guide (Multi)

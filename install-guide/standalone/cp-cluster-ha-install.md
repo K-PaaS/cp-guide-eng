@@ -1,4 +1,4 @@
-### [Index](https://github.com/K-PaaS/cp-guide-eng) > [CP Install](/install-guide/README.md) > Cluster Installation Guide (HA)
+### [Index](https://github.com/K-PaaS/cp-guide-eng/blob/master/README.md) > [CP Install](/install-guide/README.md) > Cluster Installation Guide (HA)
 <br>
 
 ## Table of Contents
@@ -517,4 +517,5 @@ When users create their own resources, be careful not to use the following prefi
 [image 001]:images/stanalone-ha-external-etcd-v1.2.png
 [image 002]:images/stanalone-ha-stacked-etcd-v1.2.png
 
-### [Index](https://github.com/K-PaaS/cp-guide-eng) > [CP Install](https://github.com/K-PaaS/container-platform/blob/master/install-guide/Readme.md) > Cluster Installation Guide (HA)
+### [Index](https://github.com/K-PaaS/cp-guide-eng/blob/master/README.md) > [CP Install](/install-guide/README.md) > Cluster Installation Guide (HA)
+

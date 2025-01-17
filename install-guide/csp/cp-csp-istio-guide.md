@@ -1,4 +1,4 @@
-### [Index](https://github.com/K-PAAS/Guide/blob/master/README.md) > [CP Install](/install-guide/Readme.md) > CSP Kubernetes Service Istio Multi Cluster Installation Guide
+### [Index](https://github.com/K-PaaS/cp-guide-eng/blob/master/README.md) > [CP Install](/install-guide/README.md) > CSP Kubernetes Service Istio Multi Cluster Installation Guide
 
 <br>
 
@@ -873,7 +873,7 @@ istio-ingressgateway   Deployment/istio-ingressgateway   cpu: 4%/80% (Check)   1
 
 <br>
 
-### [Index](https://github.com/K-PAAS/Guide/blob/master/README.md) > [CP Install](/install-guide/Readme.md) > CSP Kubernetes Service Istio Multi Cluster Installation Guide
+### [Index](https://github.com/K-PaaS/cp-guide-eng/blob/master/README.md) > [CP Install](/install-guide/README.md) > CSP Kubernetes Service Istio Multi Cluster Installation Guide
 
 
 [image 001]:../images/csp/csp-001.png

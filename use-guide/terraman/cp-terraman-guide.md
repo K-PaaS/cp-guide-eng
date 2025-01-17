@@ -1,4 +1,4 @@
-### [Index](https://github.com/K-PaaS/cp-guide-eng/blob/master/README.md) > [CP Use](https://github.com/K-PaaS/cp-guide-eng/blob/master/use-guide/Readme.md) > Terraman 사용 가이드
+### [Index](https://github.com/K-PaaS/cp-guide-eng/blob/master/README.md) > [CP Use](/use-guide/README.md) > Terraman Use Guide
 
 ## Terraman Use Guide
 ### Terraman Deployment Guide by CSP

@@ -1,4 +1,4 @@
-### [Index](https://github.com/K-PaaS/cp-guide-en/blob/master/README.md) > [CP Use](/use-guide/README.md) > Container Platform Source Control Service User Guide
+### [Index](https://github.com/K-PaaS/cp-guide-eng/blob/master/README.md) > [CP Use](/use-guide/README.md) > Container Platform Source Control Service Use Guide
 
 <br>
 
@@ -208,7 +208,7 @@ Describes how to get and manage repository information of the Container Platform
 
 <br>
 
-### [Index](https://github.com/K-PaaS/cp-guide-en/blob/master/README.md) > [CP Use](/use-guide/README.md) > Container Platform Source Control Service User Guide
+### [Index](https://github.com/K-PaaS/cp-guide-eng/blob/master/README.md) > [CP Use](/use-guide/README.md) > Container Platform Source Control Service Use Guide
 
 
 [SCM-IMG-2.1]:../images/sourcecontrol/SCM-IMG-2.1.png

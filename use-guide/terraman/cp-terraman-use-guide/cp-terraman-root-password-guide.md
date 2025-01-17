@@ -1,4 +1,4 @@
-### [Index](https://github.com/K-PaaS/cp-guide-eng/blob/master/README.md) > [CP Use](https://github.com/K-PaaS/cp-guide-eng/blob/master/use-guide/Readme.md) > [Terraman Use Guide](../cp-terraman-guide.md) > Terraman Deployment Guide
+### [Index](https://github.com/K-PaaS/cp-guide-eng/blob/master/README.md) > [CP Use](/use-guide/README.md) >  Terraman Deployment Guide
 <br>
 
 ## Table of Contents
@@ -355,4 +355,4 @@ In the Container Platform portal menu Global > Clusters, enter the following ite
 
 <br>
 
-### [Index](https://github.com/K-PaaS/cp-guide-eng/blob/master/README.md) > [CP Use](https://github.com/K-PaaS/cp-guide-eng/blob/master/use-guide/Readme.md) > [Terraman Use Guide](../cp-terraman-guide.md) > Terraman Deployment Guide
+### [Index](https://github.com/K-PaaS/cp-guide-eng/blob/master/README.md) > [CP Use](/use-guide/README.md) > Terraman Deployment Guide
