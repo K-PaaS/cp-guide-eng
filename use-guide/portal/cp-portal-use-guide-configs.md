@@ -27,8 +27,9 @@
     1.2.7. [View Vault Secret Details](#1-2-7)  
     1.2.8. [Create a Vault Secret](#1-2-8)  
     1.2.9. [Apply the Vault Secret](#1-2-9)  
-    1.2.10. [Modify the Vault Secret](#1-2-10)  
-    1.2.11. [Delete the Vault Secret](#1-2-11)    
+    1.2.10. [Remove the Vault Secret](#1-2-10)  
+    1.2.11. [Modify the Vault Secret](#1-2-11)  
+    1.2.12. [Delete the Vault Secret](#1-2-12)    
 
 <br> 
 
@@ -40,13 +41,13 @@
 
 <br>
 
-#### <div id='1-1-2'/> 1.1.2. View ConfigMap Details
+#### <div id='1-1-2'/> 1.1.2. View the ConfigMap Details
 - Click the name of a ConfigMap in the Configs list to go to the ConfigMap details page.
   ![IMG_6_1_2]
 
 <br>
 
-#### <div id='1-1-3'/> 1.1.3. Create a ConfigMap
+#### <div id='1-1-3'/> 1.1.3. Create the ConfigMap
 - When you click the Create button in the Configs list, the Create ConfigMap popup window appears.
   ![IMG_6_1_3]
 
@@ -71,13 +72,13 @@
 
 <br>
 
-#### <div id='1-2-2'/> 1.2.2. View Secret Details
+#### <div id='1-2-2'/> 1.2.2. View the Secret Details
 - Click the name of a Secret in the Configs list to go to the Secret details page.  
   ![IMG_6_2_2]
 
 <br>
 
-#### <div id='1-2-3'/> 1.2.3. Create a Secret
+#### <div id='1-2-3'/> 1.2.3. Create the Secret
 ##### <div id='1-2-3-1'/> 1.2.3.1. Opaque Type
 - When you click the Create button in the Secret list, you go to the Create Secret page.
 - The Opaque type is the default secret type when the secret type is not specified in the secret configuration file.    
@@ -362,7 +363,7 @@
 <br>
 
 #### <div id='1-2-5'/> 1.2.5. Delete the Secret
-- Click the Delete button to delete button in the Secureret details.  
+- Click the Delete button to delete button in the Secret details.  
   ![IMG_6_2_10]
 
 <br>
@@ -373,13 +374,13 @@
 
 <br>
 
-#### <div id='1-2-7'/> 1.2.7. View Vault Secret Details
+#### <div id='1-2-7'/> 1.2.7. View the Vault Secret Details
 - Click the Vault Secret name in the Vault Secret list to navigate to the Vault Secret Details page.  
   ![IMG_6_2_12]
 
 <br>
 
-#### <div id='1-2-8'/> 1.2.8. Create a Vault Secret
+#### <div id='1-2-8'/> 1.2.8. Create the Vault Secret
 - When you click the Create button in the Vault Secret list, you go to the Create Secret page.  
 - Vault Secret stores the account information in the database secret engine. Postgresql DB must be installed in advance to create an out secret.  
   ![IMG_6_2_13]
@@ -427,15 +428,21 @@
 
 <br>
 
-#### <div id='1-2-10'/> 1.2.10. Modify the Vault Secret
-- In Vault Secure the Vault Secure TTL, click Edit and Max TTL value by clicking the Edit button and modify button.   
+#### <div id='1-2-10'/> 1.2.10. Remove the Vault Secret
+- When you click the Remove button in Vault Secret Details, the Vault Secret removal is complete.
   ![IMG_6_2_15]
+  
+<br>
+
+#### <div id='1-2-11'/> 1.2.11. Modify the Vault Secret
+- In Vault Secret the Vault Secret TTL, click Edit and Max TTL value by clicking the Edit button and modify button.   
+  ![IMG_6_2_16]
 
 <br>
 
-#### <div id='1-2-11'/> 1.2.11. Delete the Vault Secret
-- When you click the Delete button in Vault Secret Details, the Delete Vault Secret deletion is complete.  
-  ![IMG_6_2_16]
+#### <div id='1-2-12'/> 1.2.12. Delete the Vault Secret
+- When you click the Delete button in Vault Secret Details, the Vault Secret deletion is complete.  
+  ![IMG_6_2_17]
 
 <br>
 
@@ -463,3 +470,4 @@
 [IMG_6_2_14]:../images/portal/IMG_6_2_14.png
 [IMG_6_2_15]:../images/portal/IMG_6_2_15.png
 [IMG_6_2_16]:../images/portal/IMG_6_2_16.png
+[IMG_6_2_17]:../images/portal/IMG_6_2_17.png
