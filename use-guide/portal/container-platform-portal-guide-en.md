@@ -77,7 +77,6 @@ See the guide below to create a subcluster after completing the setup.
 ## <div id='3'>3. Access the Container Platform Portal
 Access the Container Platform portal.<br><br>
 **Container Platform Portal URL** : `http://portal.${HOST_DOMAIN}`
-+ Enter the value of `HOST_DOMAIN` as defined in [[3.1.2. Defining Container Platform Portal variables]] (..//portal/cp-portal-standalone-guide.md#3.1.2)
 
 <br>
 
@@ -91,10 +90,10 @@ Administrator accounts require a password reset setting, so preprocess them as d
 ### 1. Get Keycloak Admin account information
 To check the Keycloak Admin account information, execute the command below.
 ```bash
-# Get Keycloak Admin account
-$ kubectl get cm cp-portal-configmap -n cp-portal -o yaml | grep KEYCLOAK_ADMIN
-KEYCLOAK_ADMIN_USERNAME: ********* (Username)
-KEYCLOAK_ADMIN_PASSWORD: ********* (Password)
+# Get Keycloak Admin Username
+$ kubectl get secret cp-portal-secret -n cp-portal -o jsonpath="{.data.KEYCLOAK_ADMIN_USERNAME}" | base64 -d; echo
+# Get Keycloak Admin Password
+$ kubectl get secret cp-portal-secret -n cp-portal -o jsonpath="{.data.KEYCLOAK_ADMIN_PASSWORD}" | base64 -d; echo
 ```
 
 <br>

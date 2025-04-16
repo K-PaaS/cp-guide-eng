@@ -119,17 +119,11 @@ This document is a usage guide about how users will use the Container Platform P
 # <div id='2'/> 2. Container Platform Pipeline Access
 ## <div id='2-1'/> 2.1 Container Platform Pipeline Access Description
 Connect to the container platform pipeline.<br><br>
-1. **Container Platform Pipeline URL** : `http://pipeline.${HOST_DOMAIN}`
+**Container Platform Pipeline URL** : `http://pipeline.${HOST_DOMAIN}`
 + Enter the `HOST_DOMAIN` value defined in [[Container platform pipeline variable definitions]](../../install-guide/pipeline/cp-pipeline-standalone-guide.md#3.2)
 
-2. After checking the initial information for accessing the container platform pipeline, log in to the pipeline.
-   > Check the initial account information using the command below
-   ```
-   $ kubectl get configmap -n cp-portal cp-portal-configmap -o yaml | grep KEYCLOAK_ADMIN
-   ```
-
-   ![image](../images/pipeline/IMG_2_1_1.png)
-   ![image](../images/pipeline/IMG_2_1_2.png)
+![image](../images/pipeline/IMG_2_1_1.png)
+![image](../images/pipeline/IMG_2_1_2.png)
 
 <br>
 

@@ -73,7 +73,7 @@ Download the Deployment file for your Container Platform source control deployme
 > For multi-cluster environments, proceed on the cluster you specified as **Cluster1** when deploying the Container Platform Portal.
 
 + Download Container Platform Source Control Deployment File:
-  [cp-source-control-deployment-v1.6.0.tar.gz](https://nextcloud.k-paas.org/index.php/s/dkfdTd6zttpi3T2/download)
+  [cp-source-control-deployment-v1.6.1.tar.gz](https://nextcloud.k-paas.org/index.php/s/faHjJRM7tiyLTBj/download)
 
 ```bash
 # Create a path to download the Deployment file
@@ -81,13 +81,13 @@ $ mkdir -p ~/workspace/container-platform
 $ cd ~/workspace/container-platform
 
 # Download the Deployment file and verify the file path
-$ wget --content-disposition https://nextcloud.k-paas.org/index.php/s/dkfdTd6zttpi3T2/download
+$ wget --content-disposition https://nextcloud.k-paas.org/index.php/s/faHjJRM7tiyLTBj/download
 
 $ ls ~/workspace/container-platform
-  cp-source-control-deployment-v1.6.0.tar.gz ...
+  cp-source-control-deployment-v1.6.1.tar.gz ...
   
 # Extract the Deployment file
-$ tar -xvf cp-source-control-deployment-v1.6.0.tar.gz
+$ tar -xvf cp-source-control-deployment-v1.6.1.tar.gz
 ```
 
 - Configure the Deployment file directory

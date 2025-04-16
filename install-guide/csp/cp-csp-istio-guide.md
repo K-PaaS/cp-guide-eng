@@ -129,7 +129,7 @@ We provide an example of configuring a multi cluster environment based on three 
 To install Istio Multi Cluster, download the Container Platform Portal Deployment and locate it at the path below.<br>
 
 + Download the Container Platform Portal Deployment file :
-  [cp-portal-deployment-v1.6.0.tar.gz](https://nextcloud.k-paas.org/index.php/s/ZcFt4cpeXj8d4o4/download)
+  [cp-portal-deployment-v1.6.1.tar.gz](https://nextcloud.k-paas.org/index.php/s/FQFddRC4wiq5cdj/download)
 
 ```bash
 # Create Path
@@ -137,13 +137,13 @@ $ mkdir -p ~/workspace/container-platform
 $ cd ~/workspace/container-platform
 
 # Download Deployment File and Verify File
-$ wget --content-disposition https://nextcloud.k-paas.org/index.php/s/ZcFt4cpeXj8d4o4/download
+$ wget --content-disposition https://nextcloud.k-paas.org/index.php/s/FQFddRC4wiq5cdj/download
 
 $ ls ~/workspace/container-platform
-  cp-portal-deployment-v1.6.0.tar.gz
+  cp-portal-deployment-v1.6.1.tar.gz
 
 # Decompress Deployment Files
-$ tar -xvf cp-portal-deployment-v1.6.0.tar.gz
+$ tar -xvf cp-portal-deployment-v1.6.1.tar.gz
 ```
 
 <br>
@@ -570,7 +570,7 @@ sleep-5577c64d7c-9zg7w   2/2     Running   0          74s
 ```bash
 # Access to cluster3's sleep pod 
 $ kubectl exec -it -n sample --context="${CLUSTER3_CONFIG[CTX]}" \
-"$(kubectl get pod -n sample --context="${CLUSTER3_CONFIG[CTX]}" -l app=sleep -o jsonpath='{.items[0].metadata.name}')" -c sleep sh
+"$(kubectl get pod -n sample --context="${CLUSTER3_CONFIG[CTX]}" -l app=sleep -o jsonpath='{.items[0].metadata.name}')" -c sleep -- sh
 
 # curl reviews service
 ~ $ curl reviews:9080/reviews/1

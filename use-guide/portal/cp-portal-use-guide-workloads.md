@@ -27,6 +27,33 @@
 <br>
 
 ## <div id='1'/> 1. Workloads Menu
+K-PaaS standard model’s single-cloud deployment (default installation) comes with a default Kyverno-based network isolation policy applied.
+According to this policy, Pod-to-Pod traffic between namespaces is blocked by default. However, if inter-service communication across namespaces is required, an additional configuration must be applied to allow it.
+
+#### How to Allow Cross-Namespace Communication
+By default, the network policy blocks traffic between namespaces.
+However, communication can be allowed if a specific label is set on the Pod.
+- `cp-role=shared`
+    + This label must be set for the Pod to communicate with other namespaces
+    + If the label is not present, the default policy blocks the traffic
+
+#### Setting the Label via Portal UI
+When creating a Deployment, ReplicaSet, or Pod in the Workloads menu, you can use the following option to automatically add the required label.
+
+##### Steps
+1. In the resource list view, click the [Create] button
+2. Check the option “Allow traffic between namespaces”
+3. Upon creation, the Pod will automatically have the `cp-role=shared` label attached
+
+![IMG_3_4_1]
+
+##### How to Verify
+After the resource is created, you can verify the label from the Labels section in the Pod detail view.
+
+![IMG_3_4_2]
+
+<br>
+
 ### <div id='1-1'/> 1.1. Deployments
 #### <div id='1-1-1'/> 1.1.1. Get a list of deployments
 - Click Deployments in Workloads to go to the Deployments list page.
@@ -139,3 +166,5 @@
 [IMG_3_3_3]:../images/portal/IMG_3_3_3.png
 [IMG_3_3_4]:../images/portal/IMG_3_3_4.png
 [IMG_3_3_5]:../images/portal/IMG_3_3_5.png
+[IMG_3_4_1]:../images/portal/IMG_3_4_1.png
+[IMG_3_4_2]:../images/portal/IMG_3_4_2.png

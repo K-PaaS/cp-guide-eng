@@ -101,7 +101,7 @@ The service information included and deployed in the container platform portal i
 |[Vault Secrets Operator](https://github.com/hashicorp/vault-secrets-operator)|0.9.0|0.9.0|
 |[MariaDB](https://github.com/mariadb)|11.4.3|19.0.7|
 |[Harbor](https://github.com/goharbor/harbor)|2.11.1|1.15.1|
-|[Keycloak](https://github.com/keycloak/keycloak)|25.0.4|22.2.1|
+|[Keycloak](https://github.com/keycloak/keycloak)|25.0.6|23.0.0|
 |[ChartMuseum](https://github.com/helm/chartmuseum)|0.16.2|3.10.3|
 |[Chaos Mesh](https://github.com/chaos-mesh/chaos-mesh)|2.7.0|2.7.0|
 
@@ -114,7 +114,7 @@ For container platform portal deployment, download the container platform portal
 :bulb: This will be done on the **Master Node**.
 
 + Download the Container Platform Portal Deployment file :
-  [cp-portal-deployment-v1.6.0.tar.gz](https://nextcloud.k-paas.org/index.php/s/ZcFt4cpeXj8d4o4/download)
+  [cp-portal-deployment-v1.6.1.tar.gz](https://nextcloud.k-paas.org/index.php/s/FQFddRC4wiq5cdj/download)
 
 ```bash
 # Create Path
@@ -122,13 +122,13 @@ $ mkdir -p ~/workspace/container-platform
 $ cd ~/workspace/container-platform
 
 # Download Deployment File and Verify File
-$ wget --content-disposition https://nextcloud.k-paas.org/index.php/s/ZcFt4cpeXj8d4o4/download
+$ wget --content-disposition https://nextcloud.k-paas.org/index.php/s/FQFddRC4wiq5cdj/download
 
 $ ls ~/workspace/container-platform
-  cp-portal-deployment-v1.6.0.tar.gz
+  cp-portal-deployment-v1.6.1.tar.gz
 
 # Decompress Deployment Files
-$ tar -xvf cp-portal-deployment-v1.6.0.tar.gz
+$ tar -xvf cp-portal-deployment-v1.6.1.tar.gz
 ```
 
 - Configure the Deployment File Directory
@@ -372,10 +372,10 @@ The administrator account needs to set the password initialization, so it is pre
 ### 1. View Keycloak Admin Account Information
 To check your Keycloak Admin account information, follow the command below.
 ```bash
-# check Keycloak Admin account 
-$ kubectl get cm cp-portal-configmap -n cp-portal -o yaml | grep KEYCLOAK_ADMIN
-KEYCLOAK_ADMIN_USERNAME: ********* (Username)
-KEYCLOAK_ADMIN_PASSWORD: ********* (Password)
+# Get Keycloak Admin Username
+$ kubectl get secret cp-portal-secret -n cp-portal -o jsonpath="{.data.KEYCLOAK_ADMIN_USERNAME}" | base64 -d; echo
+# Get Keycloak Admin Password
+$ kubectl get secret cp-portal-secret -n cp-portal -o jsonpath="{.data.KEYCLOAK_ADMIN_PASSWORD}" | base64 -d; echo
 ```
 
 <br>

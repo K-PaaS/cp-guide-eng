@@ -23,10 +23,10 @@ Administrator accounts require a password reset setting, so preprocess them as d
 ### 1. Get Keycloak Admin account information
 To check the Keycloak Admin account information, execute the command below.
 ```bash
-# Get Keycloak Admin account
-$ kubectl get cm cp-portal-configmap -n cp-portal -o yaml | grep KEYCLOAK_ADMIN
-KEYCLOAK_ADMIN_USERNAME: ********* (Username)
-KEYCLOAK_ADMIN_PASSWORD: ********* (Password)
+# Get Keycloak Admin Username
+$ kubectl get secret cp-portal-secret -n cp-portal -o jsonpath="{.data.KEYCLOAK_ADMIN_USERNAME}" | base64 -d; echo
+# Get Keycloak Admin Password
+$ kubectl get secret cp-portal-secret -n cp-portal -o jsonpath="{.data.KEYCLOAK_ADMIN_PASSWORD}" | base64 -d; echo
 ```
 
 <br>
