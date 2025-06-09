@@ -44,7 +44,12 @@ The installation scope is based on a Kubernetes cluster deployment.
 ### <span id='1.3'>1.3. System Configuration
 <p align="center"><img src="../images/portal/cp-001.png" width="850" height="530"></p>
 
-The system configuration consists of a **Kubernetes cluster (master, worker)** environment and a storage server for data management. It provides a middleware environment as a container, including **Vault** to manage secret information and authentication data, **MariaDB (RDBMS)** to manage metadata, **Harbor** to manage container images, **Keycloak** to manage container platform portal user authentication, **ChartMuseum** to manage Helm charts, and **Chaos Mesh** to simulate various types of failures in Kubernetes. The total required VM environment is at least **1 Master VM and 3 Worker** VMs. This document is about deploying a container platform portal environment on a Kubernetes cluster.
+The system configuration consists of a **Kubernetes cluster (master, worker)** environment and a storage server for data management.
+It provides a middleware environment as a container, including **OpenBao** to manage secret information and authentication data,
+**MariaDB (RDBMS)** to manage metadata, **Harbor** to manage container images, **Keycloak** to manage container platform portal user authentication,
+**ChartMuseum** to manage Helm charts, and **Chaos Mesh** to simulate various types of failures in Kubernetes. 
+The total required VM environment is at least **1 Master VM and 3 Worker** VMs. 
+This document is about deploying a container platform portal environment on a Kubernetes cluster.
 
 
 
@@ -97,13 +102,12 @@ Set the port that should be opened for the IaaS Security Group.
 The service information included and deployed in the container platform portal is as follows.
 |Service| Application Version| Chart Version|
 |:--- | :---:|  :---: |  
-|[Vault](https://github.com/hashicorp/vault)|1.14.0|0.25.0|
-|[Vault Secrets Operator](https://github.com/hashicorp/vault-secrets-operator)|0.9.0|0.9.0|
-|[MariaDB](https://github.com/mariadb)|11.4.3|19.0.7|
-|[Harbor](https://github.com/goharbor/harbor)|2.11.1|1.15.1|
+|[OpenBao](https://github.com/openbao/openbao)|2.2.0|0.12.0|
+|[MariaDB](https://github.com/mariadb)|11.4.7|20.5.6|
+|[Harbor](https://github.com/goharbor/harbor)|2.13.1|1.17.1|
 |[Keycloak](https://github.com/keycloak/keycloak)|25.0.6|23.0.0|
-|[ChartMuseum](https://github.com/helm/chartmuseum)|0.16.2|3.10.3|
-|[Chaos Mesh](https://github.com/chaos-mesh/chaos-mesh)|2.7.0|2.7.0|
+|[ChartMuseum](https://github.com/helm/chartmuseum)|0.16.3|3.10.4|
+|[Chaos Mesh](https://github.com/chaos-mesh/chaos-mesh)|2.7.2|2.7.2|
 
 <br>
 
@@ -114,7 +118,7 @@ For container platform portal deployment, download the container platform portal
 :bulb: This will be done on the **Master Node**.
 
 + Download the Container Platform Portal Deployment file :
-  [cp-portal-deployment-v1.6.1.tar.gz](https://nextcloud.k-paas.org/index.php/s/FQFddRC4wiq5cdj/download)
+  [cp-portal-deployment-v1.6.1.1.tar.gz](https://nextcloud.k-paas.org/index.php/s/jyjGsowwx3AHNPk/download)
 
 ```bash
 # Create Path
@@ -122,13 +126,13 @@ $ mkdir -p ~/workspace/container-platform
 $ cd ~/workspace/container-platform
 
 # Download Deployment File and Verify File
-$ wget --content-disposition https://nextcloud.k-paas.org/index.php/s/FQFddRC4wiq5cdj/download
+$ wget --content-disposition https://nextcloud.k-paas.org/index.php/s/jyjGsowwx3AHNPk/download
 
 $ ls ~/workspace/container-platform
-  cp-portal-deployment-v1.6.1.tar.gz
+  cp-portal-deployment-v1.6.1.1.tar.gz
 
 # Decompress Deployment Files
-$ tar -xvf cp-portal-deployment-v1.6.1.tar.gz
+$ tar -xvf cp-portal-deployment-v1.6.1.1.tar.gz
 ```
 
 - Configure the Deployment File Directory
@@ -139,7 +143,7 @@ cp-portal-deployment
 ├── images          # Images file
 ├── charts          # Helm chart file
 ├── values_orig     # Helm chart values file
-├── vault_orig      # Vault deployment file
+├── secmg_orig      # Secrets management deployment file
 └── istio_mc        # Istio Service Mesh Related File
 ```
 
@@ -242,6 +246,46 @@ TLS_CERT_PATH="/home/ubuntu/tls/mydomain.crt"  # Enter the absolute path to the 
 TLS_KEY_PATH="/home/ubuntu/tls/mydomain.key"   # Enter the absolute path to the host_domain key file
 ```
 
+<details>
+<summary><h4> ⚠️ [Note] When installing the portal on a container runtime environment other than CRI-O </h4></summary>
+<h1></h1>
+
+When installing a K-PaaS cluster, the default container runtime is **CRI-O (crio)**.  
+K-PaaS cluster users can skip this section.  
+However, if deploying the portal on a cluster using a different container runtime (such as containerd), the following settings must be adjusted.
+
+<br>
+
+**Chaos Mesh**, which is included and deployed with the portal, requires container runtime configuration.  
+Check the runtime and socketPath for your cluster environment and modify the settings below accordingly before proceeding with the installation.
+
+**Reference settings**
+
+> This guide is for reference only. For accurate and up-to-date details, refer to the official [Install Chaos Mesh in different environments](https://chaos-mesh.org/docs/production-installation-using-helm/#step-4-install-chaos-mesh-in-different-environments) documentation.
+
+| Runtime      | Runtime value | Example socketPath                 |
+|--------------|---------------|------------------------------------|
+| CRI-O        | `crio`        | `/var/run/crio/crio.sock`          |
+| containerd   | `containerd`  | `/run/containerd/containerd.sock`  |
+
+#### Modify runtime and socketPath
+
+```bash
+$ cd ~/workspace/container-platform/cp-portal-deployment/values_orig
+$ vi chaos-mesh.yaml
+```
+
+```yaml
+···
+chaosDaemon:
+  runtime: crio # change
+  socketPath: /var/run/crio/crio.sock # change
+···
+```
+
+<h1></h1>
+</details>
+
 <br>
 
 ### <span id='3.3'>3.3. Run the Container Platform Portal Deployment Script
@@ -258,13 +302,12 @@ For Resource Pod, it takes a few seconds to bind to Node and create a container 
 
 <br>
 
-- **List Vault Pods**
->`$ kubectl get pods -n vault`
+- **List OpenBao Pods**
+>`$ kubectl get pods -n openbao`
 ```bash
-NAME                                                         READY   STATUS    RESTARTS   AGE
-vault-0                                                      1/1     Running   0          4m33s
-vault-agent-injector-c75f7dff5-cbf76                         1/1     Running   0          4m33s
-vault-secrets-operator-controller-manager-6f8d9ff576-6nz8c   2/2     Running   0          4m32s
+NAME                                      READY   STATUS    RESTARTS   AGE
+openbao-0                                 1/1     Running   0          4m33s
+openbao-agent-injector-55bbd89f66-l7mxr   1/1     Running   0          4m33s
 ```
 
 - **List MariaDB Pods**
@@ -336,7 +379,7 @@ chartmuseum   chartmuseum         nginx   chartmuseum.105.xxx.xxx.xxx.nip.io   1
 cp-portal     cp-portal-ingress   nginx   portal.105.xxx.xxx.xxx.nip.io        192.168.0.xxx    80, 443   4m3s
 harbor        harbor-ingress      nginx   harbor.105.xxx.xxx.xxx.nip.io        192.168.0.xxx    80, 443   5m47s
 keycloak      keycloak            nginx   keycloak.105.xxx.xxx.xxx.nip.io      192.168.0.xxx    80, 443   4m31s
-vault         vault               nginx   vault.105.xxx.xxx.xxx.nip.io         192.168.0.xxx    80, 443   6m8s
+openbao       openbao             nginx   openbao.105.xxx.xxx.xxx.nip.io       192.168.0.xxx    80, 443   6m8s
 ```
 
 <br>

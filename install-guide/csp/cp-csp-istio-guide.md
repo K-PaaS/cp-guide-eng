@@ -79,16 +79,16 @@ The default network for cluster N is set to network N, and the cluster communica
 The list of installed tools is as follows.
 | Tool | Version |
 | :---: | :---: |  
-| kubectl | v1.30.3 |
-| Helm | v3.14.2 |
+| kubectl | v1.32.3 |
+| Helm | v3.16.4 |
 | step | 0.24.4 |
 | Podman | - |
 | ca-certificates | - |
-| Istio | 1.24.0 |
+| Istio | 1.26.0 |
 
 | Istio Version | [Supported Kubernetes Versions](https://istio.io/latest/docs/releases/supported-releases/#support-status-of-istio-releases)|  
 | :---: | :---: |  
-| `1.24` |1.28, 1.29, 1.30, 1.31|  
+|  `1.26`  |1.29, 1.30, 1.31, 1.32|  
 
 <br>
 
@@ -113,11 +113,11 @@ We provide an example of configuring a multi cluster environment based on three 
 > This guide targets the Kubernetes cluster services of three domestic CSP.
 
 #### CSP Kubernetes cluster environment
-| Kubernetes Service | Version |CNI| Server Image |
-| --- | --- | --- | --- |
-| KT Kubernetes Service (K2P Standard) | v1.30.4 |Calico| Ubuntu 24.04 |
-| Ncloud Kubernetes Service (NKS) | v1.28.10 |Cilium| Ubuntu 22.04 |
-| NHN kubernetes Service (NKS) | v1.30.3 |Calico| Ubuntu 22.04 |
+| Kubernetes Service                    | CNI     |
+|---------------------------------------|---------| 
+| KT Kubernetes Service (K2P Standard)  | Calico  |
+| Ncloud Kubernetes Service (NKS)       | Cilium  |
+| NHN kubernetes Service (NKS)          | Calico  | 
 
 
 <br>
@@ -129,7 +129,7 @@ We provide an example of configuring a multi cluster environment based on three 
 To install Istio Multi Cluster, download the Container Platform Portal Deployment and locate it at the path below.<br>
 
 + Download the Container Platform Portal Deployment file :
-  [cp-portal-deployment-v1.6.1.tar.gz](https://nextcloud.k-paas.org/index.php/s/FQFddRC4wiq5cdj/download)
+  [cp-portal-deployment-v1.6.1.1.tar.gz](https://nextcloud.k-paas.org/index.php/s/jyjGsowwx3AHNPk/download)
 
 ```bash
 # Create Path
@@ -137,13 +137,13 @@ $ mkdir -p ~/workspace/container-platform
 $ cd ~/workspace/container-platform
 
 # Download Deployment File and Verify File
-$ wget --content-disposition https://nextcloud.k-paas.org/index.php/s/FQFddRC4wiq5cdj/download
+$ wget --content-disposition https://nextcloud.k-paas.org/index.php/s/jyjGsowwx3AHNPk/download
 
 $ ls ~/workspace/container-platform
-  cp-portal-deployment-v1.6.1.tar.gz
+  cp-portal-deployment-v1.6.1.1.tar.gz
 
 # Decompress Deployment Files
-$ tar -xvf cp-portal-deployment-v1.6.1.tar.gz
+$ tar -xvf cp-portal-deployment-v1.6.1.1.tar.gz
 ```
 
 <br>
@@ -160,12 +160,12 @@ $ vi istio-vars-mc.sh
 ```bash
 # Change to the version to install
 # command line tool
-KUBECTL_VERSION="1.30.3"
-HELM_VERSION="3.14.2"
+KUBECTL_VERSION="1.32.3"
+HELM_VERSION="3.16.4"
 STEP_VERSION="0.24.4"
 
 # Istio
-ISTIO_VERSION="1.24.0"
+ISTIO_VERSION="1.26.0"
 ...
 ```
 

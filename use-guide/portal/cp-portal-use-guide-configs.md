@@ -23,14 +23,7 @@
     1.2.3.6. [kubernetes.io/service-account-token Type](#1-2-3-6)  
     1.2.4. [Modify the Secret](#1-2-4)  
     1.2.5. [Delete the Secret](#1-2-5)  
-    1.2.6. [Get the Vault Secret list](#1-2-6)  
-    1.2.7. [View Vault Secret Details](#1-2-7)  
-    1.2.8. [Create a Vault Secret](#1-2-8)  
-    1.2.9. [Apply the Vault Secret](#1-2-9)  
-    1.2.10. [Remove the Vault Secret](#1-2-10)  
-    1.2.11. [Modify the Vault Secret](#1-2-11)  
-    1.2.12. [Delete the Vault Secret](#1-2-12)    
-
+  
 <br> 
 
 ## <div id='1'/> 1. Configs Menu
@@ -368,85 +361,6 @@
 
 <br>
 
-#### <div id='1-2-6'/> 1.2.6. Get the Vault Secret list
-- Click Security tab to move to the Vault tab by selecting the Vault tab to the Vault Security tab.  
-  ![IMG_6_2_11]
-
-<br>
-
-#### <div id='1-2-7'/> 1.2.7. View the Vault Secret Details
-- Click the Vault Secret name in the Vault Secret list to navigate to the Vault Secret Details page.  
-  ![IMG_6_2_12]
-
-<br>
-
-#### <div id='1-2-8'/> 1.2.8. Create the Vault Secret
-- When you click the Create button in the Vault Secret list, you go to the Create Secret page.  
-- Vault Secret stores the account information in the database secret engine. Postgresql DB must be installed in advance to create an out secret.  
-  ![IMG_6_2_13]
-
-  <table>
-    <thead>
-      <tr>
-        <th>Item</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>Storage Backend</td>
-        <td>Select the storage in which encrypted Secret data will be stored.</td>
-      </tr>
-      <tr>
-        <td>Name</td>
-        <td>Enter the name of the secret.</td>
-      </tr>
-      <tr>
-        <td>DB Types</td>
-        <td>Select the DB Type for which Vault Secret data will be used.</td>
-      </tr>      
-      <tr>
-        <td>DB Service</td>
-        <td>Select the DB Service on which Vault Secret data will be used.</td>
-      </tr>
-      <tr>
-        <td>Default TTL</td>
-        <td>Default TTL enters a valid time to use Vault Secret.</td>
-      </tr>     
-      <tr>
-        <td>Max TTL</td>
-        <td>Max TTL enters the maximum available time during Default TTL time.</td>
-      </tr>    
-    </tbody>
-  </table>
-
-<br>
-
-#### <div id='1-2-9'/> 1.2.9. Apply the Vault Secret
-- When you click the Apply button in Vault Secret Details, a list of Deployment for the selected Namespace appears in the Apply pop-up window. Select the Deployment to which Vault Secret Data is applied and click the Save button.  
-  ![IMG_6_2_14]
-
-<br>
-
-#### <div id='1-2-10'/> 1.2.10. Remove the Vault Secret
-- When you click the Remove button in Vault Secret Details, the Vault Secret removal is complete.
-  ![IMG_6_2_15]
-  
-<br>
-
-#### <div id='1-2-11'/> 1.2.11. Modify the Vault Secret
-- In Vault Secret the Vault Secret TTL, click Edit and Max TTL value by clicking the Edit button and modify button.   
-  ![IMG_6_2_16]
-
-<br>
-
-#### <div id='1-2-12'/> 1.2.12. Delete the Vault Secret
-- When you click the Delete button in Vault Secret Details, the Vault Secret deletion is complete.  
-  ![IMG_6_2_17]
-
-<br>
-
-
 ### [Index](https://github.com/K-PaaS/cp-guide-eng/blob/master/README.md) > [CP Use](/use-guide/README.md) > Configs Menu
 
 [IMG_6_1_1]:../images/portal/IMG_6_1_1.png
@@ -464,10 +378,3 @@
 [IMG_6_2_8]:../images/portal/IMG_6_2_8.png
 [IMG_6_2_9]:../images/portal/IMG_6_2_9.png
 [IMG_6_2_10]:../images/portal/IMG_6_2_10.png
-[IMG_6_2_11]:../images/portal/IMG_6_2_11.png
-[IMG_6_2_12]:../images/portal/IMG_6_2_12.png
-[IMG_6_2_13]:../images/portal/IMG_6_2_13.png
-[IMG_6_2_14]:../images/portal/IMG_6_2_14.png
-[IMG_6_2_15]:../images/portal/IMG_6_2_15.png
-[IMG_6_2_16]:../images/portal/IMG_6_2_16.png
-[IMG_6_2_17]:../images/portal/IMG_6_2_17.png
