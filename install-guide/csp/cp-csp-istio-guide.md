@@ -129,7 +129,7 @@ We provide an example of configuring a multi cluster environment based on three 
 To install Istio Multi Cluster, download the Container Platform Portal Deployment and locate it at the path below.<br>
 
 + Download the Container Platform Portal Deployment file :
-  [cp-portal-deployment-v1.6.1.1.tar.gz](https://nextcloud.k-paas.org/index.php/s/jyjGsowwx3AHNPk/download)
+  [cp-portal-deployment-v1.6.1.1.tar.gz](https://nextcloud.k-paas.org/index.php/s/Stz3f8F2oHWfYRb/download)
 
 ```bash
 # Create Path
@@ -137,7 +137,7 @@ $ mkdir -p ~/workspace/container-platform
 $ cd ~/workspace/container-platform
 
 # Download Deployment File and Verify File
-$ wget --content-disposition https://nextcloud.k-paas.org/index.php/s/jyjGsowwx3AHNPk/download
+$ wget --content-disposition https://nextcloud.k-paas.org/index.php/s/Stz3f8F2oHWfYRb/download
 
 $ ls ~/workspace/container-platform
   cp-portal-deployment-v1.6.1.1.tar.gz
