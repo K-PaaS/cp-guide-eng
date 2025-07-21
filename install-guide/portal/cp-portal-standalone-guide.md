@@ -118,7 +118,7 @@ For container platform portal deployment, download the container platform portal
 :bulb: This will be done on the **Master Node**.
 
 + Download the Container Platform Portal Deployment file :
-  [cp-portal-deployment-v1.6.1.1.tar.gz](https://nextcloud.k-paas.org/index.php/s/jyjGsowwx3AHNPk/download)
+  [cp-portal-deployment-v1.6.1.1.tar.gz](https://nextcloud.k-paas.org/index.php/s/Stz3f8F2oHWfYRb/download)
 
 ```bash
 # Create Path
@@ -126,7 +126,7 @@ $ mkdir -p ~/workspace/container-platform
 $ cd ~/workspace/container-platform
 
 # Download Deployment File and Verify File
-$ wget --content-disposition https://nextcloud.k-paas.org/index.php/s/jyjGsowwx3AHNPk/download
+$ wget --content-disposition https://nextcloud.k-paas.org/index.php/s/Stz3f8F2oHWfYRb/download
 
 $ ls ~/workspace/container-platform
   cp-portal-deployment-v1.6.1.1.tar.gz
