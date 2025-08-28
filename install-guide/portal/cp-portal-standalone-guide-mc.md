@@ -116,7 +116,7 @@ For container platform portal deployment, download the container platform portal
 :bulb: This will be done on the **Master Node**.
 
 + Download the Container Platform Portal Deployment file :
-  [cp-portal-deployment-v1.6.1.1.tar.gz](https://nextcloud.k-paas.org/index.php/s/Stz3f8F2oHWfYRb/download)
+  [cp-portal-deployment-v1.6.2.tar.gz](https://nextcloud.k-paas.org/index.php/s/x7ccTRQYrBHsTD4/download)
 
 ```bash
 # Create Path
@@ -124,13 +124,13 @@ $ mkdir -p ~/workspace/container-platform
 $ cd ~/workspace/container-platform
 
 # Download Deployment File and Verify File
-$ wget --content-disposition https://nextcloud.k-paas.org/index.php/s/Stz3f8F2oHWfYRb/download
+$ wget --content-disposition https://nextcloud.k-paas.org/index.php/s/x7ccTRQYrBHsTD4/download
 
 $ ls ~/workspace/container-platform
-  cp-portal-deployment-v1.6.1.1.tar.gz
+  cp-portal-deployment-v1.6.2.tar.gz
 
 # Decompress Deployment Files
-$ tar -xvf cp-portal-deployment-v1.6.1.1.tar.gz
+$ tar -xvf cp-portal-deployment-v1.6.2.tar.gz
 ```
 
 - Configure the Deployment File Directory
@@ -138,8 +138,6 @@ $ tar -xvf cp-portal-deployment-v1.6.1.1.tar.gz
 cp-portal-deployment
 ├── script          # (Single) Variables and script files for portal deployment
 ├── script_mc       # (Multi) Variables and script files for portal deployment
-├── images          # Images file
-├── charts          # Helm chart file
 ├── values_orig     # Helm chart values file
 ├── secmg_orig      # Secrets management deployment file
 └── istio_mc        # Istio Service Mesh Related File

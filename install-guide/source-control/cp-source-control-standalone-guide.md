@@ -73,7 +73,7 @@ Download the Deployment file for your Container Platform source control deployme
 > For multi-cluster environments, proceed on the cluster you specified as **Cluster1** when deploying the Container Platform Portal.
 
 + Download Container Platform Source Control Deployment File:
-  [cp-source-control-deployment-v1.6.1.tar.gz](https://nextcloud.k-paas.org/index.php/s/faHjJRM7tiyLTBj/download)
+  [cp-source-control-deployment-v1.6.2.tar.gz](https://nextcloud.k-paas.org/index.php/s/TewcbsNdm2EQmtX/download)
 
 ```bash
 # Create a path to download the Deployment file
@@ -81,21 +81,19 @@ $ mkdir -p ~/workspace/container-platform
 $ cd ~/workspace/container-platform
 
 # Download the Deployment file and verify the file path
-$ wget --content-disposition https://nextcloud.k-paas.org/index.php/s/faHjJRM7tiyLTBj/download
+$ wget --content-disposition https://nextcloud.k-paas.org/index.php/s/TewcbsNdm2EQmtX/download
 
 $ ls ~/workspace/container-platform
-  cp-source-control-deployment-v1.6.1.tar.gz ...
+  cp-source-control-deployment-v1.6.2.tar.gz ...
   
 # Extract the Deployment file
-$ tar -xvf cp-source-control-deployment-v1.6.1.tar.gz
+$ tar -xvf cp-source-control-deployment-v1.6.2.tar.gz
 ```
 
 - Configure the Deployment file directory
 ```bash
 cp-source-control-deployment
  ├── script        # Variable and script file locations for source control deployments
- ├── images        # Image file location
- ├── charts        # Helm chart file locations
  └── values_orig   # Helm chart values file location
 ```
 

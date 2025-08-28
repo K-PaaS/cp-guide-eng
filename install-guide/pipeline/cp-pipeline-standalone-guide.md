@@ -105,7 +105,7 @@ For container platform pipeline deployment, download the container platform pipe
 > In the case of a multi-cluster environment, proceed with the cluster that was designated as **Cluster1** when deploying the container platform portal.
 
 +  Download the Container Platform Pipeline Deployment file :
-   [cp-pipeline-deployment-v1.6.1.tar.gz](https://nextcloud.k-paas.org/index.php/s/r8qWAadGoAHNcBn/download)
+   [cp-pipeline-deployment-v1.6.2.tar.gz](https://nextcloud.k-paas.org/index.php/s/D7fz23QcDrT4Afs/download)
 
 ```bash
 # Create Path
@@ -113,21 +113,19 @@ $ mkdir -p ~/workspace/container-platform
 $ cd ~/workspace/container-platform
 
 # Download Deployment File and Verify File
-$ wget --content-disposition https://nextcloud.k-paas.org/index.php/s/r8qWAadGoAHNcBn/download
+$ wget --content-disposition https://nextcloud.k-paas.org/index.php/s/D7fz23QcDrT4Afs/download
 
 $ ls ~/workspace/container-platform
-  cp-pipeline-deployment-v1.6.1.tar.gz ...
+  cp-pipeline-deployment-v1.6.2.tar.gz ...
   
 # Decompress Deployment Files
-$ tar -xvf cp-pipeline-deployment-v1.6.1.tar.gz
+$ tar -xvf cp-pipeline-deployment-v1.6.2.tar.gz
 ```
 
 - Configure the Deployment File Directory
 ```bash
 cp-pipeline-deployment
  ├── script        # Variables and script files for pipeline deployment
- ├── images        # Images file
- ├── charts        # Helm chart file
  └── values_orig   # Helm chart values file
 ```
 
