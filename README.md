@@ -5,49 +5,60 @@
 <table>
 <thead>
   <tr>
-    <th width="100">Platforms</th>
-    <th width="250"><a href="https://github.com/K-PaaS/cp-deployment">Container platform</a></th>
-    <th width="250">&nbsp;&nbsp;&nbsp;<a href="https://github.com/K-PaaS/sidecar-deployment.git">Sidecar</a></th>
-  </tr>
-</thead>
+    <th align="center" style="text-align:center;width=100;">Platforms</th>
+    <th align="center" colspan="2" style="text-align:center; width=100;">Container platform</a></th>
+    <th align="center" style="text-align:center;width=250;">Sidecar</a></th>
+  </tr></thead>
 <tbody>
   <tr>
     <td align="center">Portal</td>
-    <td align="center"><a href="https://github.com/K-PaaS/cp-portal-release">CP Portal</a></td>
+    <td align="center" colspan="2"><a href="https://github.com/K-PaaS/cp-portal-release">CP Portal</a></td>
     <td align="center"><a href="https://github.com/K-PaaS/sidecar-deployment/tree/master/install-scripts/portal">Sidecar Portal</a></td>
   </tr>
   <tr>
-    <td rowspan="8">Component <br>/Services</td>
+    <td rowspan="8">Component<br>/Services</td>
     <td align="center"><a href="https://github.com/K-PaaS/cp-portal-ui">Portal UI</a></td>
+    <td align="center"><a href="https://github.com/K-PaaS/cp-remote-api">Remote API</a></td>
     <td align="center"><a href="https://github.com/K-PaaS/sidecar-portal-ui">Portal UI</a></td>
   </tr>
   <tr>
     <td align="center"><a href="https://github.com/K-PaaS/cp-portal-api">Portal API</a></td>
+    <td align="center"><a href="https://github.com/K-PaaS/cp-migration-ui">Migration UI</a></td>
     <td align="center"><a href="https://github.com/K-PaaS/sidecar-portal-api">Portal API</a></td>
   </tr>
   <tr>
     <td align="center"><a href="https://github.com/K-PaaS/cp-portal-common-api">Common API</a></td>
+    <td align="center"><a href="https://github.com/K-PaaS/cp-migration-api">Migration API</a></td>
     <td align="center"></td>
   </tr>
   <tr>
     <td align="center"><a href="https://github.com/K-PaaS/cp-metrics-api">Metric API</a></td>
+    <td align="center"><a href="https://github.com/K-PaaS/cp-migration-auth-api">Migration Auth API</a></td>
     <td align="center"></td>
   </tr>
   <tr>
     <td align="center"><a href="https://github.com/K-PaaS/cp-terraman">Terraman API</a></td>
+    <td align="center"><a href="https://github.com/K-PaaS/cp-federation-ui">Federation UI</a></td>
     <td align="center"></td>
   </tr>
   <tr>
     <td align="center"><a href="https://github.com/K-PaaS/cp-catalog-api">Catalog API</a></td>
+    <td align="center"><a href="https://github.com/K-PaaS/cp-federation-api">Federation API</a></td>
     <td align="center"></td>
   </tr>
   <tr>
     <td align="center"><a href="https://github.com/K-PaaS/cp-chaos-api">Chaos API</a></td>
+    <td align="center"><a href="https://github.com/K-PaaS/cp-federation-collector">Federation Collector</a></td>
     <td align="center"></td>
   </tr>
   <tr>
-    <td align="center"><a href="https://github.com/K-PaaS/cp-chaos-collector">Chaos Collector API</a></td>
-    <td align="center"></td>
+  <td align="center">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <a href="https://github.com/K-PaaS/cp-chaos-collector">Chaos Collector</a>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </td>
+  <td align="center"></td>
+  <td align="center"></td>
   </tr>
 </tbody></table>
 <i>🚩 You are here.</i>
@@ -81,6 +92,8 @@ It covers guides to installing native Kubernetes (installing Kubespray, installi
 ### Multi Cloud Deployment
 - Installing a cluster
   + [Cluster Installation Guide](install-guide/standalone/cp-cluster-install-multi.md)
+- Using a CSP Kubernetes service to deploy Istio
+  + [Istio Multi-Cluster Installation Guide](install-guide/csp/cp-csp-istio-guide.md)
 - Installing the portal
   + [Portal Installation Guide](install-guide/portal/cp-portal-standalone-guide-mc.md)
   + [Installation and Deployment Files](https://github.com/K-PaaS/cp-helm-chart)
@@ -92,8 +105,19 @@ It covers guides to installing native Kubernetes (installing Kubespray, installi
   + [Linkerd Installation Guide](install-guide/multicluster/cp-linkerd-install.md)
   + [Karmada Installation Guide](install-guide/multicluster/cp-karmada-install.md)
 - Utilize CSP Kubernetes Service
-  + [Istio Multi-Cluster Installation Guide](install-guide/csp/cp-csp-istio-guide.md)
   + [Linkerd Multi-Cluster Installation Guide](install-guide/csp/cp-csp-linkerd-guide.md)
+
+### Federation Based Multi Cloud Deployment
+- Installing a cluster
+  + [Cluster Installation Guide](install-guide/standalone/cp-cluster-install-federation.md)
+- Installing the portal
+  + [Portal Installation Guide](install-guide/portal/cp-portal-standalone-guide-fed.md)
+  + [Installation and Deployment Files](https://github.com/K-PaaS/cp-helm-chart)
+  + [Release Files](https://github.com/K-PaaS/cp-portal-release)
+- Installing services
+  + [Pipeline Installation Guide](install-guide/pipeline/cp-pipeline-standalone-guide.md)
+  + [Source Control Installation Guide](install-guide/source-control/cp-source-control-standalone-guide.md)
+
 
 ### Edge Deployment
 - Install Edge

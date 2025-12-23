@@ -86,6 +86,7 @@ The required OS environment information for deploying the K-PaaS Container Platf
 |Environment|Node|Supported OS|Version|Architecture|
 |---|---|---|---|---|
 |Cloud Environment|Control Plane<br>Worker|Ubuntu|22.04|amd64|
+|Cloud Environment|Control Plane<br>Worker|Ubuntu|24.04|amd64|
 |Edge Environment|Edge|Ubuntu|20.04|arm64|
 |Edge Environment|Edge|Ubuntu|22.04|arm64|
 
@@ -96,12 +97,12 @@ The key software required for deploying the K-PaaS Container Platform Edge is as
 
 |Key Software|Version|
 |---|---|
-|Kubernetes Native|v1.30.4|
-|Kubernetes Native (Edge Node)|v1.24.17|
-|CRI-O|1.30.3|
-|CRI-O (Edge Node)|v1.24.0|
-|KubeEdge|v1.14.4|
-|EdgeMesh|v1.12.0|
+|Kubernetes Native|v1.33.5|
+|Kubernetes Native (Edge Node)|v1.30.7|
+|CRI-O|1.33.5|
+|CRI-O (Edge Node)|v1.30.0|
+|KubeEdge|v1.20.0|
+|EdgeMesh|v1.16.0|
 
 <br><br>
 
@@ -191,6 +192,16 @@ To support external communication and services via the assigned External IP, ***
 
 <br>
 
+> In the K-PaaS Container Platform Cluster v1.7.0 release, installing the load balancer controller automatically creates and assigns load balancer services, and MetalLB is not installed. (Applicable to NHN and Naver Cloud environments)
+
+<br>
+
+|Method|Description|Note|
+|---|---|---|
+|Load Balancer Controller|Automatically creates load balancer services with assigned public IPs|**Supported on NHN and Naver Cloud**<br>**MetalLB not installed**<br>Additional costs incurred for load balancer services<br>Ingress Nginx service remains operational even if some control plane nodes fail in an HA configuration<br>Recommended for production environments|
+
+<br>
+
 Refer to the following sections of the K-PaaS Container Platform Cluster Installation Guide for CloudCore service configuration methods:
 - [2.1.6.1. Control Plane Node Addition Interface](https://github.com/K-PaaS/cp-guide-eng/blob/master/install-guide/standalone/cp-cluster-install-single.md#2.1.6.1)
 - [2.1.6.2. Cloud Load Balancer Service](https://github.com/K-PaaS/cp-guide-eng/blob/master/install-guide/standalone/cp-cluster-install-single.md#2.1.6.2)
@@ -242,7 +253,7 @@ Reboot the `Raspberry Pi`.
 
 Navigate to the installation path for K-PaaS Container Platform Edge deployment. From this point onward, perform the steps only on the **Control Plane node**.
 ```
-$ cd ~/cp-deployment/standalone
+$ cd ~/cp-deployment/edge
 ```
 
 <br>
@@ -256,10 +267,8 @@ $ vi cp-edge-vars.sh
 
 |Environment Variable|Description|Notes|
 |---|---|---|
-|CLOUDCORE_PRIVATE_VIP|Private IP for the interface used by the CloudCore Service through MetalLB|Duplicate entry with **`CLOUDCORE_VIP`** when using load balancer service|
-|CLOUDCORE_VIP|Public IP assigned to the interface or load balancer service used by the CloudCore Service||
-|CLOUDCORE1_NODE_HOSTNAME|Hostname of the node where CloudCore will be installed|Enter information for 1 Control Plane or Worker node|
-|CLOUDCORE2_NODE_HOSTNAME|Hostname of the node where CloudCore will be installed|Enter information for 1 Control Plane or Worker node|
+|CLOUDCORE_PRIVATE_IP|Private IP for the interface used by the CloudCore Service through MetalLB|Duplicate entry with **`CLOUDCORE_VIP`** when using load balancer service|
+|CLOUDCORE_PUBLIC_IP|Public IP assigned to the interface or load balancer service used by the CloudCore Service||
 |EDGE_NODE_CNT|Number of Edge nodes||
 |EDGE1_NODE_HOSTNAME|Hostname of the first Edge node||
 |EDGE1_NODE_PUBLIC_IP|Public IP of the first Edge node||
@@ -271,19 +280,27 @@ $ vi cp-edge-vars.sh
 ```
 #!/bin/bash
 
-export CLOUDCORE_PRIVATE_VIP=
-export CLOUDCORE_VIP=
+# --------------------------------------------------------------------
+# CloudCore Node Configuration
+# --------------------------------------------------------------------
 
-export CLOUDCORE1_NODE_HOSTNAME=
-export CLOUDCORE2_NODE_HOSTNAME=
+CLOUDCORE_PRIVATE_IP=
+CLOUDCORE_PUBLIC_IP=
 
-export EDGE_NODE_CNT=
+CLOUDCORE1_NODE_HOSTNAME=
+CLOUDCORE2_NODE_HOSTNAME=
 
-export EDGE1_NODE_HOSTNAME=
-export EDGE1_NODE_PUBLIC_IP=
+# --------------------------------------------------------------------
+# Edge Node Configuration
+# --------------------------------------------------------------------
+
+EDGE_NODE_CNT=
+
+EDGE1_NODE_HOSTNAME=
+EDGE1_NODE_PUBLIC_IP=
 ...
-export EDGE{n}_NODE_HOSTNAME=
-export EDGE{n}_NODE_PUBLIC_IP=
+EDGE{n}_NODE_HOSTNAME=
+EDGE{n}_NODE_PUBLIC_IP=
 ```
 
 <br><br>
@@ -292,7 +309,7 @@ export EDGE{n}_NODE_PUBLIC_IP=
 Sequentially perform package installation, Edge deployment environment variable configuration, and K-PaaS Container Platform Edge deployment using an Ansible playbook via a shell script.
 
 ```
-$ source deploy-cp-edge.sh
+$ ./deploy-cp-edge.sh
 ```
 
 <br><br>
@@ -304,11 +321,11 @@ The node and Pod information displayed may vary depending on the configuration. 
 ```
 $ kubectl get nodes
 NAME                 STATUS   ROLES                  AGE     VERSION
-cp-edge              Ready    agent,edge             5m40s   v1.24.17-kubeedge-v1.14.4
-cp-master            Ready    control-plane,master   39m     v1.30.4
-cp-worker-1          Ready    <none>                 38m     v1.30.4
-cp-worker-2          Ready    <none>                 38m     v1.30.4
-cp-worker-3          Ready    <none>                 38m     v1.30.4
+cp-edge              Ready    agent,edge             5m40s   v1.30.7-kubeedge-v1.20.0
+cp-master            Ready    control-plane,master   39m     v1.33.5
+cp-worker-1          Ready    <none>                 38m     v1.33.5
+cp-worker-2          Ready    <none>                 38m     v1.33.5
+cp-worker-3          Ready    <none>                 38m     v1.33.5
 
 $ kubectl get pods -n kube-system
 NAME                                       READY   STATUS    RESTARTS   AGE
@@ -328,20 +345,26 @@ kube-proxy-nnh6d                           1/1     Running   0          38m
 kube-proxy-p9srm                           1/1     Running   0          6m4s
 kube-scheduler-cp-master                   1/1     Running   1          39m
 metrics-server-5cd75b7749-57sc2            2/2     Running   0          37m
+nginx-proxy-cp-worker-1                    1/1     Running   0          8m8s
+nginx-proxy-cp-worker-2                    1/1     Running   0          8m8s
+nginx-proxy-cp-worker-3                    1/1     Running   0          8m8s
 nodelocaldns-24vq4                         1/1     Running   0          6m4s
 nodelocaldns-jjrjj                         1/1     Running   0          37m
 nodelocaldns-kgzxb                         1/1     Running   0          37m
 nodelocaldns-l9s47                         1/1     Running   0          37m
 
 $ kubectl get pods -n kubeedge
-NAME                         READY   STATUS    RESTARTS   AGE
-cloudcore-758b4f4b97-4s57p   1/1     Running   0          3m49s
-cloudcore-758b4f4b97-ndxbl   1/1     Running   0          3m49s
-edgemesh-agent-9cmt2         1/1     Running   0          25s
-edgemesh-agent-b8btq         1/1     Running   0          87s
-edgemesh-agent-ntf24         1/1     Running   0          87s
-edgemesh-agent-vhggk         1/1     Running   0          87s
-edgemesh-agent-vzpdj         1/1     Running   0          87s
+NAME                           READY   STATUS    RESTARTS   AGE
+cloud-iptables-manager-j4jm9   1/1     Running   0          3m49s
+cloud-iptables-manager-l4nhp   1/1     Running   0          3m49s
+cloud-iptables-manager-sm7j6   1/1     Running   0          3m49s
+cloud-iptables-manager-tw3k9   1/1     Running   0          3m49s
+cloudcore-758b4f4b97-4s57p     1/1     Running   0          3m49s
+edgemesh-agent-9cmt2           1/1     Running   0          25s
+edgemesh-agent-b8btq           1/1     Running   0          87s
+edgemesh-agent-ntf24           1/1     Running   0          87s
+edgemesh-agent-vhggk           1/1     Running   0          87s
+edgemesh-agent-vzpdj           1/1     Running   0          87s
 ```
 
 <br><br>
@@ -349,7 +372,7 @@ edgemesh-agent-vzpdj         1/1     Running   0          87s
 ## <div id='3'> 3. Deleting a K-PaaS Container Platform Edge Deployment (Reference)
 Delete the K-PaaS Container Platform Edge deployment using a shell script.
 ```
-$ source reset-cp-edge.sh
+$ ./reset-cp-edge.sh
 ```
 
 <br><br>

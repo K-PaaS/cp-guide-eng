@@ -148,6 +148,7 @@ The required OS environment information for K-PaaS Container Platform Cluster in
 |Supported OS|Version|
 |---|---|
 |Ubuntu|22.04|
+|Ubuntu|24.04|
 
 <br>
 
@@ -183,16 +184,6 @@ When creating an instance with the main account, root is used. When creating an 
 
 Perform the following steps on the Install instance or the first Control Plane node instance.
 
-```
-$ sudo useradd -m -s /bin/bash ubuntu
-$ echo "ubuntu ALL=(ALL) NOPASSWD: ALL" | sudo tee -a /etc/sudoers
-
-$ sudo mkdir -p /home/ubuntu/.ssh
-$ sudo ssh-keygen -t rsa -m PEM -N '' -f /home/ubuntu/.ssh/id_rsa
-$ sudo cat /home/ubuntu/.ssh/id_rsa.pub | sudo tee -a /home/ubuntu/.ssh/authorized_keys
-$ sudo chown -R ubuntu:ubuntu /home/ubuntu/.ssh
-```
-
 <br>
 
 Generate the RSA public key.
@@ -220,12 +211,12 @@ The key's randomart image is:
 
 <br>
 
-Copy the private key to the local environment for access to the instance.
+Copy the private key to the local PC environment for access to the instance.
 
 ```
-## Copy the displayed private key and create a file in the local environment
+## Copy the displayed private key and create a file in the local PC environment
 
-$ sudo cat ~/.ssh/id_rsa
+$ cat ~/.ssh/id_rsa
 ```
 
 <br>
@@ -235,7 +226,7 @@ View and copy the public key.
 ```
 ## Copy the displayed public key
 
-$ sudo cat ~/.ssh/id_rsa.pub
+$ cat ~/.ssh/id_rsa.pub
 ```
 
 <br>
@@ -247,7 +238,7 @@ $ sudo useradd -m -s /bin/bash ubuntu
 $ echo "ubuntu ALL=(ALL) NOPASSWD: ALL" | sudo tee -a /etc/sudoers
 
 $ sudo mkdir -p /home/ubuntu/.ssh
-$ echo "{{ public key }}" | sudo tee -a /home/ubuntu/.ssh/authorized_keys
+$ echo "{{ public key copied to the clipboard }}" | sudo tee -a /home/ubuntu/.ssh/authorized_keys
 $ sudo chown -R ubuntu:ubuntu /home/ubuntu/.ssh
 ```
 
@@ -268,13 +259,16 @@ The following are the main Python packages required for the installation of the 
 
 |Python Package|Version|
 |---|---|
-|ansible|9.8.0|
+|ansible|10.7.0|
+|cryptography|46.0.2|
 |jmespath|1.0.1|
-|jsonschema|4.23.0|
 |netaddr|1.3.0|
-|configparser|>=3.3.0|
-|ipaddress||
-|ruamel.yaml|>=0.15.88|
+|ansible-core|~=2.17.7|
+|typing-extensions|>=4.13.2|
+|cffi|>=2.0.0|
+|PyYAML|>=5.1|
+|jinja2|>=3.0.0|
+|resolvelib|<1.1.0,>=0.5.3|
 
 <br><br>
 
@@ -285,20 +279,21 @@ The following are the main software required for the installation of the K-PaaS 
 
 |Major Software|Version|
 |---|---|
-|Kubespray|2.26.0|
-|KubernetesNative|1.30.4|
-|CRI-O|1.30.3|
-|Calico|3.28.1|
-|MetalLB|0.13.9|
-|IngressNginxController|1.11.3|
-|Helm|3.15.4|
-|Istio|1.23.2|
-|Podman|3.4.4|
-|OpenTofu|1.8.3|
-|nfs-subdir-external-provisioner|4.0.2|
-|RookCeph|1.15.4|
+|Kubespray|2.29.0|
+|Kubernetes Native|1.33.5|
+|CRI-O|1.33.5|
+|Calico|3.30.3|
+|MetalLB|0.14.9|
+|Ingress Nginx Controller|1.13.3|
+|Helm|3.17.4-1|
+|Istio|1.27.3|
+|Podman|3.4.7|
+|OpenTofu|1.10.6|
+|nfs-subdir-external-provisioner|4.0.18|
+|Rook Ceph|1.18.5|
 |Kubeflow|1.7.0|
-|Kyverno|1.12.5|
+|Kyverno|1.15.2|
+|OpenBAO|2.2.0|
 
 <br><br>
 
@@ -384,9 +379,20 @@ To support external communication and services through this External IP, ***`cho
 |Add Interface|Add a new interface with a Public IP assigned to one Control Plane node|Only the cost of using the Public IP will be incurred<br>If the node fails in an HA configuration, external access to the Ingress Nginx service will not be available|
 |Create Load Balancer|Create a load balancer service with a Public IP assigned|Additional cost will incur for the load balancer service<br>In the case of some Control Plane node failures in an HA configuration, the Ingress Nginx service will still be functional<br>Recommended for production environments|
 
+<br>
+
+> In the K-PaaS Container Platform Cluster v1.7.0 release, installing the load balancer controller automatically creates and assigns load balancer services, and MetalLB is not installed. (Applicable to NHN and Naver Cloud environments)
+
+<br>
+
+|Method|Description|Note|
+|---|---|---|
+|Load Balancer Controller|Automatically creates load balancer services with assigned public IPs|**Supported on NHN and Naver Cloud**<br>**MetalLB not installed**<br>Additional costs incurred for load balancer services<br>Ingress Nginx service remains operational even if some control plane nodes fail in an HA configuration<br>Recommended for production environments|
+
 <br><br>
 
 ### <div id='2.1.6.1'> 2.1.6.1. Control Plane Node Addition Interface
+The method for adding interfaces to Control Plane nodes varies by CSP as follows.
 
 <br>
 
@@ -507,6 +513,7 @@ Therefore, it is necessary to proceed with the creation and configuration of a l
 <br><br>
 
 ### <div id='2.1.6.2'> 2.1.6.2. Cloud Load Balancer Service
+The method for creating load balancer services differs by CSP as follows.
 
 <br>
 
@@ -1150,7 +1157,7 @@ Download the Deployment needed for installing the K-PaaS container platform clus
 
 Use the git clone command to download the K-PaaS container platform cluster Deployment in the HOME directory.
 ```
-$ git clone https://github.com/K-PaaS/cp-deployment.git -b branch_v1.6.x
+$ git clone https://github.com/K-PaaS/cp-deployment.git -b branch_v1.7.x
 ```
 
 <br><br>
@@ -1177,17 +1184,18 @@ Control Plane
 |Environment Variable|Description|Remarks|
 |---|---|---|
 |KUBE_CONTROL_HOSTS|Number of Control Plane nodes||
+|MASTER1_NODE_HOSTNAME|Hostname of the first Control Plane node||
+|MASTER1_NODE_USER|User Account of the first Control Plane node|Configured for use as a Bastion server<br>default : **`ubuntu`**|
+|MASTER1_NODE_PRIVATE_IP|Private IP of the first Control Plane node||
+|MASTER1_NODE_PUBLIC_IP|Public IP of the first Control Plane node|Only the first Control Plane node requires the Public IP information|
+|MASTER{n}_NODE_HOSTNAME|Hostname of the nth Control Plane node|Set if **`KUBE_CONTROL_HOSTS`** value is 2 or more<br>Set as many as the value of **`KUBE_CONTROL_HOSTS`**|
+|MASTER{n}_NODE_PRIVATE_IP|Private IP of the nth Control Plane node|Set if **`KUBE_CONTROL_HOSTS`** value is 2 or more<br>Set as many as the value of **`KUBE_CONTROL_HOSTS`**|
 |ETCD_TYPE|ETCD deployment method<br>external: ETCD configured on a separate node<br>stacked: ETCD configured on Control Plane nodes|Set if **`KUBE_CONTROL_HOSTS`** value is 2 or more|
 |LOADBALANCER_DOMAIN|VIP or Domain information of the pre-configured load balancer|Set if **`KUBE_CONTROL_HOSTS`** value is 2 or more|
 |ETCD1_NODE_HOSTNAME|Hostname of the first ETCD node|Set if **`KUBE_CONTROL_HOSTS`** value is 2 or more<br>Set if **`ETCD_TYPE`** is external|
 |ETCD1_NODE_PRIVATE_IP|Private IP of the first ETCD node|Set if **`KUBE_CONTROL_HOSTS`** value is 2 or more<br>Set if **`ETCD_TYPE`** is external|
 |ETCD{n}_NODE_HOSTNAME|Hostname of the nth ETCD node|Set if **`KUBE_CONTROL_HOSTS`** value is 2 or more<br>Set if **`ETCD_TYPE`** is external<br>Set as many as the value of **`KUBE_CONTROL_HOSTS`**|
 |ETCD{n}_NODE_PRIVATE_IP|Private IP of the nth ETCD node|Set if **`KUBE_CONTROL_HOSTS`** value is 2 or more<br>Set if **`ETCD_TYPE`** is external<br>Set as many as the value of **`KUBE_CONTROL_HOSTS`**|
-|MASTER1_NODE_HOSTNAME|Hostname of the first Control Plane node||
-|MASTER1_NODE_PUBLIC_IP|Public IP of the first Control Plane node|Only the first Control Plane node requires the Public IP information|
-|MASTER1_NODE_PRIVATE_IP|Private IP of the first Control Plane node||
-|MASTER{n}_NODE_HOSTNAME|Hostname of the nth Control Plane node|Set if **`KUBE_CONTROL_HOSTS`** value is 2 or more<br>Set as many as the value of **`KUBE_CONTROL_HOSTS`**|
-|MASTER{n}_NODE_PRIVATE_IP|Private IP of the nth Control Plane node|Set if **`KUBE_CONTROL_HOSTS`** value is 2 or more<br>Set as many as the value of **`KUBE_CONTROL_HOSTS`**|
 
 <br>
 
@@ -1221,61 +1229,146 @@ LoadBalancer Service
 
 <br>
 
+Kyverno
+
+|Environment Variable|Description|Remarks|
+|---|---|---|
+|INSTALL_KYVERNO|Whether to deploy Kyverno policies||
+
+<br>
+
+Controller
+
+|Environment Variable|Description|Remarks|
+|---|---|---|
+|CSP_TYPE|CSP information|Supports **NHN, NAVER** only|
+|NHN_USERNAME|NHN Cloud account|Automatically deleted after cluster installation|
+|NHN_PASSWORD|NHN Cloud password|Automatically deleted after cluster installation|
+|NHN_TENANT_ID|NHN Cloud Tenant ID|Automatically deleted after cluster installation|
+|NHN_VIP_SUBNET_ID|Subnet ID used to create the NHN Cloud Load Balancer|Automatically deleted after cluster installation|
+|NHN_API_BASE_URL|NHN Cloud API URL|Default: **https://kr1-api-network-infrastructure.nhncloudservice.com**|
+|NAVER_CLOUD_API_KEY|NAVER Cloud API Key|Automatically deleted after cluster installation|
+|NAVER_CLOUD_API_SECRET|NAVER Cloud API Secret|Automatically deleted after cluster installation|
+|NAVER_CLOUD_REGION|NAVER Cloud region|Default: **KR**|
+|NAVER_CLOUD_VPC_NO|NAVER Cloud VPC No.|Automatically deleted after cluster installation|
+|NAVER_CLOUD_SUBNET_NO|NAVER Cloud Subnet No.|Automatically deleted after cluster installation|
+<br>
+
 ```
 #!/bin/bash
 
-# Control Plane Node Count Variable (e.g., 1, 3, 5, ...)
-export KUBE_CONTROL_HOSTS=
+# --------------------------------------------------------------------
+# Control Plane Node Configuration
+# --------------------------------------------------------------------
 
-# if KUBE_CONTROL_HOSTS > 1 (e.g., external, stacked)
-export ETCD_TYPE=
+# Number of Control Plane (Master) Nodes (e.g., 1, 3, 5 ...)
+KUBE_CONTROL_HOSTS=
 
-# if KUBE_CONTROL_HOSTS > 1
-# HA Control Plane LoadBalancer IP or Domain
-export LOADBALANCER_DOMAIN=
+# Control Plane (Master) Node Information
+# Configure according to the number of Control Plane nodes
+MASTER1_NODE_HOSTNAME=
+MASTER1_NODE_USER=ubuntu
+MASTER1_NODE_PRIVATE_IP=
+MASTER1_NODE_PUBLIC_IP=
+MASTER2_NODE_HOSTNAME=
+MASTER2_NODE_PRIVATE_IP=
+MASTER3_NODE_HOSTNAME=
+MASTER3_NODE_PRIVATE_IP=
 
-# if ETCD_TYPE=external
-# The number of ETCD nodes is set equal to the number of KUBE_CONTROL_HOSTS
-export ETCD1_NODE_HOSTNAME=
-export ETCD1_NODE_PRIVATE_IP=
-...
-export ETCD{n}_NODE_HOSTNAME=
-export ETCD{n}_NODE_PRIVATE_IP=
-...
+# --------------------------------------------------------------------
+# LoadBalancer Configuration
+# --------------------------------------------------------------------
 
-# Master Node Info Variables
-# The number of MASTER nodes is set equal to the number of KUBE_CONTROL_HOSTS
-export MASTER1_NODE_HOSTNAME=
-export MASTER1_NODE_PUBLIC_IP=
-export MASTER1_NODE_PRIVATE_IP=
-...
-export MASTER{n}_NODE_HOSTNAME=
-export MASTER{n}_NODE_PRIVATE_IP=
-...
+# Required when using two or more Control Plane nodes
+# External Load Balancer domain or IP
+LOADBALANCER_DOMAIN=
 
-# Worker Node Count Variable
-export KUBE_WORKER_HOSTS=
+# --------------------------------------------------------------------
+# ETCD Node Configuration
+# --------------------------------------------------------------------
 
-# Worker Node Info Variables
-# The number of Worker nodes is set equal to the number of KUBE_WORKER_HOSTS
-export WORKER1_NODE_HOSTNAME=
-export WORKER1_NODE_PRIVATE_IP=
-...
-export WORKER{n}_NODE_HOSTNAME=
-export WORKER{n}_NODE_PRIVATE_IP=
-...
+# ETCD deployment mode
+# Required when two or more Control Plane nodes are used (e.g., external, stacked)
+# - external : Deploy ETCD as separate nodes
+# - stacked  : ETCD runs on each Control Plane node
+ETCD_TYPE=
 
-# Storage Variable (e.g., nfs, rook-ceph)
-export STORAGE_TYPE=
+# Required when ETCD_TYPE=external
+# Must match the number of Control Plane nodes
+ETCD1_NODE_HOSTNAME=
+ETCD1_NODE_PRIVATE_IP=
+ETCD2_NODE_HOSTNAME=
+ETCD2_NODE_PRIVATE_IP=
+ETCD3_NODE_HOSTNAME=
+ETCD3_NODE_PRIVATE_IP=
 
-# if STORAGE_TYPE=nfs
-export NFS_SERVER_PRIVATE_IP=
+# --------------------------------------------------------------------
+# Worker Node Configuration
+# --------------------------------------------------------------------
 
-# MetalLB Variable (e.g., 192.168.0.150-192.168.0.160)
-export METALLB_IP_RANGE=
+# Number of Worker nodes
+KUBE_WORKER_HOSTS=
 
-# MetalLB Ingress Nginx Controller LoadBalancer Service External IP
-export INGRESS_NGINX_IP=
+# Worker node information
+# Configure according to the number of Worker nodes
+WORKER1_NODE_HOSTNAME=
+WORKER1_NODE_PRIVATE_IP=
+WORKER2_NODE_HOSTNAME=
+WORKER2_NODE_PRIVATE_IP=
+WORKER3_NODE_HOSTNAME=
+WORKER3_NODE_PRIVATE_IP=
+
+# --------------------------------------------------------------------
+# Storage Configuration
+# --------------------------------------------------------------------
+
+# Storage type (e.g., nfs, rook-ceph)
+STORAGE_TYPE=
+
+# Private IP of the NFS server when STORAGE_TYPE='nfs'
+NFS_SERVER_PRIVATE_IP=
+
+# --------------------------------------------------------------------
+# MetalLB Configuration
+# --------------------------------------------------------------------
+
+# MetalLB Address Pool range (e.g., 192.168.0.150-192.168.0.160)
+METALLB_IP_RANGE=
+
+# External IP for the Ingress Nginx Controller LoadBalancer Service
+# - Interface expansion method: set the interface Private IP
+# - LoadBalancer service method: set the LoadBalancer service Public IP
+INGRESS_NGINX_IP=
+
+# --------------------------------------------------------------------
+# Kyverno Configuration
+# --------------------------------------------------------------------
+
+# Whether to install Kyverno (e.g., Y, N)
+# - Y : Install Kyverno and automatically apply PSS (Pod Security Standards) and cp-policy (namespace network isolation)
+# - N : Do not install
+INSTALL_KYVERNO=
+
+# --------------------------------------------------------------------
+# CSP LoadBalancer Controller Configuration
+# --------------------------------------------------------------------
+
+# CSP type (e.g., NHN, NAVER)
+CSP_TYPE=
+
+# NHN Cloud environment variables (required when CSP_TYPE=NHN)
+NHN_USERNAME=
+NHN_PASSWORD=
+NHN_TENANT_ID=
+NHN_VIP_SUBNET_ID=
+NHN_API_BASE_URL=https://kr1-api-network-infrastructure.nhncloudservice.com
+
+# NAVER Cloud environment variables (required when CSP_TYPE=NAVER)
+NAVER_CLOUD_API_KEY=
+NAVER_CLOUD_API_SECRET=
+NAVER_CLOUD_REGION=KR
+NAVER_CLOUD_VPC_NO=
+NAVER_CLOUD_SUBNET_NO=
 ```
 
 <br><br>
@@ -1284,7 +1377,7 @@ export INGRESS_NGINX_IP=
 Through the shell script, the necessary packages will be installed, the cluster installation environment variables set, and the K-PaaS container platform cluster will be installed step by step using Ansible playbook.
 
 ```
-$ source deploy-cp-cluster.sh
+$ ./deploy-cp-cluster.sh
 ```
 
 <br><br>
@@ -1296,10 +1389,10 @@ The nodes and pod information displayed may vary depending on the configuration,
 ```
 $ kubectl get nodes
 NAME                 STATUS   ROLES                  AGE   VERSION
-cp-master            Ready    control-plane          12m   v1.30.4
-cp-worker-1          Ready    <none>                 10m   v1.30.4
-cp-worker-2          Ready    <none>                 10m   v1.30.4
-cp-worker-3          Ready    <none>                 10m   v1.30.4
+cp-master            Ready    control-plane          12m   v1.33.5
+cp-worker-1          Ready    <none>                 10m   v1.33.5
+cp-worker-2          Ready    <none>                 10m   v1.33.5
+cp-worker-3          Ready    <none>                 10m   v1.33.5
 
 $ kubectl get pods -n kube-system
 NAME                                          READY   STATUS    RESTARTS      AGE
@@ -1319,6 +1412,9 @@ kube-proxy-nfttc                              1/1     Running   0             10
 kube-proxy-znfgk                              1/1     Running   0             10m
 kube-scheduler-cp-master                      1/1     Running   1 (11m ago)   12m
 metrics-server-5cd75b7749-xcrps               2/2     Running   0             7m57s
+nginx-proxy-cp-worker-1                       1/1     Running   0             8m8s
+nginx-proxy-cp-worker-2                       1/1     Running   0             8m8s
+nginx-proxy-cp-worker-3                       1/1     Running   0             8m8s
 nodelocaldns-556gb                            1/1     Running   0             8m8s
 nodelocaldns-8dpnt                            1/1     Running   0             8m8s
 nodelocaldns-pvl6z                            1/1     Running   0             8m8s
@@ -1333,7 +1429,7 @@ The K-PaaS container platform cluster can be deleted using a shell script.
 <br>
 
 ```
-$ source reset-cp-cluster.sh
+$ ./reset-cp-cluster.sh
 ```
 
 <br><br>
@@ -1368,7 +1464,7 @@ In the **`single cloud`** environment, Kubeflow installation is supported throug
 <br>
 
 ```
-$ source deploy-cp-kubeflow.sh
+$ ./deploy-cp-kubeflow.sh
 ```
 
 <br><br>

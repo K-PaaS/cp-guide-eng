@@ -79,16 +79,16 @@ The default network for cluster N is set to network N, and the cluster communica
 The list of installed tools is as follows.
 | Tool | Version |
 | :---: | :---: |  
-| kubectl | v1.32.3 |
-| Helm | v3.16.4 |
+| kubectl | v1.33.4 |
+| Helm | v3.18.4 |
 | step | 0.24.4 |
 | Podman | - |
 | ca-certificates | - |
-| Istio | 1.26.0 |
+| Istio | 1.28.0 |
 
 | Istio Version | [Supported Kubernetes Versions](https://istio.io/latest/docs/releases/supported-releases/#support-status-of-istio-releases)|  
 | :---: | :---: |  
-|  `1.26`  |1.29, 1.30, 1.31, 1.32|  
+|  `1.28`  |1.30, 1.31, 1.32, 1.33, 1.34|  
 
 <br>
 
@@ -129,7 +129,7 @@ We provide an example of configuring a multi cluster environment based on three 
 To install Istio Multi Cluster, download the Container Platform Portal Deployment and locate it at the path below.<br>
 
 + Download the Container Platform Portal Deployment file :
-  [cp-portal-deployment-v1.6.2.tar.gz](https://nextcloud.k-paas.org/index.php/s/x7ccTRQYrBHsTD4/download)
+  [cp-portal-deployment-v1.7.0.tar.gz](https://nextcloud.k-paas.org/index.php/s/qrApL4sP5eC2WMX/download)
 
 ```bash
 # Create Path
@@ -137,13 +137,13 @@ $ mkdir -p ~/workspace/container-platform
 $ cd ~/workspace/container-platform
 
 # Download Deployment File and Verify File
-$ wget --content-disposition https://nextcloud.k-paas.org/index.php/s/x7ccTRQYrBHsTD4/download
+$ wget --content-disposition https://nextcloud.k-paas.org/index.php/s/qrApL4sP5eC2WMX/download
 
 $ ls ~/workspace/container-platform
-  cp-portal-deployment-v1.6.2.tar.gz
+  cp-portal-deployment-v1.7.0.tar.gz
 
 # Decompress Deployment Files
-$ tar -xvf cp-portal-deployment-v1.6.2.tar.gz
+$ tar -xvf cp-portal-deployment-v1.7.0.tar.gz
 ```
 
 <br>
@@ -160,12 +160,12 @@ $ vi istio-vars-mc.sh
 ```bash
 # Change to the version to install
 # command line tool
-KUBECTL_VERSION="1.32.3"
-HELM_VERSION="3.16.4"
+KUBECTL_VERSION="1.33.4"
+HELM_VERSION="3.18.4"
 STEP_VERSION="0.24.4"
 
 # Istio
-ISTIO_VERSION="1.26.0"
+ISTIO_VERSION="1.28.0"
 ...
 ```
 
@@ -206,22 +206,22 @@ CURRENT   NAME     CLUSTER      AUTHINFO     NAMESPACE
 ```bash
 # Get nodes in cluster1 (kt) 
 $ kubectl get nodes --context=kt
-NAME                       STATUS   ROLES           AGE    VERSION
-kt-k2p-standard.master01   Ready    control-plane   5d6h   v1.30.4
-kt-k2p-standard.worker01   Ready    <none>          5d6h   v1.30.4
-kt-k2p-standard.worker02   Ready    <none>          5d6h   v1.30.4
+NAME                       STATUS   ROLES           AGE    ···
+kt-k2p-standard.master01   Ready    control-plane   5d6h
+kt-k2p-standard.worker01   Ready    <none>          5d6h
+kt-k2p-standard.worker02   Ready    <none>          5d6h
 
 # Get nodes in cluster2 (ncloud)
 $ kubectl get nodes --context=ncloud
-NAME                    STATUS   ROLES    AGE    VERSION
-ncloud-nks-w-2lmr       Ready    <none>   5d6h   v1.28.10
-ncloud-nks-w-2lms       Ready    <none>   5d6h   v1.28.10
+NAME                    STATUS   ROLES    AGE    ···
+ncloud-nks-w-2lmr       Ready    <none>   5d6h
+ncloud-nks-w-2lms       Ready    <none>   5d6h
 
 # Get nodes in cluster3 (nhn)
 $ kubectl get nodes --context=nhn
-NAME                                STATUS   ROLES    AGE    VERSION
-nhn-nks-default-worker-node-0       Ready    <none>   5d6h   v1.30.3
-nhn-nks-default-worker-node-1       Ready    <none>   5d6h   v1.30.3
+NAME                                STATUS   ROLES    AGE    ···
+nhn-nks-default-worker-node-0       Ready    <none>   5d6h
+nhn-nks-default-worker-node-1       Ready    <none>   5d6h
 ```
 
 <br>

@@ -68,10 +68,10 @@ See the guide below to create a subcluster after completing the setup.
 </thead>
 <tbody>
   <tr>
-    <td rowspan="5">🔗<a href="./cp-portal-use-guide-global.md"><b>Global</b></a></td>
+    <td rowspan="7">🔗<a href="./cp-portal-use-guide-global.md"><b>Global</b></a></td>
     <td>Overview</td>
     <td>Cluster information dashboard</td>
-    <td rowspan="5">Super Admin <br> Cluster Admin (View Permissions)</td>
+    <td rowspan="7">Super Admin <br> Cluster Admin (View Permissions)</td>
   </tr>
   <tr>
     <td>Clusters</td>
@@ -88,6 +88,14 @@ See the guide below to create a subcluster after completing the setup.
   <tr>
     <td>SSH Keys</td>
     <td>Managing SSH Keys Information</td>
+  </tr>  
+  <tr>
+    <td>Federation</td>
+    <td>Manage Federation information</td>
+  </tr> 
+  <tr>
+    <td>Migration</td>
+    <td>Manage Migration information</td>
   </tr>   
   <tr>
     <td rowspan="3">🔗<a href="./cp-portal-use-guide-clusters.md"><b>Clusters</b></a></td>

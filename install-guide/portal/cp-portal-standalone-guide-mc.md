@@ -42,7 +42,7 @@ The installation scope is based on Istio Service Mesh based multi-cloud environm
 <br>
 
 ### <span id='1.3'>1.3. System Configuration
-<p align="center"><img src="../images/portal/cp-001.png" width="850" height="530"></p>
+<p align="center"><img src="../images/portal/cp-001.png"></p>
 
 The system configuration consists of a **Kubernetes cluster (master, worker)** environment and a storage server for data management. It provides a middleware environment as a container, including **OpenBao** to manage secret information and authentication data, **MariaDB (RDBMS)** to manage metadata, **Harbor** to manage container images, **Keycloak** to manage container platform portal user authentication, **ChartMuseum** to manage Helm charts, and **Chaos Mesh** to simulate various types of failures in Kubernetes. The total required VM environment is at least **1 Master VM and 3 Worker** VMs. This document is about deploying a container platform portal environment on a Kubernetes cluster.
 
@@ -50,6 +50,7 @@ The system configuration consists of a **Kubernetes cluster (master, worker)** e
 
 ### <span id='1.4'>1.4. Reference
 > https://kubernetes.io<br>
+> https://istio.io/latest/docs
 
 <br>
 
@@ -113,10 +114,10 @@ The service information included and deployed in the container platform portal i
 
 ### <span id='3.1'>3.1. Download the Container Platform Portal Deployment
 For container platform portal deployment, download the container platform portal deployment file and place it in the path below. <br>
-:bulb: This will be done on the **Master Node**.
-
+:bulb: This will be done on the **Master Node**.<br>
+If the setup was completed using [CSP Kubernetes Service Istio Multi-Cluster Configuration Guide](../csp/cp-csp-istio-guide.md), the Deployment files have already been downloaded, so you can proceed directly to step 3.2.<br>
 + Download the Container Platform Portal Deployment file :
-  [cp-portal-deployment-v1.6.2.tar.gz](https://nextcloud.k-paas.org/index.php/s/x7ccTRQYrBHsTD4/download)
+  [cp-portal-deployment-v1.7.0.tar.gz](https://nextcloud.k-paas.org/index.php/s/qrApL4sP5eC2WMX/download)
 
 ```bash
 # Create Path
@@ -124,13 +125,13 @@ $ mkdir -p ~/workspace/container-platform
 $ cd ~/workspace/container-platform
 
 # Download Deployment File and Verify File
-$ wget --content-disposition https://nextcloud.k-paas.org/index.php/s/x7ccTRQYrBHsTD4/download
+$ wget --content-disposition https://nextcloud.k-paas.org/index.php/s/qrApL4sP5eC2WMX/download
 
 $ ls ~/workspace/container-platform
-  cp-portal-deployment-v1.6.2.tar.gz
+  cp-portal-deployment-v1.7.0.tar.gz
 
 # Decompress Deployment Files
-$ tar -xvf cp-portal-deployment-v1.6.2.tar.gz
+$ tar -xvf cp-portal-deployment-v1.7.0.tar.gz
 ```
 
 - Configure the Deployment File Directory
@@ -138,6 +139,7 @@ $ tar -xvf cp-portal-deployment-v1.6.2.tar.gz
 cp-portal-deployment
 ├── script          # (Single) Variables and script files for portal deployment
 ├── script_mc       # (Multi) Variables and script files for portal deployment
+├── script_fed      # (Federation) Variables and script files for portal deployment
 ├── values_orig     # Helm chart values file
 ├── secmg_orig      # Secrets management deployment file
 └── istio_mc        # Istio Service Mesh Related File
@@ -149,8 +151,8 @@ cp-portal-deployment
 ### <span id='3.2'>3.2. Define Container Platform Portal Variables
 Define the variable values required for container platform portal deployment.
 ```bash
-$ cd ~/workspace/container-platform/cp-portal-deployment/script
-$ vi cp-portal-vars.sh
+$ cd ~/workspace/container-platform/cp-portal-deployment/script_mc
+$ vi cp-portal-vars-mc.sh
 ```
 
 ```bash                                                 
@@ -297,7 +299,13 @@ $ ./deploy-cp-portal-mc.sh
 <br>
 
 Verify that the container platform portal related resources have been deployed normally.<br>
-For Resource Pod, it takes a few seconds to bind to Node and create a container before it transitions to Running state.
+For Resource Pod, it takes a few seconds to bind to Node and create a container before it transitions to Running state. <br>
+
+> **Keycloak** may take several minutes to complete its initial startup.
+During this period, UIs that rely on OIDC may repeatedly restart their Pods because the authentication server is not yet ready.
+Once Keycloak reaches the Ready state, these components will stabilize sequentially.
+
+<br>
 
 ##### Set cluster context in variables
 ```bash
@@ -310,72 +318,78 @@ source ~/workspace/container-platform/cp-portal-deployment/script_mc/cp-portal-v
 >`$ kubectl get pods -n openbao --context=${CLUSTER1_CONFIG[CTX]}`
 ```bash
 NAME                                      READY   STATUS    RESTARTS   AGE
-openbao-0                                 2/2     Running   0          4m34s
-openbao-agent-injector-5687899c56-kg4jc   2/2     Running   0          4m34s
+openbao-0                                 2/2     Running   0          6m56s
+openbao-agent-injector-65b78b458b-4fjdt   2/2     Running   0          6m56s
 ```
 
 - **List MariaDB Pods**
 >`$ kubectl get pods -n mariadb --context=${CLUSTER2_CONFIG[CTX]}`
 ```bash
 NAME        READY   STATUS    RESTARTS   AGE
-mariadb-0   2/2     Running   0          4m37s
+mariadb-0   2/2     Running   0          6m58s
 ```    
 
 - **List Harbor Pods**
 >`$ kubectl get pods -n harbor --context=${CLUSTER1_CONFIG[CTX]}`
 ```bash
 NAME                                 READY   STATUS    RESTARTS   AGE
-harbor-core-fc4678b57-stf5g          1/1     Running   0          4m43s
-harbor-database-0                    1/1     Running   0          4m43s
-harbor-jobservice-849bd887dd-xp25j   1/1     Running   0          4m43s
-harbor-nginx-5f6cf644c6-zq44q        1/1     Running   0          4m43s
-harbor-portal-67f54c96f6-ws4p8       1/1     Running   0          4m43s
-harbor-redis-0                       1/1     Running   0          4m43s
-harbor-registry-675656d75d-zrmds     2/2     Running   0          4m43s
-harbor-trivy-0                       1/1     Running   0          4m43s
+harbor-core-7476c98945-kjd6v         1/1     Running   0          7m3s
+harbor-database-0                    1/1     Running   0          7m3s
+harbor-jobservice-755886bd87-cqwjl   1/1     Running   0          7m3s
+harbor-nginx-6ff95fdfbc-wkgr9        1/1     Running   0          7m3s
+harbor-portal-854ff6c585-t5vhx       1/1     Running   0          7m3s
+harbor-redis-0                       1/1     Running   0          7m3s
+harbor-registry-6d95d597f-vrl4c      2/2     Running   0          7m3s
+harbor-trivy-0                       1/1     Running   0          7m3s
 ```  
 
 - **List Keycloak Pods**
 >`$ kubectl get pods -n keycloak --context=${CLUSTER1_CONFIG[CTX]}`
 ```bash
 NAME         READY   STATUS    RESTARTS   AGE
-keycloak-0   2/2     Running   0          3m36s
-keycloak-1   2/2     Running   0          3m36s
+keycloak-0   2/2     Running   0          6m14s
+keycloak-1   2/2     Running   0          6m14s
 ```
 
 - **List Container Platform Portal Pods**
 >`$ kubectl get pods -n cp-portal --context=${CLUSTER1_CONFIG[CTX]}`
 ```bash
 NAME                                                    READY   STATUS    RESTARTS   AGE
-cp-portal-api-deployment-768d6b9ccb-hxbp2               2/2     Running   0          3m12s
-cp-portal-catalog-api-deployment-64947556ff-q5z68       2/2     Running   0          3m12s
-cp-portal-chaos-api-deployment-777c5678b4-cqc92         2/2     Running   0          3m12s
-cp-portal-chaos-collector-deployment-5d86f48545-x22gp   2/2     Running   0          3m12s
-cp-portal-terraman-deployment-7b584498c7-96ght          2/2     Running   0          3m12s
-cp-portal-ui-deployment-c7ff7cf67-xxkpw                 2/2     Running   0          3m12s
+cp-portal-api-deployment-9dfbfc655-p7nht                2/2     Running   0          5m57s
+cp-portal-catalog-api-deployment-56c5b74b9d-kwvcp       2/2     Running   0          5m57s
+cp-portal-chaos-api-deployment-76944f64ff-nqq4k         2/2     Running   0          5m57s
+cp-portal-chaos-collector-deployment-6f9b69584d-w7dwz   2/2     Running   0          5m57s
+cp-portal-migration-api-deployment-5cc978cc6b-r5tx2     2/2     Running   0          5m57s
+cp-portal-migration-auth-deployment-6c89fcd447-gg85x    2/2     Running   0          5m56s
+cp-portal-migration-ui-deployment-5c857dddff-jjg8v      2/2     Running   0          5m57s
+cp-portal-remote-api-deployment-8656b556d-jbz58         2/2     Running   0          5m56s
+cp-portal-terraman-deployment-559d664d96-bmvdb          2/2     Running   0          5m57s
+cp-portal-ui-deployment-5cdc8f6879-2nqb2                2/2     Running   0          5m56s
 ```
 >`$ kubectl get pods -n cp-portal --context=${CLUSTER2_CONFIG[CTX]}`
 ```bash
 NAME                                               READY   STATUS    RESTARTS   AGE
-cp-portal-common-api-deployment-6d49b449bf-vjngc   2/2     Running   0          3m28s
-cp-portal-metric-api-deployment-64c5745d76-wpdf4   2/2     Running   0          3m28s
+cp-portal-common-api-deployment-7cb898686d-74c8x   2/2     Running   0          6m31s
+cp-portal-metric-api-deployment-6484648b75-rgjgc   2/2     Running   0          6m31s
 ```
 
 - **List ChartMuseum Pods**
 >`$ kubectl get pods -n chartmuseum  --context=${CLUSTER1_CONFIG[CTX]}`
 ```bash
 NAME                          READY   STATUS    RESTARTS   AGE
-chartmuseum-dd99f7685-vrm4c   1/1     Running   0          4m15s
+chartmuseum-bdd579f9d-mfcbz   1/1     Running   0          7m13s
 ```
 - **List Chaos Mesh Pods**
 >`$ kubectl get pods -n chaos-mesh --context=${CLUSTER1_CONFIG[CTX]}`
 ```bash
 NAME                                        READY   STATUS    RESTARTS   AGE
-chaos-controller-manager-744b49d8f4-f27dk   1/1     Running   0          3m56s
-chaos-daemon-dspdl                          1/1     Running   0          3m56s
-chaos-daemon-nmlcg                          1/1     Running   0          3m56s
-chaos-dashboard-6f76b99746-km9wf            1/1     Running   0          3m56s
-chaos-dns-server-5d58bb59dd-jvrgm           1/1     Running   0          3m56s
+chaos-controller-manager-77c59b89f7-c78s4   1/1     Running   0          7m5s
+chaos-daemon-8v6bh                          1/1     Running   0          7m5s
+chaos-daemon-grtvv                          1/1     Running   0          7m5s
+chaos-daemon-kqrn5                          1/1     Running   0          7m5s
+chaos-daemon-sdgsv                          1/1     Running   0          7m5s
+chaos-dashboard-548db4f5c4-bm8v6            1/1     Running   0          7m5s
+chaos-dns-server-6b877f78d5-pg6v7           1/1     Running   0          7m5s
 ```
 
 - **List Service Access Hosts**

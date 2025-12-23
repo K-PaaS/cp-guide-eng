@@ -42,7 +42,7 @@ The installation scope is based on a Kubernetes cluster deployment.
 <br>
 
 ### <span id='1.3'>1.3. System Configuration
-<p align="center"><img src="../images/portal/cp-001.png" width="850" height="530"></p>
+<p align="center"><img src="../images/portal/cp-001.png"></p>
 
 The system configuration consists of a **Kubernetes cluster (master, worker)** environment and a storage server for data management.
 It provides a middleware environment as a container, including **OpenBao** to manage secret information and authentication data,
@@ -102,12 +102,12 @@ Set the port that should be opened for the IaaS Security Group.
 The service information included and deployed in the container platform portal is as follows.
 |Service| Application Version| Chart Version|
 |:--- | :---:|  :---: |  
-|[OpenBao](https://github.com/openbao/openbao)|2.2.0|0.12.0|
-|[MariaDB](https://github.com/mariadb)|11.4.7|20.5.6|
-|[Harbor](https://github.com/goharbor/harbor)|2.13.1|1.17.1|
-|[Keycloak](https://github.com/keycloak/keycloak)|25.0.6|23.0.0|
+|[OpenBao](https://github.com/openbao/openbao)|v2.4.1|0.19.0|
+|[MariaDB](https://github.com/mariadb)|12.0.2|23.2.1 (Bitnami)|
+|[Harbor](https://github.com/goharbor/harbor)|2.14.0|1.18.0|
+|[Keycloak](https://github.com/keycloak/keycloak)|26.3.3|25.2.0 (Bitnami)|
 |[ChartMuseum](https://github.com/helm/chartmuseum)|0.16.3|3.10.4|
-|[Chaos Mesh](https://github.com/chaos-mesh/chaos-mesh)|2.7.2|2.7.2|
+|[Chaos Mesh](https://github.com/chaos-mesh/chaos-mesh)|2.8.0|2.8.0|
 
 <br>
 
@@ -118,7 +118,7 @@ For container platform portal deployment, download the container platform portal
 :bulb: This will be done on the **Master Node**.
 
 + Download the Container Platform Portal Deployment file :
-  [cp-portal-deployment-v1.6.2.tar.gz](https://nextcloud.k-paas.org/index.php/s/x7ccTRQYrBHsTD4/download)
+  [cp-portal-deployment-v1.7.0.tar.gz](https://nextcloud.k-paas.org/index.php/s/qrApL4sP5eC2WMX/download)
 
 ```bash
 # Create Path
@@ -126,13 +126,13 @@ $ mkdir -p ~/workspace/container-platform
 $ cd ~/workspace/container-platform
 
 # Download Deployment File and Verify File
-$ wget --content-disposition https://nextcloud.k-paas.org/index.php/s/x7ccTRQYrBHsTD4/download
+$ wget --content-disposition https://nextcloud.k-paas.org/index.php/s/qrApL4sP5eC2WMX/download
 
 $ ls ~/workspace/container-platform
-  cp-portal-deployment-v1.6.2.tar.gz
+  cp-portal-deployment-v1.7.0.tar.gz
 
 # Decompress Deployment Files
-$ tar -xvf cp-portal-deployment-v1.6.2.tar.gz
+$ tar -xvf cp-portal-deployment-v1.7.0.tar.gz
 ```
 
 - Configure the Deployment File Directory
@@ -140,6 +140,7 @@ $ tar -xvf cp-portal-deployment-v1.6.2.tar.gz
 cp-portal-deployment
 ├── script          # (Single) Variables and script files for portal deployment
 ├── script_mc       # (Multi) Variables and script files for portal deployment
+├── script_fed      # (Federation)) Variables and script files for portal deployment
 ├── values_orig     # Helm chart values file
 ├── secmg_orig      # Secrets management deployment file
 └── istio_mc        # Istio Service Mesh Related File
@@ -298,86 +299,93 @@ $ ./deploy-cp-portal.sh
 Verify that the container platform portal related resources have been deployed normally.<br>
 For Resource Pod, it takes a few seconds to bind to Node and create a container before it transitions to Running state.
 
+> **Keycloak** may take several minutes to complete its initial startup.
+During this period, UIs that rely on OIDC may repeatedly restart their Pods because the authentication server is not yet ready.
+Once Keycloak reaches the Ready state, these components will stabilize sequentially.
 <br>
 
 - **List OpenBao Pods**
 >`$ kubectl get pods -n openbao`
 ```bash
 NAME                                      READY   STATUS    RESTARTS   AGE
-openbao-0                                 1/1     Running   0          4m33s
-openbao-agent-injector-55bbd89f66-l7mxr   1/1     Running   0          4m33s
+openbao-0                                 1/1     Running   0          8m38s
+openbao-agent-injector-59777b5b64-cdks2   1/1     Running   0          8m38s
 ```
 
 - **List MariaDB Pods**
 >`$ kubectl get pods -n mariadb`
 ```bash
 NAME        READY   STATUS    RESTARTS   AGE
-mariadb-0   1/1     Running   0          4m24s
+mariadb-0   1/1     Running   0          8m37s
 ```    
 
 - **List Harbor Pods**
 >`$ kubectl get pods -n harbor`
 ```bash
-NAME                                READY   STATUS    RESTARTS   AGE
-harbor-core-64494dcd9b-spxbm        1/1     Running   0          4m35s
-harbor-database-0                   1/1     Running   0          4m35s
-harbor-jobservice-6c88f89d9-mm2kh   1/1     Running   0          4m35s
-harbor-portal-6fcddb995f-pjmch      1/1     Running   0          4m35s
-harbor-redis-0                      1/1     Running   0          4m35s
-harbor-registry-7d98c6df6b-86dhk    2/2     Running   0          4m35s
-harbor-trivy-0                      1/1     Running   0          4m35s
+NAME                                 READY   STATUS    RESTARTS   AGE
+harbor-core-689ffcd797-tbpmn         1/1     Running   0          8m47s
+harbor-database-0                    1/1     Running   0          8m47s
+harbor-jobservice-6c7d64dc58-jlk28   1/1     Running   0          8m47s
+harbor-portal-645d97998c-x22b6       1/1     Running   0          8m47s
+harbor-redis-0                       1/1     Running   0          8m47s
+harbor-registry-7c9769495b-z7247     2/2     Running   0          8m47s
+harbor-trivy-0                       1/1     Running   0          8m47s
 ```  
 
 - **List Keycloak Pods**
 >`$ kubectl get pods -n keycloak`
 ```bash
 NAME         READY   STATUS    RESTARTS   AGE
-keycloak-0   1/1     Running   0          3m38s
-keycloak-1   1/1     Running   0          3m38s
+keycloak-0   1/1     Running   0          7m37s
+keycloak-1   1/1     Running   0          7m37s
 ```
 
 - **List Container Platform Portal Pods**
 >`$ kubectl get pods -n cp-portal`
 ```bash
 NAME                                                    READY   STATUS    RESTARTS   AGE
-cp-portal-api-deployment-8c4d87657-58rr9                1/1     Running   0          3m19s
-cp-portal-catalog-api-deployment-54f56948bb-ml7gz       1/1     Running   0          3m19s
-cp-portal-chaos-api-deployment-7d9959c57c-42hpd         1/1     Running   0          3m19s
-cp-portal-chaos-collector-deployment-6ff45d89d4-2v57b   1/1     Running   0          3m19s
-cp-portal-common-api-deployment-65b87c5ddb-h8b42        1/1     Running   0          3m19s
-cp-portal-metric-api-deployment-69ccbbd775-6gm26        1/1     Running   0          3m19s
-cp-portal-terraman-deployment-599795db7d-8m97k          1/1     Running   0          3m19s
-cp-portal-ui-deployment-5b5f465f7b-nnhpg                1/1     Running   0          3m19s
+cp-portal-api-deployment-6b5c84fbdf-6bcn2               1/1     Running   0          7m16s
+cp-portal-catalog-api-deployment-85795db844-zfgch       1/1     Running   0          7m15s
+cp-portal-chaos-api-deployment-68f8dc64fc-q7gjl         1/1     Running   0          7m16s
+cp-portal-chaos-collector-deployment-859df489f4-tsjvp   1/1     Running   0          7m15s
+cp-portal-common-api-deployment-59f65d7dd6-57wmx        1/1     Running   0          7m15s
+cp-portal-metric-api-deployment-756b4585d5-rjz2v        1/1     Running   0          7m16s
+cp-portal-migration-api-deployment-9b79789c6-q78sp      1/1     Running   0          7m15s
+cp-portal-migration-auth-deployment-96995bc65-rnk6q     1/1     Running   0          7m15s
+cp-portal-migration-ui-deployment-c5948cc9c-vrl95       1/1     Running   0          7m16s
+cp-portal-remote-api-deployment-788f46bc9d-kt6gf        1/1     Running   0          7m15s
+cp-portal-terraman-deployment-57dd8649cd-llqps          1/1     Running   0          7m15s
+cp-portal-ui-deployment-7df6cbc75c-kt6tb                1/1     Running   0          7m16s
 ```
 
 - **List ChartMuseum Pods**
 >`$ kubectl get pods -n chartmuseum`
 ```bash
 NAME                           READY   STATUS    RESTARTS   AGE
-chartmuseum-684cbdcd6c-gq5rt   1/1     Running   0          4m5s
+chartmuseum-648968c7dd-sgn8c   1/1     Running   0          8m7s
 ```
 
 - **List Chaos Mesh Pods**
 >`$ kubectl get pods -n chaos-mesh`
 ```bash
-NAME                                       READY   STATUS    RESTARTS   AGE
-chaos-controller-manager-cdf78b66c-75dxt   1/1     Running   0          3m53s
-chaos-daemon-8t7qk                         1/1     Running   0          3m53s
-chaos-daemon-94c59                         1/1     Running   0          3m53s
-chaos-daemon-wv78l                         1/1     Running   0          3m53s
-chaos-dashboard-6755fb7bf-k7f4w            1/1     Running   0          3m53s
-chaos-dns-server-675758fb6b-6fdfg          1/1     Running   0          3m53s
+NAME                                        READY   STATUS    RESTARTS   AGE
+chaos-controller-manager-778684cd75-979jl   1/1     Running   0          7m54s
+chaos-daemon-brc8m                          1/1     Running   0          7m54s
+chaos-daemon-d9gwf                          1/1     Running   0          7m54s
+chaos-daemon-wpgsm                          1/1     Running   0          7m54s
+chaos-dashboard-799b6d9f6-mc49j             1/1     Running   0          7m54s
+chaos-dns-server-5f9bb85c75-5tpc2           1/1     Running   0          7m54s
 ```
 
 - **List Service Access Hosts**
 >`$ kubectl get ingress -A`
 ```bash
-NAMESPACE     NAME                CLASS   HOSTS                                ADDRESS          PORTS     AGE
-chartmuseum   chartmuseum         nginx   chartmuseum.105.xxx.xxx.xxx.nip.io   192.168.0.xxx    80, 443   4m31s
-cp-portal     cp-portal-ingress   nginx   portal.105.xxx.xxx.xxx.nip.io        192.168.0.xxx    80, 443   4m3s
-harbor        harbor-ingress      nginx   harbor.105.xxx.xxx.xxx.nip.io        192.168.0.xxx    80, 443   5m47s
-keycloak      keycloak            nginx   keycloak.105.xxx.xxx.xxx.nip.io      192.168.0.xxx    80, 443   4m31s
-openbao       openbao             nginx   openbao.105.xxx.xxx.xxx.nip.io       192.168.0.xxx    80, 443   6m8s
+NAMESPACE     NAME                CLASS   HOSTS                                ADDRESS         PORTS     AGE
+chartmuseum   chartmuseum         nginx   chartmuseum.xxx.xxx.xxx.xxx.nip.io   172.xx.xx.xxx   80, 443   8m39s
+cp-portal     cp-portal-ingress   nginx   portal.xxx.xxx.xxx.xxx.nip.io        172.xx.xx.xxx   80, 443   8m3s
+harbor        harbor-ingress      nginx   harbor.xxx.xxx.xxx.xxx.nip.io        172.xx.xx.xxx   80, 443   10m
+keycloak      keycloak            nginx   keycloak.xxx.xxx.xxx.xxx.nip.io      172.xx.xx.xxx   80, 443   8m40s
+openbao       openbao             nginx   openbao.xxx.xxx.xxx.xxx.nip.io       172.xx.xx.xxx   80, 443   10m
 ```
 
 <br>
