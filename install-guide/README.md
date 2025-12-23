@@ -21,7 +21,7 @@
 - Installing a cluster
   + [Cluster Installation Guide](standalone/cp-cluster-install-multi.md)
 - Using a CSP Kubernetes service to deploy Istio
-  + [Istio Multi-Cluster Installation Guide](install-guide/csp/cp-csp-istio-guide.md)
+  + [Istio Multi-Cluster Installation Guide](/csp/cp-csp-istio-guide.md)
 - Installing the portal
   + [Portal Installation Guide](portal/cp-portal-standalone-guide-mc.md)
   + [Installation and Deployment Files](https://github.com/K-PaaS/cp-helm-chart)
@@ -37,14 +37,14 @@
 
 ### Federation Based Multi Cloud Deployment
 - Installing a cluster
-  + [Cluster Installation Guide](install-guide/standalone/cp-cluster-install-federation.md)
+  + [Cluster Installation Guide](standalone/cp-cluster-install-federation.md)
 - Installing the portal
-  + [Portal Installation Guide](install-guide/portal/cp-portal-standalone-guide-fed.md)
+  + [Portal Installation Guide](portal/cp-portal-standalone-guide-fed.md)
   + [Installation and Deployment Files](https://github.com/K-PaaS/cp-helm-chart)
   + [Release Files](https://github.com/K-PaaS/cp-portal-release)
 - Installing services
-  + [Pipeline Installation Guide](install-guide/pipeline/cp-pipeline-standalone-guide.md)
-  + [Source Control Installation Guide](install-guide/source-control/cp-source-control-standalone-guide.md)
+  + [Pipeline Installation Guide](pipeline/cp-pipeline-standalone-guide.md)
+  + [Source Control Installation Guide](source-control/cp-source-control-standalone-guide.md)
 
 ### Edge Deployment
 - Install Edge
