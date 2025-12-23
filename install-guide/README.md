@@ -21,7 +21,7 @@
 - Installing a cluster
   + [Cluster Installation Guide](standalone/cp-cluster-install-multi.md)
 - Using a CSP Kubernetes service to deploy Istio
-  + [Istio Multi-Cluster Installation Guide](/csp/cp-csp-istio-guide.md)
+  + [Istio Multi-Cluster Installation Guide](csp/cp-csp-istio-guide.md)
 - Installing the portal
   + [Portal Installation Guide](portal/cp-portal-standalone-guide-mc.md)
   + [Installation and Deployment Files](https://github.com/K-PaaS/cp-helm-chart)
