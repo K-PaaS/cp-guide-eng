@@ -29,7 +29,7 @@
    1.5.2. [Get SSH Keys Details](#1-5-2)  
    1.5.3. [Generate SSH Keys](#1-5-3)  
    1.5.4. [Modify SSH Keys](#1-5-4)  
-   1.5.5. [Delete SSH Keys](#1-5-5)
+   1.5.5. [Delete SSH Keys](#1-5-5)  
    1.6. [Federation](#1-6)  
    1.6.1. [Get Overview Information](#1-6-1)   
    1.6.2. [Get a list of Clusters](#1-6-2)   
